@@ -1,0 +1,19 @@
+{
+  "cards": [
+    {
+        "id":,
+        "name":"",
+        "type":"",
+        "image":"",
+        "stats": {
+            "hp":,
+            "attack":,
+            "sp.attack":,
+            "defense":,
+            "sp.defense":,
+            "speed":
+        },
+    }
+  ]
+
+}

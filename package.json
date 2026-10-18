@@ -1,3 +1,6 @@
 {
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@tcgdex/sdk": "^2.9.0"
+  }
 }
