@@ -17,7 +17,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/44/high.webp"
   },
   {
     "name": "Ivysaur",
@@ -37,7 +38,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/30/high.webp"
   },
   {
     "name": "Venusaur",
@@ -61,7 +63,8 @@
     ],
     "retreat_cost": 4,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/15/high.webp"
   },
   {
     "name": "Venusaur EX",
@@ -94,7 +97,8 @@
     ],
     "retreat_cost": 4,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/112/high.webp"
   },
   {
     "name": "Caterpie",
@@ -117,7 +121,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/45/high.webp"
   },
   {
     "name": "Butterfree",
@@ -142,7 +147,8 @@
         "target": "all_your_pokemon",
         "amount": 20,
         "condition": "once_per_turn"
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base2/33/high.webp"
 },
 {
     "name": "Weedle",
@@ -161,7 +167,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/69/high.webp"
 },
 {
     "name": "Kakuna",
@@ -180,7 +187,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/33/high.webp"
 },
 {
     "name": "Beedrill",
@@ -200,7 +208,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/17/high.webp"
 },
 {
     "name": "Oddish",
@@ -219,7 +228,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/58/high.webp"
 },
 {
     "name": "Gloom",
@@ -239,7 +249,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/37/high.webp"
 },
 {
     "name": "Vileplume",
@@ -263,7 +274,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/15/high.webp"
 },
 {
     "name": "Paras",
@@ -282,7 +294,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/59/high.webp"
 },
 {
     "name": "Parasect",
@@ -302,7 +315,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/41/high.webp"
 },
 {
     "name": "Venonat",
@@ -321,7 +335,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/63/high.webp"
 },
 {
     "name": "Venomoth",
@@ -345,7 +360,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/13/high.webp"
 },
 {
     "name": "Bellsprout",
@@ -364,7 +380,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/49/high.webp"
 },
 {
     "name": "Weepinbell",
@@ -384,7 +401,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/48/high.webp"
 },
 {
     "name": "Victreebel",
@@ -408,7 +426,8 @@
         "action": "switch_opponent_active",
         "condition": "once_per_turn",
         "description": "Switch 1 of your opponent's Benched Basic Pokémon to the Active Spot."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base2/14/high.webp"
 },
 {
     "name": "Exeggcute",
@@ -427,7 +446,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/52/high.webp"
 },
 {
     "name": "Exeggutor",
@@ -451,7 +471,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/35/high.webp"
 },
 {
     "name": "Exeggutor EX",
@@ -475,7 +496,8 @@
     ],
     "retreat_cost": 3,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/tcgp/A1/023/high.webp"
 },
 {
     "name": "Tangela",
@@ -498,7 +520,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/66/high.webp"
 },
 {
     "name": "Scyther",
@@ -518,7 +541,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/10/high.webp"
 },
 {
     "name": "Pinsir",
@@ -542,7 +566,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/25/high.webp"
 },
 {
     "name": "Cottonee",
@@ -561,7 +586,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw2/10/high.webp"
 },
 {
     "name": "Whimsicott",
@@ -581,7 +607,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw2/11/high.webp"
 },
 {
     "name": "Petilil",
@@ -604,7 +631,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/9/high.webp"
 },
 {
     "name": "Lilligant",
@@ -629,7 +657,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/10/high.webp"
 },
 {
     "name": "Skiddo",
@@ -653,7 +682,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY11/high.webp"
 },
 {
     "name": "Gogoat",
@@ -673,7 +703,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY16/high.webp"
 },
 {
     "name": "Charmander",
@@ -696,7 +727,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/46/high.webp"
 },
 {
     "name": "Charmeleon",
@@ -716,7 +748,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/24/high.webp"
 },
 {
     "name": "Charizard",
@@ -739,7 +772,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/4/high.webp"
 },
 {
     "name": "Charizard EX",
@@ -771,7 +805,8 @@
     ],
     "retreat_cost": 3,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/105/high.webp"
 },
 {
     "name": "Vulpix",
@@ -796,7 +831,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/68/high.webp"
 },
 {
     "name": "Ninetales",
@@ -819,7 +855,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/12/high.webp"
 },
 {
     "name": "Growlithe",
@@ -838,7 +875,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/28/high.webp"
 },
 {
     "name": "Arcanine",
@@ -862,7 +900,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/23/high.webp"
 },
 {
     "name": "Arcanine EX",
@@ -886,7 +925,8 @@
     ],
     "retreat_cost": 4,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex12/83/high.webp"
 },
 {
     "name": "Ponyta",
@@ -905,7 +945,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/60/high.webp"
 },
 {
     "name": "Rapidash",
@@ -924,7 +965,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/44/high.webp"
 },
 {
     "name": "Magmar",
@@ -943,7 +985,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/36/high.webp"
 },
 {
     "name": "Flareon",
@@ -967,7 +1010,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/19/high.webp"
 },
 {
     "name": "Moltres",
@@ -990,7 +1034,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/basep/21/high.webp"
 },
 {
     "name": "Moltres EX",
@@ -1023,7 +1068,8 @@
     ],
     "retreat_cost": 2,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/pop/np/31/high.webp"
 },
 {
     "name": "Heatmor",
@@ -1042,7 +1088,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/18/high.webp"
 },
 {
     "name": "Salandit",
@@ -1061,7 +1108,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/sm/smp/SM154/high.webp"
 },
 {
     "name": "Salazzle",
@@ -1081,7 +1129,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/sm/smp/SM73/high.webp"
 },
 {
     "name": "Sizzlipede",
@@ -1100,7 +1149,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/37/high.webp"
 },
 {
     "name": "Centiskorch",
@@ -1124,7 +1174,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH048/high.webp"
 },
 {
     "name": "Squirtle",
@@ -1143,7 +1194,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/63/high.webp"
 },
 {
     "name": "Wartortle",
@@ -1162,7 +1214,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/42/high.webp"
 },
 {
     "name": "Blastoise",
@@ -1185,7 +1238,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/2/high.webp"
 },
 {
     "name": "Blastoise EX",
@@ -1217,7 +1271,8 @@
     ],
     "retreat_cost": 4,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/104/high.webp"
 },
 {
     "name": "Psyduck",
@@ -1240,7 +1295,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/basep/20/high.webp"
 },
 {
     "name": "Golduck",
@@ -1260,7 +1316,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/35/high.webp"
 },
 {
     "name": "Poliwag",
@@ -1279,7 +1336,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/59/high.webp"
 },
 {
     "name": "Poliwhirl",
@@ -1298,7 +1356,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/38/high.webp"
 },
 {
     "name": "Poliwrath",
@@ -1322,7 +1381,8 @@
         "amount": 20,
         "condition": "if_damaged_by_attack",
         "description": "If this Pokémon is damaged by an attack from an opponent's Pokémon, deal 20 damage to the Attacking Pokémon."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base1/13/high.webp"
 },
 {
     "name": "Tentacool",
@@ -1341,7 +1401,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/56/high.webp"
 },
 {
     "name": "Tentacruel",
@@ -1364,7 +1425,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/44/high.webp"
 },
 {
     "name": "Seel",
@@ -1383,7 +1445,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/41/high.webp"
 },
 {
     "name": "Dewgong",
@@ -1402,7 +1465,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/25/high.webp"
 },
 {
     "name": "Shellder",
@@ -1421,7 +1485,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/54/high.webp"
 },
 {
     "name": "Cloyster",
@@ -1444,7 +1509,8 @@
         "action": "reduce_damage",
         "amount": 10,
         "description": "This Pokémon takes 10 less damage from attacks."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base3/32/high.webp"
 },
 {
     "name": "Krabby",
@@ -1463,7 +1529,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/51/high.webp"
 },
 {
     "name": "Kingler",
@@ -1487,7 +1554,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/38/high.webp"
 },
 {
     "name": "Horsea",
@@ -1506,7 +1574,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/49/high.webp"
 },
 {
     "name": "Seadra",
@@ -1528,7 +1597,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/42/high.webp"
 },
 {
     "name": "Goldeen",
@@ -1547,7 +1617,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/53/high.webp"
 },
 {
     "name": "Seaking",
@@ -1570,7 +1641,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/46/high.webp"
 },
 {
     "name": "Staryu",
@@ -1589,7 +1661,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/65/high.webp"
 },
 {
     "name": "Starmie",
@@ -1608,7 +1681,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/64/high.webp"
 },
 {
     "name": "Starmie EX",
@@ -1627,7 +1701,8 @@
     ],
     "retreat_cost": 1,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/tcgp/A1/076/high.webp"
 },
 {
     "name": "Magikarp",
@@ -1646,7 +1721,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/35/high.webp"
 },
 {
     "name": "Gyarados",
@@ -1669,7 +1745,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/6/high.webp"
 },
 {
     "name": "Lapras",
@@ -1692,7 +1769,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/10/high.webp"
 },
 {
     "name": "Vaporeon",
@@ -1716,7 +1794,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/12/high.webp"
 },
 {
     "name": "Omanyte",
@@ -1735,7 +1814,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/52/high.webp"
 },
 {
     "name": "Omastar",
@@ -1759,7 +1839,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/40/high.webp"
 },
 {
     "name": "Articuno",
@@ -1784,7 +1865,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/basep/22/high.webp"
 },
 {
     "name": "Articuno EX",
@@ -1817,7 +1899,8 @@
     ],
     "retreat_cost": 3,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/pop/np/32/high.webp"
 },
 {
     "name": "Ducklett",
@@ -1836,7 +1919,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/36/high.webp"
 },
 {
     "name": "Swanna",
@@ -1856,7 +1940,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/37/high.webp"
 },
 {
     "name": "Froakie",
@@ -1875,7 +1960,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY03/high.webp"
 },
 {
     "name": "Frogadier",
@@ -1894,7 +1980,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xy0/13/high.webp"
 },
 {
     "name": "Greninja",
@@ -1917,7 +2004,8 @@
         "action": "deal_damage",
         "amount": 20,
         "description": "Once during your turn, you may do 20 damage to 1 of your opponent's Pokémon."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY162/high.webp"
 },
 {
     "name": "Pyukumuku",
@@ -1936,7 +2024,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/sm/sm1/47/high.webp"
 },
 {
     "name": "Bruxish",
@@ -1960,7 +2049,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/sm/sm1/48/high.webp"
 },
 {
     "name": "Snom",
@@ -1979,7 +2069,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/63/high.webp"
 },
 {
     "name": "Frosmoth",
@@ -2003,7 +2094,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH007/high.webp"
 },
 {
     "name": "Pikachu",
@@ -2022,7 +2114,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/58/high.webp"
 },
 {
     "name": "Raichu",
@@ -2045,7 +2138,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/14/high.webp"
 },
 {
     "name": "Pikachu EX",
@@ -2068,7 +2162,8 @@
     ],
     "retreat_cost": 1,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY124/high.webp"
 },
 {
     "name": "Magnemite",
@@ -2087,7 +2182,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/53/high.webp"
 },
 {
     "name": "Magneton",
@@ -2111,7 +2207,8 @@
         "action": "attach_energy",
         "target": "self",
         "description": "Once during your turn, you may attach 2 Energy from your discard pile to this Pokémon."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base1/9/high.webp"
 },
 {
     "name": "Voltorb",
@@ -2130,7 +2227,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/67/high.webp"
 },
 {
     "name": "Electrode",
@@ -2149,7 +2247,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/21/high.webp"
 },
 {
     "name": "Electabuzz",
@@ -2175,7 +2274,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/20/high.webp"
 },
 {
     "name": "Jolteon",
@@ -2200,7 +2300,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/20/high.webp"
 },
 {
     "name": "Zapdos",
@@ -2224,7 +2325,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/16/high.webp"
 },
 {
     "name": "Zapdos EX",
@@ -2257,7 +2359,8 @@
     ],
     "retreat_cost": 3,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/pop/np/33/high.webp"
 },
 {
     "name": "Blitzle",
@@ -2276,7 +2379,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/40/high.webp"
 },
 {
     "name": "Zebstrika",
@@ -2300,7 +2404,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/42/high.webp"
 },
 {
     "name": "Tynamo",
@@ -2319,7 +2424,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/38/high.webp"
 },
 {
     "name": "Eelektrik",
@@ -2338,7 +2444,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/40/high.webp"
 },
 {
     "name": "Eelektross",
@@ -2362,7 +2469,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/41/high.webp"
 },
 {
     "name": "Helioptile",
@@ -2381,7 +2489,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xy2/36/high.webp"
 },
 {
     "name": "Heliolisk",
@@ -2405,7 +2514,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY47/high.webp"
 },
 {
     "name": "Pincurchin",
@@ -2429,7 +2539,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/77/high.webp"
 },
 {
     "name": "Clefairy",
@@ -2448,7 +2559,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/5/high.webp"
 },
 {
     "name": "Clefable",
@@ -2467,7 +2579,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/1/high.webp"
 },
 {
     "name": "Abra",
@@ -2490,7 +2603,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/43/high.webp"
 },
 {
     "name": "Kadabra",
@@ -2509,7 +2623,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/32/high.webp"
 },
 {
     "name": "Alakazam",
@@ -2533,7 +2648,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/1/high.webp"
 },
 {
     "name": "Slowpoke",
@@ -2552,7 +2668,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/55/high.webp"
 },
 {
     "name": "Slowbro",
@@ -2571,7 +2688,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/43/high.webp"
 },
 {
     "name": "Gastly",
@@ -2590,7 +2708,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/50/high.webp"
 },
 {
     "name": "Haunter",
@@ -2609,7 +2728,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/29/high.webp"
 },
 {
     "name": "Gengar",
@@ -2632,7 +2752,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/20/high.webp"
 },
 {
     "name": "Gengar EX",
@@ -2654,7 +2775,8 @@
     "effect": {
         "action": "disable_supporters",
         "description": "As long as this Pokémon is in the Active Spot, your opponent can't play any Supporter cards from their hand."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/ex/ex6/108/high.webp"
 },
 {
     "name": "Drowzee",
@@ -2673,7 +2795,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/49/high.webp"
 },
 {
     "name": "Hypno",
@@ -2697,7 +2820,8 @@
         "condition": "heads",
         "status": "asleep",
         "description": "Once during your turn, you may flip a coin. If heads, your opponent's Active Pokémon is now Asleep."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base3/23/high.webp"
 },
 {
     "name": "Mr. Mime",
@@ -2720,7 +2844,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/22/high.webp"
 },
 {
     "name": "Jynx",
@@ -2743,7 +2868,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/31/high.webp"
 },
 {
     "name": "Mewtwo",
@@ -2766,7 +2892,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/10/high.webp"
 },
 {
     "name": "Mewtwo EX",
@@ -2799,7 +2926,8 @@
     ],
     "retreat_cost": 2,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex1/101/high.webp"
 },
 {
     "name": "Ralts",
@@ -2818,7 +2946,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex1/66/high.webp"
 },
 {
     "name": "Kirlia",
@@ -2837,7 +2966,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex1/34/high.webp"
 },
 {
     "name": "Gardevoir",
@@ -2859,7 +2989,8 @@
     "effect": {
         "action": "move_energy",
         "description": "Once during your turn, you may take 1 Energy from your discard pile and attach it to 1 of your Pokémon."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/ex/ex1/7/high.webp"
 },
 {
     "name": "Woobat",
@@ -2878,7 +3009,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/50/high.webp"
 },
 {
     "name": "Swoobat",
@@ -2897,7 +3029,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/51/high.webp"
 },
 {
     "name": "Golett",
@@ -2916,7 +3049,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/71/high.webp"
 },
 {
     "name": "Golurk",
@@ -2941,7 +3075,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/72/high.webp"
 },
 {
     "name": "Sandshrew",
@@ -2960,7 +3095,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/62/high.webp"
 },
 {
     "name": "Sandslash",
@@ -2980,7 +3116,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/41/high.webp"
 },
 {
     "name": "Diglett",
@@ -2999,7 +3136,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/47/high.webp"
 },
 {
     "name": "Dugtrio",
@@ -3022,7 +3160,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/19/high.webp"
 },
 {
     "name": "Mankey",
@@ -3041,7 +3180,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/55/high.webp"
 },
 {
     "name": "Primeape",
@@ -3064,7 +3204,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/43/high.webp"
 },
 {
     "name": "Machop",
@@ -3083,7 +3224,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/52/high.webp"
 },
 {
     "name": "Machoke",
@@ -3102,7 +3244,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/34/high.webp"
 },
 {
     "name": "Machamp",
@@ -3121,7 +3264,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/8/high.webp"
 },
 {
     "name": "Machamp EX",
@@ -3141,7 +3285,8 @@
     ],
     "retreat_cost": 3,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY108/high.webp"
 },
 {
     "name": "Geodude",
@@ -3160,7 +3305,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/47/high.webp"
 },
 {
     "name": "Graveler",
@@ -3179,7 +3325,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/37/high.webp"
 },
 {
     "name": "Golem",
@@ -3203,7 +3350,8 @@
     ],
     "retreat_cost": 4,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/36/high.webp"
 },
 {
     "name": "Onix",
@@ -3222,7 +3370,8 @@
     ],
     "retreat_cost": 4,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/56/high.webp"
 },
 {
     "name": "Cubone",
@@ -3245,7 +3394,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/50/high.webp"
 },
 {
     "name": "Marowak",
@@ -3264,7 +3414,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/39/high.webp"
 },
 {
     "name": "Marowak EX",
@@ -3288,7 +3439,8 @@
     ],
     "retreat_cost": 2,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/tcgp/A1/153/high.webp"
 },
 {
     "name": "Hitmonlee",
@@ -3311,7 +3463,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/22/high.webp"
 },
 {
     "name": "Hitmonchan",
@@ -3330,7 +3483,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/7/high.webp"
 },
 {
     "name": "Rhyhorn",
@@ -3349,7 +3503,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/61/high.webp"
 },
 {
     "name": "Rhydon",
@@ -3368,7 +3523,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/45/high.webp"
 },
 {
     "name": "Kabuto",
@@ -3387,7 +3543,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/50/high.webp"
 },
 {
     "name": "Kabutops",
@@ -3411,7 +3568,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/24/high.webp"
 },
 {
     "name": "Mienfoo",
@@ -3430,7 +3588,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/69/high.webp"
 },
 {
     "name": "Mienshao",
@@ -3449,7 +3608,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/70/high.webp"
 },
 {
     "name": "Clobbopus",
@@ -3468,7 +3628,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/111/high.webp"
 },
 {
     "name": "Grapploct",
@@ -3490,7 +3651,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/113/high.webp"
 },
 {
     "name": "Ekans",
@@ -3509,7 +3671,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/46/high.webp"
 },
 {
     "name": "Arbok",
@@ -3531,7 +3694,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/31/high.webp"
 },
 {
     "name": "Nidoran♀",
@@ -3554,7 +3718,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/57/high.webp"
 },
 {
     "name": "Nidorina",
@@ -3573,7 +3738,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/40/high.webp"
 },
 {
     "name": "Nidoqueen",
@@ -3597,7 +3763,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/23/high.webp"
 },
 {
     "name": "Nidoran♂",
@@ -3616,7 +3783,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/55/high.webp"
 },
 {
     "name": "Nidorino",
@@ -3636,7 +3804,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/37/high.webp"
 },
 {
     "name": "Nidoking",
@@ -3661,7 +3830,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/11/high.webp"
 },
 {
     "name": "Zubat",
@@ -3680,7 +3850,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/57/high.webp"
 },
 {
     "name": "Golbat",
@@ -3699,7 +3870,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/34/high.webp"
 },
 {
     "name": "Grimer",
@@ -3723,7 +3895,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/48/high.webp"
 },
 {
     "name": "Muk",
@@ -3748,7 +3921,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/13/high.webp"
 },
 {
     "name": "Koffing",
@@ -3767,7 +3941,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/51/high.webp"
 },
 {
     "name": "Weezing",
@@ -3789,7 +3964,8 @@
     "effect": {
         "action": "spread_poison",
         "description": "Once during your turn, if this Pokémon is in the Active Spot, you may make all of your opponent's Benched Pokémon Poisoned."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base3/45/high.webp"
 },
 {
     "name": "Mawile",
@@ -3813,7 +3989,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex2/9/high.webp"
 },
 {
     "name": "Pawniard",
@@ -3832,7 +4009,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/75/high.webp"
 },
 {
     "name": "Bisharp",
@@ -3851,7 +4029,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw3/76/high.webp"
 },
 {
     "name": "Meltan",
@@ -3874,7 +4053,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/sm/smp/SM177/high.webp"
 },
 {
     "name": "Melmetal",
@@ -3897,7 +4077,8 @@
         "action": "reduce_damage",
         "amount": 30,
         "description": "This Pokémon takes 30 less damage from attacks."
-    }
+    },
+    "image": "https://images.pokemontcg.io/smp/SM181.png"
 },
 {
     "name": "Dratini",
@@ -3916,7 +4097,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/26/high.webp"
 },
 {
     "name": "Dragonair",
@@ -3935,7 +4117,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/18/high.webp"
 },
 {
     "name": "Dragonite",
@@ -3959,7 +4142,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Stage 2",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/basep/5/high.webp"
 },
 {
     "name": "Pidgey",
@@ -3978,7 +4162,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/57/high.webp"
 },
 {
     "name": "Pidgeotto",
@@ -3997,7 +4182,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/22/high.webp"
 },
 {
     "name": "Pidgeot",
@@ -4019,7 +4205,8 @@
     "effect": {
         "action": "switch_opponent_pokemon",
         "description": "Once during your turn, you may switch your opponent's Active Pokémon with 1 of their Benched Pokémon."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base2/24/high.webp"
 },
 {
     "name": "Rattata",
@@ -4038,7 +4225,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/61/high.webp"
 },
 {
     "name": "Raticate",
@@ -4057,7 +4245,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/40/high.webp"
 },
 {
     "name": "Spearow",
@@ -4076,7 +4265,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/62/high.webp"
 },
 {
     "name": "Fearow",
@@ -4099,7 +4289,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/36/high.webp"
 },
 {
     "name": "Jigglypuff",
@@ -4118,7 +4309,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/54/high.webp"
 },
 {
     "name": "Wigglytuff",
@@ -4137,7 +4329,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/16/high.webp"
 },
 {
     "name": "Wigglytuff EX",
@@ -4161,7 +4354,8 @@
     ],
     "retreat_cost": 2,
     "stage": "EX",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/ex/ex5/101/high.webp"
 },
 {
     "name": "Meowth",
@@ -4183,7 +4377,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/56/high.webp"
 },
 {
     "name": "Persian",
@@ -4206,7 +4401,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/42/high.webp"
 },
 {
     "name": "Farfetch'd",
@@ -4225,7 +4421,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/27/high.webp"
 },
 {
     "name": "Doduo",
@@ -4244,7 +4441,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/48/high.webp"
 },
 {
     "name": "Dodrio",
@@ -4263,7 +4461,8 @@
     ],
     "retreat_cost": 0,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/34/high.webp"
 },
 {
     "name": "Lickitung",
@@ -4285,7 +4484,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/38/high.webp"
 },
 {
     "name": "Chansey",
@@ -4304,7 +4504,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base1/3/high.webp"
 },
 {
     "name": "Kangaskhan",
@@ -4327,7 +4528,8 @@
     ],
     "retreat_cost": 3,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/21/high.webp"
 },
 {
     "name": "Tauros",
@@ -4346,7 +4548,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/47/high.webp"
 },
 {
     "name": "Ditto",
@@ -4368,7 +4571,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/18/high.webp"
 },
 {
     "name": "Eevee",
@@ -4387,7 +4591,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/51/high.webp"
 },
 {
     "name": "Porygon",
@@ -4409,7 +4614,8 @@
     "effect": {
         "action": "reveal_top_card",
         "description": "Once during your turn, you may look at the top card of your deck."
-    }
+    },
+    "image": "https://assets.tcgdex.net/en/base/base1/39/high.webp"
 },
 {
     "name": "Aerodactyl",
@@ -4432,7 +4638,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base3/1/high.webp"
 },
 {
     "name": "Snorlax",
@@ -4451,7 +4658,8 @@
     ],
     "retreat_cost": 4,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/base2/11/high.webp"
 },
 {
     "name": "Minccino",
@@ -4470,7 +4678,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/88/high.webp"
 },
 {
     "name": "Cinccino",
@@ -4493,7 +4702,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/bw/bw1/89/high.webp"
 },
 {
     "name": "Wooloo",
@@ -4512,7 +4722,8 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH011/high.webp"
 },
 {
     "name": "Dubwool",
@@ -4531,7 +4742,8 @@
     ],
     "retreat_cost": 2,
     "stage": "Stage 1",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/swsh/swsh1/154/high.webp"
 },
 {
     "name": "Mew",
@@ -4554,6 +4766,7 @@
     ],
     "retreat_cost": 1,
     "stage": "Basic",
-    "effect": null
+    "effect": null,
+    "image": "https://assets.tcgdex.net/en/base/basep/47/high.webp"
 }
 ]
