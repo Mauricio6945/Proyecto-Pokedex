@@ -1,16 +1,5 @@
 {
   "version": "5",
-  "specifiers": {
-    "npm:@types/node@^24.13.3": "24.19.0",
-    "npm:@types/react-dom@^19.2.7": "19.3.0_@types+react@19.3.0",
-    "npm:@types/react@^19.2.18": "19.3.0",
-    "npm:@vitejs/plugin-react@^6.1.1": "6.1.1_vite@8.3.1_@types+node@24.19.0",
-    "npm:oxlint@^1.81.0": "1.86.0",
-    "npm:react-dom@^19.2.8": "19.3.0_react@19.3.0",
-    "npm:react@^19.2.8": "19.3.0",
-    "npm:typescript@~6.0.2": "6.0.3",
-    "npm:vite@^8.3.0": "8.3.1_@types+node@24.19.0"
-  },
   "npm": {
     "@oxc-project/types@0.151.0": {
       "integrity": "sha512-J1yXrIlNDZVzE3ada310xeAw7nH8yCAyLPuUIsjKatFPmfn5bS1oW+cM+QsGOtVWd5nhSpbwZWx/rue+r5Z+PA=="
@@ -427,15 +416,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@types/node@^24.13.3",
-        "npm:@types/react-dom@^19.2.7",
-        "npm:@types/react@^19.2.18",
-        "npm:@vitejs/plugin-react@^6.1.1",
-        "npm:oxlint@^1.81.0",
-        "npm:react-dom@^19.2.8",
-        "npm:react@^19.2.8",
-        "npm:typescript@~6.0.2",
-        "npm:vite@^8.3.0"
+        "npm:tcgapi@0.3"
       ]
     }
   }
