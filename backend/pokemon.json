@@ -1,4772 +1,2121 @@
 [
   {
+    "id": "base1-44",
+    "pokedex_number": 1,
     "name": "Bulbasaur",
     "type": "Grass",
-    "hp": 70,
-    "weakness": "Fire",
-    "attacks": [
-      {
-        "name": "Vine Whip",
-        "cost": {
-          "colorless": 1,
-          "grass": 1
-        },
-        "damage": 40,
-        "effect": null
-      }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "44",
+    "price_usd": 0.5,
     "image": "https://assets.tcgdex.net/en/base/base1/44/high.webp"
   },
   {
+    "id": "base1-30",
+    "pokedex_number": 2,
     "name": "Ivysaur",
     "type": "Grass",
-    "hp": 90,
-    "weakness": "Fire",
-    "attacks": [
-      {
-        "name": "Razor Leaf",
-        "cost": {
-          "colorless": 2,
-          "grass": 1
-        },
-        "damage": 60,
-        "effect": null
-      }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "30",
+    "price_usd": 3.64,
     "image": "https://assets.tcgdex.net/en/base/base1/30/high.webp"
   },
   {
+    "id": "base1-15",
+    "pokedex_number": 3,
     "name": "Venusaur",
     "type": "Grass",
-    "hp": 160,
-    "weakness": "Fire",
-    "attacks": [
-      {
-        "name": "Mega Drain",
-        "cost": {
-          "grass": 3,
-          "colorless": 1
-        },
-        "damage": 80,
-        "effect": {
-          "action": "heal",
-          "target": "self",
-          "amount": 30
-        }
-      }
-    ],
-    "retreat_cost": 4,
-    "stage": "Stage 2",
-    "effect": null,
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "15",
+    "price_usd": 107.75,
     "image": "https://assets.tcgdex.net/en/base/base1/15/high.webp"
   },
   {
+    "id": "ex6-112",
+    "pokedex_number": 3,
     "name": "Venusaur EX",
     "type": "Grass",
-    "hp": 190,
-    "weakness": "Fire",
-    "attacks": [
-      {
-        "name": "Razor Leaf",
-        "cost": {
-          "colorless": 2,
-          "grass": 1
-        },
-        "damage": 60,
-        "effect": null
-      },
-      {
-        "name": "Giant Bloom",
-        "cost": {
-          "colorless": 2,
-          "grass": 2
-        },
-        "damage": 100,
-        "effect": {
-          "action": "heal",
-          "target": "self",
-          "amount": 30
-        }
-      }
-    ],
-    "retreat_cost": 4,
-    "stage": "EX",
-    "effect": null,
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX FireRed & LeafGreen",
+    "set_id": "ex6",
+    "card_number": "112",
+    "price_usd": 100.33,
     "image": "https://assets.tcgdex.net/en/ex/ex6/112/high.webp"
   },
   {
+    "id": "base1-46",
+    "pokedex_number": 4,
+    "name": "Charmander",
+    "type": "Fire",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "46",
+    "price_usd": 3.49,
+    "image": "https://assets.tcgdex.net/en/base/base1/46/high.webp"
+  },
+  {
+    "id": "base1-24",
+    "pokedex_number": 5,
+    "name": "Charmeleon",
+    "type": "Fire",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "24",
+    "price_usd": 7.25,
+    "image": "https://assets.tcgdex.net/en/base/base1/24/high.webp"
+  },
+  {
+    "id": "base1-4",
+    "pokedex_number": 6,
+    "name": "Charizard",
+    "type": "Fire",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "4",
+    "price_usd": 150.0,
+    "image": "https://assets.tcgdex.net/en/base/base1/4/high.webp"
+  },
+  {
+    "id": "ex6-105",
+    "pokedex_number": 6,
+    "name": "Charizard EX",
+    "type": "Fire",
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX FireRed & LeafGreen",
+    "set_id": "ex6",
+    "card_number": "105",
+    "price_usd": 148.5,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/105/high.webp"
+  },
+  {
+    "id": "base1-63",
+    "pokedex_number": 7,
+    "name": "Squirtle",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "63",
+    "price_usd": 3.06,
+    "image": "https://assets.tcgdex.net/en/base/base1/63/high.webp"
+  },
+  {
+    "id": "base1-42",
+    "pokedex_number": 8,
+    "name": "Wartortle",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "42",
+    "price_usd": 14.91,
+    "image": "https://assets.tcgdex.net/en/base/base1/42/high.webp"
+  },
+  {
+    "id": "base1-2",
+    "pokedex_number": 9,
+    "name": "Blastoise",
+    "type": "Water",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "2",
+    "price_usd": 113.5,
+    "image": "https://assets.tcgdex.net/en/base/base1/2/high.webp"
+  },
+  {
+    "id": "ex6-104",
+    "pokedex_number": 9,
+    "name": "Blastoise EX",
+    "type": "Water",
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX FireRed & LeafGreen",
+    "set_id": "ex6",
+    "card_number": "104",
+    "price_usd": 103.89,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/104/high.webp"
+  },
+  {
+    "id": "base1-45",
+    "pokedex_number": 10,
     "name": "Caterpie",
     "type": "Grass",
-    "hp": 50,
-    "weakness": "Fire",
-    "attacks": [
-      {
-        "name": "Find a Friend",
-        "cost": {
-          "colorless": 1
-        },
-        "damage": null,
-        "effect": {
-          "action": "search_deck",
-          "target": "grass_pokemon",
-          "amount": 1
-        }
-      }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "45",
+    "price_usd": 2.75,
     "image": "https://assets.tcgdex.net/en/base/base1/45/high.webp"
   },
   {
+    "id": "base1-54",
+    "pokedex_number": 11,
+    "name": "Metapod",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "54",
+    "price_usd": 2.75,
+    "image": "https://assets.tcgdex.net/en/base/base1/54/high.webp"
+  },
+  {
+    "id": "base2-33",
+    "pokedex_number": 12,
     "name": "Butterfree",
     "type": "Grass",
-    "hp": 120,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Gust",
-            "cost": {
-                "colorless": 2,
-                "grass": 1
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "heal",
-        "target": "all_your_pokemon",
-        "amount": 20,
-        "condition": "once_per_turn"
-    },
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "33",
+    "price_usd": 5.32,
     "image": "https://assets.tcgdex.net/en/base/base2/33/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-69",
+    "pokedex_number": 13,
     "name": "Weedle",
     "type": "Grass",
-    "hp": 50,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Sting",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "69",
+    "price_usd": 4.55,
     "image": "https://assets.tcgdex.net/en/base/base1/69/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-33",
+    "pokedex_number": 14,
     "name": "Kakuna",
     "type": "Grass",
-    "hp": 80,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Bug Bite",
-            "cost": {
-                "grass": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "33",
+    "price_usd": 10.55,
     "image": "https://assets.tcgdex.net/en/base/base1/33/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-17",
+    "pokedex_number": 15,
     "name": "Beedrill",
     "type": "Grass",
-    "hp": 120,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Sharp Sting",
-            "cost": {
-                "grass": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 2",
-    "effect": null,
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "17",
+    "price_usd": 11.18,
     "image": "https://assets.tcgdex.net/en/base/base1/17/high.webp"
-},
-{
-    "name": "Oddish",
-    "type": "Grass",
-    "hp": 60,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Ram",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/58/high.webp"
-},
-{
-    "name": "Gloom",
-    "type": "Grass",
-    "hp": 80,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Drool",
-            "cost": {
-                "colorless": 1,
-                "grass": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/37/high.webp"
-},
-{
-    "name": "Vileplume",
-    "type": "Grass",
-    "hp": 140,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Soothing Scent",
-            "cost": {
-                "colorless": 1,
-                "grass": 2
-            },
-            "damage": 80,
-            "effect": {
-                "action": "apply_status",
-                "status": "asleep",
-                "target": "opponent_active"
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/15/high.webp"
-},
-{
-    "name": "Paras",
-    "type": "Grass",
-    "hp": 70,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Scratch",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/59/high.webp"
-},
-{
-    "name": "Parasect",
-    "type": "Grass",
-    "hp": 120,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Slash",
-            "cost": {
-                "colorless": 1,
-                "grass": 2
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/41/high.webp"
-},
-{
-    "name": "Venonat",
-    "type": "Grass",
-    "hp": 60,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/63/high.webp"
-},
-{
-    "name": "Venomoth",
-    "type": "Grass",
-    "hp": 80,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Poison Powder",
-            "cost": {
-                "grass": 1,
-                "colorless": 1
-            },
-            "damage": 30,
-            "effect": {
-                "action": "apply_status",
-                "status": "poisoned",
-                "target": "opponent_active"
-            }
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/13/high.webp"
-},
-{
-    "name": "Bellsprout",
-    "type": "Grass",
-    "hp": 60,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Vine Whip",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/49/high.webp"
-},
-{
-    "name": "Weepinbell",
-    "type": "Grass",
-    "hp": 90,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Razor Leaf",
-            "cost": {
-                "colorless": 1,
-                "grass": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/48/high.webp"
-},
-{
-    "name": "Victreebel",
-    "type": "Grass",
-    "hp": 140,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Vine Whip",
-            "cost": {
-                "grass": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "switch_opponent_active",
-        "condition": "once_per_turn",
-        "description": "Switch 1 of your opponent's Benched Basic Pokémon to the Active Spot."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base2/14/high.webp"
-},
-{
-    "name": "Exeggcute",
-    "type": "Grass",
-    "hp": 50,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Seed Bomb",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/52/high.webp"
-},
-{
-    "name": "Exeggutor",
-    "type": "Grass",
-    "hp": 130,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Stomp",
-            "cost": {
-                "grass": 1,
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "coin_flip",
-                "bonus_damage": 30,
-                "condition": "heads"
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/35/high.webp"
-},
-{
-    "name": "Exeggutor EX",
-    "type": "Grass",
-    "hp": 160,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Tropical Swing",
-            "cost": {
-                "grass": 2,
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "coin_flip",
-                "bonus_damage": 40,
-                "condition": "heads"
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/tcgp/A1/023/high.webp"
-},
-{
-    "name": "Tangela",
-    "type": "Grass",
-    "hp": 80,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Absorb",
-            "cost": {
-                "grass": 2
-            },
-            "damage": 40,
-            "effect": {
-                "action": "heal",
-                "target": "self",
-                "amount": 10
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/66/high.webp"
-},
-{
-    "name": "Scyther",
-    "type": "Grass",
-    "hp": 70,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Sharp Scythe",
-            "cost": {
-                "colorless": 1,
-                "grass": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/10/high.webp"
-},
-{
-    "name": "Pinsir",
-    "type": "Grass",
-    "hp": 90,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Double Horn",
-            "cost": {
-                "grass": 2,
-                "colorless": 1
-            },
-            "damage": 50,
-            "effect": {
-                "action": "coin_flip",
-                "multiplier": 2,
-                "condition": "each_heads"
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/25/high.webp"
-},
-{
-    "name": "Cottonee",
-    "type": "Grass",
-    "hp": 50,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Attach",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw2/10/high.webp"
-},
-{
-    "name": "Whimsicott",
-    "type": "Grass",
-    "hp": 80,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Rolling Tackle",
-            "cost": {
-                "grass": 1,
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw2/11/high.webp"
-},
-{
-    "name": "Petilil",
-    "type": "Grass",
-    "hp": 60,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Blot",
-            "cost": {
-                "grass": 1
-            },
-            "damage": 10,
-            "effect": {
-                "action": "heal",
-                "target": "self",
-                "amount": 10
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/9/high.webp"
-},
-{
-    "name": "Lilligant",
-    "type": "Grass",
-    "hp": 100,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Leaf Supply",
-            "cost": {
-                "grass": 1,
-                "colorless": 1
-            },
-            "damage": 50,
-            "effect": {
-                "action": "move_energy",
-                "source": "energy_zone",
-                "target": "benched_pokemon",
-                "amount": 1
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/10/high.webp"
-},
-{
-    "name": "Skiddo",
-    "type": "Grass",
-    "hp": 70,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Surprise Attack",
-            "cost": {
-                "colorless": 1,
-                "grass": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "tails",
-                "description": "If tails, this attack does nothing."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY11/high.webp"
-},
-{
-    "name": "Gogoat",
-    "type": "Grass",
-    "hp": 120,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Razor Leaf",
-            "cost": {
-                "grass": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY16/high.webp"
-},
-{
-    "name": "Charmander",
-    "type": "Fire",
-    "hp": 60,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Ember",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 30,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 1,
-                "description": "Discard a Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/46/high.webp"
-},
-{
-    "name": "Charmeleon",
-    "type": "Fire",
-    "hp": 90,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Fire Claws",
-            "cost": {
-                "fire": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/24/high.webp"
-},
-{
-    "name": "Charizard",
-    "type": "Fire",
-    "hp": 150,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Fire Spin",
-            "cost": {
-                "fire": 4
-            },
-            "damage": 150,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 2,
-                "description": "Discard 2 Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/4/high.webp"
-},
-{
-    "name": "Charizard EX",
-    "type": "Fire",
-    "hp": 180,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Slash",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 60,
-            "effect": null
-        },
-        {
-            "name": "Crimson Storm",
-            "cost": {
-                "fire": 3,
-                "colorless": 2
-            },
-            "damage": 200,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 2,
-                "description": "Discard 2 Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex6/105/high.webp"
-},
-{
-    "name": "Vulpix",
-    "type": "Fire",
-    "hp": 50,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Tail Whip",
-            "cost": {
-                "fire": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "apply_status",
-                "status": "cannot_attack",
-                "target": "opponent_active",
-                "condition": "heads",
-                "description": "Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's next turn."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/68/high.webp"
-},
-{
-    "name": "Ninetales",
-    "type": "Fire",
-    "hp": 90,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Flamethrower",
-            "cost": {
-                "fire": 2
-            },
-            "damage": 90,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 1,
-                "description": "Discard a Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/12/high.webp"
-},
-{
-    "name": "Growlithe",
-    "type": "Fire",
-    "hp": 70,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Bite",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/28/high.webp"
-},
-{
-    "name": "Arcanine",
-    "type": "Fire",
-    "hp": 130,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Heat Tackle",
-            "cost": {
-                "fire": 2,
-                "colorless": 2
-            },
-            "damage": 100,
-            "effect": {
-                "action": "self_damage",
-                "amount": 20,
-                "description": "This Pokémon also does 20 damage to itself."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/23/high.webp"
-},
-{
-    "name": "Arcanine EX",
-    "type": "Fire",
-    "hp": 150,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Inferno Onrush",
-            "cost": {
-                "fire": 3,
-                "colorless": 1
-            },
-            "damage": 120,
-            "effect": {
-                "action": "self_damage",
-                "amount": 20,
-                "description": "This Pokémon also does 20 damage to itself."
-            }
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex12/83/high.webp"
-},
-{
-    "name": "Ponyta",
-    "type": "Fire",
-    "hp": 60,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Flare",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/60/high.webp"
-},
-{
-    "name": "Rapidash",
-    "type": "Fire",
-    "hp": 100,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Fire Mane",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/44/high.webp"
-},
-{
-    "name": "Magmar",
-    "type": "Fire",
-    "hp": 80,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Magma Punch",
-            "cost": {
-                "fire": 2
-            },
-            "damage": 50,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/36/high.webp"
-},
-{
-    "name": "Flareon",
-    "type": "Fire",
-    "hp": 120,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Flamethrower",
-            "cost": {
-                "fire": 2,
-                "colorless": 1
-            },
-            "damage": 90,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 1,
-                "description": "Discard a Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/19/high.webp"
-},
-{
-    "name": "Moltres",
-    "type": "Fire",
-    "hp": 100,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Sky Attack",
-            "cost": {
-                "fire": 3
-            },
-            "damage": 100,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "tails",
-                "description": "If tails, this attack does nothing."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/basep/21/high.webp"
-},
-{
-    "name": "Moltres EX",
-    "type": "Fire",
-    "hp": 140,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Inferno Dance",
-            "cost": {
-                "fire": 2
-            },
-            "damage": null,
-            "effect": {
-                "action": "attach_energy",
-                "source": "discard_pile",
-                "target": "self",
-                "amount": "coin_flip_total",
-                "description": "Flip 2 coins. Attach Fire Energy equal to the heads count from your discard pile."
-            }
-        },
-        {
-            "name": "Heat Blast",
-            "cost": {
-                "fire": 3
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/pop/np/31/high.webp"
-},
-{
-    "name": "Heatmor",
-    "type": "Fire",
-    "hp": 80,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Combustion",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/18/high.webp"
-},
-{
-    "name": "Salandit",
-    "type": "Fire",
-    "hp": 60,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Scratch",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/sm/smp/SM154/high.webp"
-},
-{
-    "name": "Salazzle",
-    "type": "Fire",
-    "hp": 90,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Fire Claws",
-            "cost": {
-                "fire": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/sm/smp/SM73/high.webp"
-},
-{
-    "name": "Sizzlipede",
-    "type": "Fire",
-    "hp": 60,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Gnaw",
-            "cost": {
-                "fire": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/37/high.webp"
-},
-{
-    "name": "Centiskorch",
-    "type": "Fire",
-    "hp": 130,
-    "weakness": "Water",
-    "attacks": [
-        {
-            "name": "Fire Blast",
-            "cost": {
-                "fire": 3,
-                "colorless": 1
-            },
-            "damage": 130,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 1,
-                "description": "Discard a Fire Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH048/high.webp"
-},
-{
-    "name": "Squirtle",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Water Gun",
-            "cost": {
-                "water": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/63/high.webp"
-},
-{
-    "name": "Wartortle",
-    "type": "Water",
-    "hp": 80,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Wave Splash",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/42/high.webp"
-},
-{
-    "name": "Blastoise",
-    "type": "Water",
-    "hp": 150,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Hydro Pump",
-            "cost": {
-                "water": 3
-            },
-            "damage": 80,
-            "effect": {
-                "action": "bonus_damage_per_energy",
-                "amount": 10,
-                "description": "This attack does 10 more damage for each Water Energy attached to this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/2/high.webp"
-},
-{
-    "name": "Blastoise EX",
-    "type": "Water",
-    "hp": 180,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Surf",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        },
-        {
-            "name": "Hydro Bazooka",
-            "cost": {
-                "water": 3,
-                "colorless": 1
-            },
-            "damage": 100,
-            "effect": {
-                "action": "bonus_damage",
-                "amount": 60,
-                "description": "If this Pokémon has at least 2 extra Water Energy, this attack does 60 more damage."
-            }
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex6/104/high.webp"
-},
-{
-    "name": "Psyduck",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Headache",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": {
-                "action": "prevent_supporters",
-                "target": "opponent",
-                "description": "Your opponent can't use any Supporter cards during their next turn."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/basep/20/high.webp"
-},
-{
-    "name": "Golduck",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Aqua Edge",
-            "cost": {
-                "water": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/35/high.webp"
-},
-{
-    "name": "Poliwag",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Razor Fin",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/59/high.webp"
-},
-{
-    "name": "Poliwhirl",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Knuckle Punch",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/38/high.webp"
-},
-{
-    "name": "Poliwrath",
-    "type": "Water",
-    "hp": 150,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Mega Punch",
-            "cost": {
-                "water": 3
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "counter_damage",
-        "amount": 20,
-        "condition": "if_damaged_by_attack",
-        "description": "If this Pokémon is damaged by an attack from an opponent's Pokémon, deal 20 damage to the Attacking Pokémon."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base1/13/high.webp"
-},
-{
-    "name": "Tentacool",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Gentle Slap",
-            "cost": {
-                "water": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/56/high.webp"
-},
-{
-    "name": "Tentacruel",
-    "type": "Water",
-    "hp": 110,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Poison Tentacles",
-            "cost": {
-                "water": 2
-            },
-            "damage": 50,
-            "effect": {
-                "action": "apply_status",
-                "status": "poisoned",
-                "target": "opponent_active"
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/44/high.webp"
-},
-{
-    "name": "Seel",
-    "type": "Water",
-    "hp": 80,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Headbutt",
-            "cost": {
-                "water": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/41/high.webp"
-},
-{
-    "name": "Dewgong",
-    "type": "Water",
-    "hp": 120,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Surf",
-            "cost": {
-                "water": 3
-            },
-            "damage": 90,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/25/high.webp"
-},
-{
-    "name": "Shellder",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Tongue Slap",
-            "cost": {
-                "water": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/54/high.webp"
-},
-{
-    "name": "Cloyster",
-    "type": "Water",
-    "hp": 120,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Surf",
-            "cost": {
-                "water": 2
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": {
-        "action": "reduce_damage",
-        "amount": 10,
-        "description": "This Pokémon takes 10 less damage from attacks."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base3/32/high.webp"
-},
-{
-    "name": "Krabby",
-    "type": "Water",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Vise Grip",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/51/high.webp"
-},
-{
-    "name": "Kingler",
-    "type": "Water",
-    "hp": 120,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "KO Crab",
-            "cost": {
-                "water": 3
-            },
-            "damage": 80,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "heads",
-                "bonus_damage": 80,
-                "description": "Flip 2 coins. This attack does 80 more damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/38/high.webp"
-},
-{
-    "name": "Horsea",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Water Gun",
-            "cost": {
-                "water": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/49/high.webp"
-},
-{
-    "name": "Seadra",
-    "type": "Water",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Water Arrow",
-            "cost": {
-                "water": 3
-            },
-            "damage": 50,
-            "effect": {
-                "action": "target_any",
-                "description": "This attack does 50 damage to 1 of your opponent's Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/42/high.webp"
-},
-{
-    "name": "Goldeen",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Flop",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/53/high.webp"
-},
-{
-    "name": "Seaking",
-    "type": "Water",
-    "hp": 100,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Horn Hazard",
-            "cost": {
-                "water": 2
-            },
-            "damage": 0,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "tails",
-                "description": "If tails, this attack does nothing."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/46/high.webp"
-},
-{
-    "name": "Staryu",
-    "type": "Water",
-    "hp": 50,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Smack",
-            "cost": {
-                "water": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/65/high.webp"
-},
-{
-    "name": "Starmie",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Wave Splash",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/64/high.webp"
-},
-{
-    "name": "Starmie EX",
-    "type": "Water",
-    "hp": 130,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Hydro Splash",
-            "cost": {
-                "water": 3
-            },
-            "damage": 90,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/tcgp/A1/076/high.webp"
-},
-{
-    "name": "Magikarp",
-    "type": "Water",
-    "hp": 30,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Splash",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/35/high.webp"
-},
-{
-    "name": "Gyarados",
-    "type": "Water",
-    "hp": 150,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Hyper Beam",
-            "cost": {
-                "water": 4
-            },
-            "damage": 100,
-            "effect": {
-                "action": "discard_energy",
-                "target": "opponent_active",
-                "description": "Discard an Energy from your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/6/high.webp"
-},
-{
-    "name": "Lapras",
-    "type": "Water",
-    "hp": 100,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Hydro Pump",
-            "cost": {
-                "water": 2
-            },
-            "damage": 20,
-            "effect": {
-                "action": "bonus_damage_per_energy",
-                "amount": 10,
-                "description": "This attack does 10 more damage for each Water Energy attached to this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/10/high.webp"
-},
-{
-    "name": "Vaporeon",
-    "type": "Water",
-    "hp": 130,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Bubble Drain",
-            "cost": {
-                "water": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": {
-                "action": "heal",
-                "amount": 30,
-                "description": "Heal 30 damage from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/12/high.webp"
-},
-{
-    "name": "Omanyte",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Water Gun",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/52/high.webp"
-},
-{
-    "name": "Omastar",
-    "type": "Water",
-    "hp": 140,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Ancient Whirlpool",
-            "cost": {
-                "water": 3
-            },
-            "damage": 70,
-            "effect": {
-                "action": "apply_status",
-                "status": "cannot_attack",
-                "target": "opponent_active",
-                "description": "During your opponent's next turn, the Defending Pokémon can't attack."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/40/high.webp"
-},
-{
-    "name": "Articuno",
-    "type": "Water",
-    "hp": 100,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Ice Beam",
-            "cost": {
-                "water": 3
-            },
-            "damage": 60,
-            "effect": {
-                "action": "apply_status",
-                "status": "paralyzed",
-                "target": "opponent_active",
-                "condition": "coin_flip_heads",
-                "description": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/basep/22/high.webp"
-},
-{
-    "name": "Articuno EX",
-    "type": "Water",
-    "hp": 140,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Ice Wing",
-            "cost": {
-                "water": 2
-            },
-            "damage": 40,
-            "effect": null
-        },
-        {
-            "name": "Blizzard",
-            "cost": {
-                "water": 3,
-                "colorless": 1
-            },
-            "damage": 80,
-            "effect": {
-                "action": "damage_benched",
-                "target": "all_opponent_benched",
-                "amount": 10,
-                "description": "This attack does 10 damage to each of your opponent's Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/pop/np/32/high.webp"
-},
-{
-    "name": "Ducklett",
-    "type": "Water",
-    "hp": 50,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Flap",
-            "cost": {
-                "water": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/36/high.webp"
-},
-{
-    "name": "Swanna",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Wing Attack",
-            "cost": {
-                "water": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/37/high.webp"
-},
-{
-    "name": "Froakie",
-    "type": "Water",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Flop",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY03/high.webp"
-},
-{
-    "name": "Frogadier",
-    "type": "Water",
-    "hp": 80,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Water Drip",
-            "cost": {
-                "water": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xy0/13/high.webp"
-},
-{
-    "name": "Greninja",
-    "type": "Water",
-    "hp": 120,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Mist Slash",
-            "cost": {
-                "water": 3
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "deal_damage",
-        "amount": 20,
-        "description": "Once during your turn, you may do 20 damage to 1 of your opponent's Pokémon."
-    },
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY162/high.webp"
-},
-{
-    "name": "Pyukumuku",
-    "type": "Water",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Rain Splash",
-            "cost": {
-                "water": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/sm/sm1/47/high.webp"
-},
-{
-    "name": "Bruxish",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Second Strike",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": {
-                "action": "bonus_damage",
-                "amount": 60,
-                "condition": "if_opponent_damaged",
-                "description": "If your opponent's Active Pokémon has damage on it, this attack does 60 more damage."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/sm/sm1/48/high.webp"
-},
-{
-    "name": "Snom",
-    "type": "Water",
-    "hp": 50,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Ram",
-            "cost": {
-                "water": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/63/high.webp"
-},
-{
-    "name": "Frosmoth",
-    "type": "Water",
-    "hp": 90,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Powder Snow",
-            "cost": {
-                "water": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "apply_status",
-                "status": "asleep",
-                "target": "opponent_active",
-                "description": "Your opponent's Active Pokémon is now Asleep."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH007/high.webp"
-},
-{
-    "name": "Pikachu",
-    "type": "Electric",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Gnaw",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/58/high.webp"
-},
-{
-    "name": "Raichu",
-    "type": "Electric",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Thunderbolt",
-            "cost": {
-                "electric": 3
-            },
-            "damage": 140,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 1,
-                "description": "Discard all Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/14/high.webp"
-},
-{
-    "name": "Pikachu EX",
-    "type": "Electric",
-    "hp": 120,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Circle Circuit",
-            "cost": {
-                "electric": 2
-            },
-            "damage": 20,
-            "effect": {
-                "action": "bonus_damage_per_benched",
-                "amount": 20,
-                "description": "This attack does 20 more damage for each of your Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY124/high.webp"
-},
-{
-    "name": "Magnemite",
-    "type": "Electric",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Lightning Ball",
-            "cost": {
-                "electric": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/53/high.webp"
-},
-{
-    "name": "Magneton",
-    "type": "Electric",
-    "hp": 80,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Spinning Attack",
-            "cost": {
-                "electric": 1,
-                "colorless": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": {
-        "action": "attach_energy",
-        "target": "self",
-        "description": "Once during your turn, you may attach 2 Energy from your discard pile to this Pokémon."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base1/9/high.webp"
-},
-{
-    "name": "Voltorb",
-    "type": "Electric",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/67/high.webp"
-},
-{
-    "name": "Electrode",
-    "type": "Electric",
-    "hp": 80,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Electro Ball",
-            "cost": {
-                "electric": 2
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/21/high.webp"
-},
-{
-    "name": "Electabuzz",
-    "type": "Electric",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Thunder Punch",
-            "cost": {
-                "electric": 1,
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "heads",
-                "bonus_damage": 40,
-                "self_damage_on_tails": 10,
-                "description": "Flip a coin. If heads, this attack does 40 more damage. If tails, this Pokémon also does 10 damage to itself."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/20/high.webp"
-},
-{
-    "name": "Jolteon",
-    "type": "Electric",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Pin Missile",
-            "cost": {
-                "electric": 1,
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "count": 4,
-                "bonus_damage_per_heads": 40,
-                "description": "Flip 4 coins. This attack does 40 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/20/high.webp"
-},
-{
-    "name": "Zapdos",
-    "type": "Electric",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Raging Thunder",
-            "cost": {
-                "electric": 3
-            },
-            "damage": 120,
-            "effect": {
-                "action": "damage_benched",
-                "target": "self_benched",
-                "amount": 30,
-                "description": "This attack does 30 damage to 1 of your Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/16/high.webp"
-},
-{
-    "name": "Zapdos EX",
-    "type": "Electric",
-    "hp": 130,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Peck",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        },
-        {
-            "name": "Thundering Hurricane",
-            "cost": {
-                "electric": 2,
-                "colorless": 2
-            },
-            "damage": 50,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "count": 4,
-                "bonus_damage_per_heads": 50,
-                "description": "Flip 4 coins. This attack does 50 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/pop/np/33/high.webp"
-},
-{
-    "name": "Blitzle",
-    "type": "Electric",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Zap Kick",
-            "cost": {
-                "electric": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/40/high.webp"
-},
-{
-    "name": "Zebstrika",
-    "type": "Electric",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Thunder Spear",
-            "cost": {
-                "electric": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "deal_damage",
-                "amount": 30,
-                "target": "opponent_pokemon",
-                "description": "This attack does 30 damage to 1 of your opponent's Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/42/high.webp"
-},
-{
-    "name": "Tynamo",
-    "type": "Electric",
-    "hp": 30,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tiny Charge",
-            "cost": {
-                "electric": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/38/high.webp"
-},
-{
-    "name": "Eelektrik",
-    "type": "Electric",
-    "hp": 80,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Head Bolt",
-            "cost": {
-                "electric": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/40/high.webp"
-},
-{
-    "name": "Eelektross",
-    "type": "Electric",
-    "hp": 140,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Thunder Fang",
-            "cost": {
-                "electric": 2
-            },
-            "damage": 80,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "heads",
-                "status": "paralyzed",
-                "description": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/41/high.webp"
-},
-{
-    "name": "Helioptile",
-    "type": "Electric",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tail Whap",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xy2/36/high.webp"
-},
-{
-    "name": "Heliolisk",
-    "type": "Electric",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Quick Attack",
-            "cost": {
-                "electric": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "heads",
-                "bonus_damage": 40,
-                "description": "Flip a coin. If heads, this attack does 40 more damage."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY47/high.webp"
-},
-{
-    "name": "Pincurchin",
-    "type": "Electric",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Thunder Shock",
-            "cost": {
-                "electric": 1
-            },
-            "damage": 30,
-            "effect": {
-                "action": "coin_flip",
-                "condition": "heads",
-                "status": "paralyzed",
-                "description": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/77/high.webp"
-},
-{
-    "name": "Clefairy",
-    "type": "Psychic",
-    "hp": 60,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Slap",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/5/high.webp"
-},
-{
-    "name": "Clefable",
-    "type": "Psychic",
-    "hp": 100,
-    "weakness": "Metal",
-    "attacks": [
-        {
-            "name": "Magical Shot",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/1/high.webp"
-},
-{
-    "name": "Abra",
-    "type": "Psychic",
-    "hp": 60,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Teleport",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "switch",
-                "target": "benched_pokemon",
-                "description": "Switch this Pokémon with 1 of your Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/43/high.webp"
-},
-{
-    "name": "Kadabra",
-    "type": "Psychic",
-    "hp": 80,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Super Psy Bolt",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/32/high.webp"
-},
-{
-    "name": "Alakazam",
-    "type": "Psychic",
-    "hp": 130,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psychic",
-            "cost": {
-                "psychic": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": {
-                "action": "bonus_damage_per_energy",
-                "amount": 20,
-                "description": "This attack does 20 more damage for each Energy attached to your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/1/high.webp"
-},
-{
-    "name": "Slowpoke",
-    "type": "Psychic",
-    "hp": 70,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Tail Whap",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/55/high.webp"
-},
-{
-    "name": "Slowbro",
-    "type": "Psychic",
-    "hp": 130,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Super Psy Bolt",
-            "cost": {
-                "psychic": 3
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/43/high.webp"
-},
-{
-    "name": "Gastly",
-    "type": "Psychic",
-    "hp": 60,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Suffocating Gas",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/50/high.webp"
-},
-{
-    "name": "Haunter",
-    "type": "Psychic",
-    "hp": 80,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Will-O-Wisp",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/29/high.webp"
-},
-{
-    "name": "Gengar",
-    "type": "Psychic",
-    "hp": 130,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Bother",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 50,
-            "effect": {
-                "action": "prevent_supporters",
-                "target": "opponent",
-                "description": "Your opponent can't play any Supporter cards from their hand during their next turn."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/20/high.webp"
-},
-{
-    "name": "Gengar EX",
-    "type": "Psychic",
-    "hp": 170,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Spooky Shot",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 100,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "EX",
-    "effect": {
-        "action": "disable_supporters",
-        "description": "As long as this Pokémon is in the Active Spot, your opponent can't play any Supporter cards from their hand."
-    },
-    "image": "https://assets.tcgdex.net/en/ex/ex6/108/high.webp"
-},
-{
-    "name": "Drowzee",
-    "type": "Psychic",
-    "hp": 70,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Mumble",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/49/high.webp"
-},
-{
-    "name": "Hypno",
-    "type": "Psychic",
-    "hp": 100,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psy Punch",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 50,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": {
-        "action": "coin_flip",
-        "condition": "heads",
-        "status": "asleep",
-        "description": "Once during your turn, you may flip a coin. If heads, your opponent's Active Pokémon is now Asleep."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base3/23/high.webp"
-},
-{
-    "name": "Mr. Mime",
-    "type": "Psychic",
-    "hp": 80,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Barrier Attack",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "reduce_damage",
-                "amount": 30,
-                "description": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/22/high.webp"
-},
-{
-    "name": "Jynx",
-    "type": "Psychic",
-    "hp": 80,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psychic",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "bonus_damage_per_energy",
-                "amount": 20,
-                "description": "This attack does 20 more damage for each Energy attached to your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/31/high.webp"
-},
-{
-    "name": "Mewtwo",
-    "type": "Psychic",
-    "hp": 120,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Power Blast",
-            "cost": {
-                "psychic": 3
-            },
-            "damage": 120,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 2,
-                "description": "Discard 2 Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/10/high.webp"
-},
-{
-    "name": "Mewtwo EX",
-    "type": "Psychic",
-    "hp": 150,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psychic Sphere",
-            "cost": {
-                "psychic": 2,
-                "colorless": 1
-            },
-            "damage": 60,
-            "effect": null
-        },
-        {
-            "name": "Psystrike",
-            "cost": {
-                "psychic": 3,
-                "colorless": 1
-            },
-            "damage": 150,
-            "effect": {
-                "action": "discard_energy",
-                "amount": 2,
-                "description": "Discard 2 Energy from this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex1/101/high.webp"
-},
-{
-    "name": "Ralts",
-    "type": "Psychic",
-    "hp": 60,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Ram",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex1/66/high.webp"
-},
-{
-    "name": "Kirlia",
-    "type": "Psychic",
-    "hp": 80,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Smack",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex1/34/high.webp"
-},
-{
-    "name": "Gardevoir",
-    "type": "Psychic",
-    "hp": 110,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psyshot",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "move_energy",
-        "description": "Once during your turn, you may take 1 Energy from your discard pile and attach it to 1 of your Pokémon."
-    },
-    "image": "https://assets.tcgdex.net/en/ex/ex1/7/high.webp"
-},
-{
-    "name": "Woobat",
-    "type": "Psychic",
-    "hp": 60,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Gnaw",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/50/high.webp"
-},
-{
-    "name": "Swoobat",
-    "type": "Psychic",
-    "hp": 90,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Heart Stamp",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/51/high.webp"
-},
-{
-    "name": "Golett",
-    "type": "Psychic",
-    "hp": 90,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Mega Punch",
-            "cost": {
-                "psychic": 2
-            },
-            "damage": 50,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/71/high.webp"
-},
-{
-    "name": "Golurk",
-    "type": "Psychic",
-    "hp": 140,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Double Lariat",
-            "cost": {
-                "psychic": 3,
-                "colorless": 1
-            },
-            "damage": 100,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "count": 2,
-                "bonus_damage_per_heads": 100,
-                "description": "Flip 2 coins. This attack does 100 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/72/high.webp"
-},
-{
-    "name": "Sandshrew",
-    "type": "Fighting",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Scratch",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/62/high.webp"
-},
-{
-    "name": "Sandslash",
-    "type": "Fighting",
-    "hp": 100,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Slash",
-            "cost": {
-                "fighting": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/41/high.webp"
-},
-{
-    "name": "Diglett",
-    "type": "Fighting",
-    "hp": 50,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Mud-Slap",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/47/high.webp"
-},
-{
-    "name": "Dugtrio",
-    "type": "Fighting",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Dig",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "prevent_damage",
-                "condition": "next_turn",
-                "description": "Flip a coin. If heads, prevent all damage done to this Pokémon during your opponent's next turn."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/19/high.webp"
-},
-{
-    "name": "Mankey",
-    "type": "Fighting",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Low Kick",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/55/high.webp"
-},
-{
-    "name": "Primeape",
-    "type": "Fighting",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Fight Back",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 40,
-            "effect": {
-                "action": "bonus_damage_if_damaged",
-                "amount": 40,
-                "description": "If this Pokémon has any damage counters on it, this attack does 40 more damage."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/43/high.webp"
-},
-{
-    "name": "Machop",
-    "type": "Fighting",
-    "hp": 70,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Knuckle Punch",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/52/high.webp"
-},
-{
-    "name": "Machoke",
-    "type": "Fighting",
-    "hp": 100,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Strength",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 50,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/34/high.webp"
-},
-{
-    "name": "Machamp",
-    "type": "Fighting",
-    "hp": 150,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Seismic Toss",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 120,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/8/high.webp"
-},
-{
-    "name": "Machamp EX",
-    "type": "Fighting",
-    "hp": 180,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Mega Punch",
-            "cost": {
-                "fighting": 3,
-                "colorless": 1
-            },
-            "damage": 120,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/xy/xyp/XY108/high.webp"
-},
-{
-    "name": "Geodude",
-    "type": "Fighting",
-    "hp": 70,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/47/high.webp"
-},
-{
-    "name": "Graveler",
-    "type": "Fighting",
-    "hp": 100,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Rollout",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/37/high.webp"
-},
-{
-    "name": "Golem",
-    "type": "Fighting",
-    "hp": 160,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Double-Edge",
-            "cost": {
-                "fighting": 3,
-                "colorless": 1
-            },
-            "damage": 120,
-            "effect": {
-                "action": "self_damage",
-                "amount": 50,
-                "description": "This Pokémon also does 50 damage to itself."
-            }
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/36/high.webp"
-},
-{
-    "name": "Onix",
-    "type": "Fighting",
-    "hp": 110,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Land Crush",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/56/high.webp"
-},
-{
-    "name": "Cubone",
-    "type": "Fighting",
-    "hp": 60,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Growl",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "reduce_damage",
-                "amount": 20,
-                "description": "During your opponent's next turn, attacks used by the Defending Pokémon do 20 less damage."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/50/high.webp"
-},
-{
-    "name": "Marowak",
-    "type": "Fighting",
-    "hp": 100,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Bone Beatdown",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/39/high.webp"
-},
-{
-    "name": "Marowak EX",
-    "type": "Fighting",
-    "hp": 140,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Boomerang",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 80,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "count": 2,
-                "bonus_damage_per_heads": 80,
-                "description": "Flip 2 coins. This attack does 80 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "EX",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/tcgp/A1/153/high.webp"
-},
-{
-    "name": "Hitmonlee",
-    "type": "Fighting",
-    "hp": 80,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Stretch Kick",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "target_benched",
-                "amount": 20,
-                "description": "This attack does 20 damage to 1 of your opponent's Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/22/high.webp"
-},
-{
-    "name": "Hitmonchan",
-    "type": "Fighting",
-    "hp": 80,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Jab",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/7/high.webp"
-},
-{
-    "name": "Rhyhorn",
-    "type": "Fighting",
-    "hp": 80,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/61/high.webp"
-},
-{
-    "name": "Rhydon",
-    "type": "Fighting",
-    "hp": 120,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Horn Drill",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 100,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/45/high.webp"
-},
-{
-    "name": "Kabuto",
-    "type": "Fighting",
-    "hp": 90,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Shell Attack",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/50/high.webp"
-},
-{
-    "name": "Kabutops",
-    "type": "Fighting",
-    "hp": 140,
-    "weakness": "Grass",
-    "attacks": [
-        {
-            "name": "Leech Life",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 50,
-            "effect": {
-                "action": "heal",
-                "target": "self",
-                "amount": "equal_to_damage",
-                "description": "Heal from this Pokémon the same amount of damage you did to your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/24/high.webp"
-},
-{
-    "name": "Mienfoo",
-    "type": "Fighting",
-    "hp": 60,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Pound",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/69/high.webp"
-},
-{
-    "name": "Mienshao",
-    "type": "Fighting",
-    "hp": 80,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Spiral Kick",
-            "cost": {
-                "fighting": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/70/high.webp"
-},
-{
-    "name": "Clobbopus",
-    "type": "Fighting",
-    "hp": 80,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Knuckle Punch",
-            "cost": {
-                "fighting": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/111/high.webp"
-},
-{
-    "name": "Grapploct",
-    "type": "Fighting",
-    "hp": 130,
-    "weakness": "Psychic",
-    "attacks": [
-        {
-            "name": "Knock Back",
-            "cost": {
-                "fighting": 3
-            },
-            "damage": 70,
-            "effect": {
-                "action": "switch_opponent_active",
-                "description": "Switch your opponent's Active Pokémon with 1 of their Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/113/high.webp"
-},
-{
-    "name": "Ekans",
-    "type": "Dark",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Bite",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/46/high.webp"
-},
-{
-    "name": "Arbok",
-    "type": "Dark",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Corner",
-            "cost": {
-                "dark": 2
-            },
-            "damage": 60,
-            "effect": {
-                "action": "prevent_retreat",
-                "description": "During your opponent's next turn, the Defending Pokémon can't retreat."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/31/high.webp"
-},
-{
-    "name": "Nidoran♀",
-    "type": "Dark",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Call for Family",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "search_deck",
-                "target": "Nidoran",
-                "description": "Search your deck for up to 2 Nidoran cards and put them onto your Bench."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/57/high.webp"
-},
-{
-    "name": "Nidorina",
-    "type": "Dark",
-    "hp": 80,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Bite",
-            "cost": {
-                "dark": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/40/high.webp"
-},
-{
-    "name": "Nidoqueen",
-    "type": "Dark",
-    "hp": 140,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Lovestrike",
-            "cost": {
-                "dark": 3,
-                "colorless": 1
-            },
-            "damage": 80,
-            "effect": {
-                "action": "bonus_damage_per_nido",
-                "amount": 50,
-                "description": "This attack does 50 more damage for each Nidoran, Nidorina, and Nidoqueen on your Bench."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base2/23/high.webp"
-},
-{
-    "name": "Nidoran♂",
-    "type": "Dark",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Peck",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/55/high.webp"
-},
-{
-    "name": "Nidorino",
-    "type": "Dark",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Horn Attack",
-            "cost": {
-                "dark": 1,
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/37/high.webp"
-},
-{
-    "name": "Nidoking",
-    "type": "Dark",
-    "hp": 150,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Poison Horn",
-            "cost": {
-                "dark": 2,
-                "colorless": 1
-            },
-            "damage": 90,
-            "effect": {
-                "action": "apply_status",
-                "status": "poisoned",
-                "target": "opponent_active",
-                "description": "Your opponent's Active Pokémon is now Poisoned."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/11/high.webp"
-},
-{
-    "name": "Zubat",
-    "type": "Dark",
-    "hp": 50,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Glide",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/57/high.webp"
-},
-{
-    "name": "Golbat",
-    "type": "Dark",
-    "hp": 70,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Wing Attack",
-            "cost": {
-                "dark": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/34/high.webp"
-},
-{
-    "name": "Grimer",
-    "type": "Dark",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Poison Gas",
-            "cost": {
-                "dark": 1
-            },
-            "damage": 10,
-            "effect": {
-                "action": "apply_status",
-                "status": "poisoned",
-                "target": "opponent_active",
-                "description": "Your opponent's Active Pokémon is now Poisoned."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/48/high.webp"
-},
-{
-    "name": "Muk",
-    "type": "Dark",
-    "hp": 130,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Venoshock",
-            "cost": {
-                "dark": 2,
-                "colorless": 1
-            },
-            "damage": 70,
-            "effect": {
-                "action": "bonus_damage_if_status",
-                "status": "poisoned",
-                "amount": 70,
-                "description": "If your opponent's Active Pokémon is Poisoned, this attack does 70 more damage."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base3/13/high.webp"
-},
-{
-    "name": "Koffing",
-    "type": "Dark",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Suffocating Gas",
-            "cost": {
-                "dark": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/51/high.webp"
-},
-{
-    "name": "Weezing",
-    "type": "Dark",
-    "hp": 110,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 1",
-    "effect": {
-        "action": "spread_poison",
-        "description": "Once during your turn, if this Pokémon is in the Active Spot, you may make all of your opponent's Benched Pokémon Poisoned."
-    },
-    "image": "https://assets.tcgdex.net/en/base/base3/45/high.webp"
-},
-{
-    "name": "Mawile",
-    "type": "Steel",
-    "hp": 70,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Crunch",
-            "cost": {
-                "steel": 1,
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": {
-                "action": "discard_energy",
-                "target": "opponent_active",
-                "description": "Flip a coin. If heads, discard a random Energy from your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/ex/ex2/9/high.webp"
-},
-{
-    "name": "Pawniard",
-    "type": "Steel",
-    "hp": 50,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Pierce",
-            "cost": {
-                "steel": 1
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/75/high.webp"
-},
-{
-    "name": "Bisharp",
-    "type": "Steel",
-    "hp": 90,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Metal Claw",
-            "cost": {
-                "steel": 2
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw3/76/high.webp"
-},
-{
-    "name": "Meltan",
-    "type": "Steel",
-    "hp": 60,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Amass",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": null,
-            "effect": {
-                "action": "attach_energy",
-                "source": "energy_zone",
-                "description": "Take a Steel Energy from your Energy Zone and attach it to this Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/sm/smp/SM177/high.webp"
-},
-{
-    "name": "Melmetal",
-    "type": "Steel",
-    "hp": 130,
-    "weakness": "Fire",
-    "attacks": [
-        {
-            "name": "Heavy Impact",
-            "cost": {
-                "steel": 3
-            },
-            "damage": 120,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "Stage 1",
-    "effect": {
-        "action": "reduce_damage",
-        "amount": 30,
-        "description": "This Pokémon takes 30 less damage from attacks."
-    },
-    "image": "https://images.pokemontcg.io/smp/SM181.png"
-},
-{
-    "name": "Dratini",
-    "type": "Dragon",
-    "hp": 70,
-    "weakness": "Fairy",
-    "attacks": [
-        {
-            "name": "Ram",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/26/high.webp"
-},
-{
-    "name": "Dragonair",
-    "type": "Dragon",
-    "hp": 100,
-    "weakness": "Fairy",
-    "attacks": [
-        {
-            "name": "Tail Smack",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/base1/18/high.webp"
-},
-{
-    "name": "Dragonite",
-    "type": "Dragon",
-    "hp": 160,
-    "weakness": "Fairy",
-    "attacks": [
-        {
-            "name": "Draco Meteor",
-            "cost": {
-                "water": 2,
-                "electric": 2
-            },
-            "damage": null,
-            "effect": {
-                "action": "spread_damage",
-                "amount": 50,
-                "description": "Flip 4 coins. For each heads, this attack does 50 damage to 1 of your opponent's Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Stage 2",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/base/basep/5/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-57",
+    "pokedex_number": 16,
     "name": "Pidgey",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Gust",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 10,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "57",
+    "price_usd": 1.94,
     "image": "https://assets.tcgdex.net/en/base/base1/57/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-22",
+    "pokedex_number": 17,
     "name": "Pidgeotto",
     "type": "Colorless",
-    "hp": 80,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Gust",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "22",
+    "price_usd": 9.78,
     "image": "https://assets.tcgdex.net/en/base/base1/22/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-24",
+    "pokedex_number": 18,
     "name": "Pidgeot",
     "type": "Colorless",
-    "hp": 130,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Wing Attack",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 2",
-    "effect": {
-        "action": "switch_opponent_pokemon",
-        "description": "Once during your turn, you may switch your opponent's Active Pokémon with 1 of their Benched Pokémon."
-    },
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "24",
+    "price_usd": 7.96,
     "image": "https://assets.tcgdex.net/en/base/base2/24/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-61",
+    "pokedex_number": 19,
     "name": "Rattata",
     "type": "Colorless",
-    "hp": 40,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Gnaw",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "61",
+    "price_usd": 2.44,
     "image": "https://assets.tcgdex.net/en/base/base1/61/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-40",
+    "pokedex_number": 20,
     "name": "Raticate",
     "type": "Colorless",
-    "hp": 80,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Bite",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "40",
+    "price_usd": 13.78,
     "image": "https://assets.tcgdex.net/en/base/base1/40/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-62",
+    "pokedex_number": 21,
     "name": "Spearow",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Peck",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "62",
+    "price_usd": 2.27,
     "image": "https://assets.tcgdex.net/en/base/base2/62/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-36",
+    "pokedex_number": 22,
     "name": "Fearow",
     "type": "Colorless",
-    "hp": 100,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Drill Run",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 50,
-            "effect": {
-                "action": "discard_energy",
-                "condition": "coin_flip_heads",
-                "description": "Flip a coin. If heads, discard a random Energy from your opponent's Active Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "36",
+    "price_usd": 6.46,
     "image": "https://assets.tcgdex.net/en/base/base2/36/high.webp"
-},
-{
+  },
+  {
+    "id": "base3-46",
+    "pokedex_number": 23,
+    "name": "Ekans",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "46",
+    "price_usd": 1.32,
+    "image": "https://assets.tcgdex.net/en/base/base3/46/high.webp"
+  },
+  {
+    "id": "base3-31",
+    "pokedex_number": 24,
+    "name": "Arbok",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "31",
+    "price_usd": 7.3,
+    "image": "https://assets.tcgdex.net/en/base/base3/31/high.webp"
+  },
+  {
+    "id": "base1-58",
+    "pokedex_number": 25,
+    "name": "Pikachu",
+    "type": "Lightning",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "58",
+    "price_usd": 1.82,
+    "image": "https://assets.tcgdex.net/en/base/base1/58/high.webp"
+  },
+  {
+    "id": "xyp-XY124",
+    "pokedex_number": 25,
+    "name": "Pikachu EX",
+    "type": "Lightning",
+    "rarity": "Promo",
+    "variant": "EX",
+    "expansion": "XY Black Star Promos",
+    "set_id": "xyp",
+    "card_number": "XY124",
+    "price_usd": 125.0,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY124/high.webp"
+  },
+  {
+    "id": "base1-14",
+    "pokedex_number": 26,
+    "name": "Raichu",
+    "type": "Lightning",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "14",
+    "price_usd": 64.59,
+    "image": "https://assets.tcgdex.net/en/base/base1/14/high.webp"
+  },
+  {
+    "id": "base1-62",
+    "pokedex_number": 27,
+    "name": "Sandshrew",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "62",
+    "price_usd": 2.33,
+    "image": "https://assets.tcgdex.net/en/base/base1/62/high.webp"
+  },
+  {
+    "id": "base3-41",
+    "pokedex_number": 28,
+    "name": "Sandslash",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "41",
+    "price_usd": 8.83,
+    "image": "https://assets.tcgdex.net/en/base/base3/41/high.webp"
+  },
+  {
+    "id": "base2-57",
+    "pokedex_number": 29,
+    "name": "Nidoran♀",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "57",
+    "price_usd": 4.43,
+    "image": "https://assets.tcgdex.net/en/base/base2/57/high.webp"
+  },
+  {
+    "id": "base2-40",
+    "pokedex_number": 30,
+    "name": "Nidorina",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "40",
+    "price_usd": 4.32,
+    "image": "https://assets.tcgdex.net/en/base/base2/40/high.webp"
+  },
+  {
+    "id": "base2-23",
+    "pokedex_number": 31,
+    "name": "Nidoqueen",
+    "type": "Grass",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "23",
+    "price_usd": 6.26,
+    "image": "https://assets.tcgdex.net/en/base/base2/23/high.webp"
+  },
+  {
+    "id": "base1-55",
+    "pokedex_number": 32,
+    "name": "Nidoran♂",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "55",
+    "price_usd": 2.06,
+    "image": "https://assets.tcgdex.net/en/base/base1/55/high.webp"
+  },
+  {
+    "id": "base1-37",
+    "pokedex_number": 33,
+    "name": "Nidorino",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "37",
+    "price_usd": 7.64,
+    "image": "https://assets.tcgdex.net/en/base/base1/37/high.webp"
+  },
+  {
+    "id": "base1-11",
+    "pokedex_number": 34,
+    "name": "Nidoking",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "11",
+    "price_usd": 29.57,
+    "image": "https://assets.tcgdex.net/en/base/base1/11/high.webp"
+  },
+  {
+    "id": "base1-5",
+    "pokedex_number": 35,
+    "name": "Clefairy",
+    "type": "Colorless",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "5",
+    "price_usd": 46.37,
+    "image": "https://assets.tcgdex.net/en/base/base1/5/high.webp"
+  },
+  {
+    "id": "base2-1",
+    "pokedex_number": 36,
+    "name": "Clefable",
+    "type": "Colorless",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "1",
+    "price_usd": 23.51,
+    "image": "https://assets.tcgdex.net/en/base/base2/1/high.webp"
+  },
+  {
+    "id": "base1-68",
+    "pokedex_number": 37,
+    "name": "Vulpix",
+    "type": "Fire",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "68",
+    "price_usd": 3.65,
+    "image": "https://assets.tcgdex.net/en/base/base1/68/high.webp"
+  },
+  {
+    "id": "base1-12",
+    "pokedex_number": 38,
+    "name": "Ninetales",
+    "type": "Fire",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "12",
+    "price_usd": 49.56,
+    "image": "https://assets.tcgdex.net/en/base/base1/12/high.webp"
+  },
+  {
+    "id": "base2-54",
+    "pokedex_number": 39,
     "name": "Jigglypuff",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Pound",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "54",
+    "price_usd": 1.93,
     "image": "https://assets.tcgdex.net/en/base/base2/54/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-16",
+    "pokedex_number": 40,
     "name": "Wigglytuff",
     "type": "Colorless",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Hyper Voice",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "16",
+    "price_usd": 105.48,
     "image": "https://assets.tcgdex.net/en/base/base2/16/high.webp"
-},
-{
+  },
+  {
+    "id": "ex5-101",
+    "pokedex_number": 40,
     "name": "Wigglytuff EX",
     "type": "Colorless",
-    "hp": 140,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Sleepy Song",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 80,
-            "effect": {
-                "action": "apply_status",
-                "status": "asleep",
-                "target": "opponent_active",
-                "description": "Your opponent's Active Pokémon is now Asleep."
-            }
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "EX",
-    "effect": null,
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX Hidden Legends",
+    "set_id": "ex5",
+    "card_number": "101",
+    "price_usd": 134.24,
     "image": "https://assets.tcgdex.net/en/ex/ex5/101/high.webp"
-},
-{
+  },
+  {
+    "id": "base3-57",
+    "pokedex_number": 41,
+    "name": "Zubat",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "57",
+    "price_usd": 4.2,
+    "image": "https://assets.tcgdex.net/en/base/base3/57/high.webp"
+  },
+  {
+    "id": "base3-34",
+    "pokedex_number": 42,
+    "name": "Golbat",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "34",
+    "price_usd": 3.63,
+    "image": "https://assets.tcgdex.net/en/base/base3/34/high.webp"
+  },
+  {
+    "id": "base2-58",
+    "pokedex_number": 43,
+    "name": "Oddish",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "58",
+    "price_usd": 1.72,
+    "image": "https://assets.tcgdex.net/en/base/base2/58/high.webp"
+  },
+  {
+    "id": "base2-37",
+    "pokedex_number": 44,
+    "name": "Gloom",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "37",
+    "price_usd": 14.67,
+    "image": "https://assets.tcgdex.net/en/base/base2/37/high.webp"
+  },
+  {
+    "id": "base2-15",
+    "pokedex_number": 45,
+    "name": "Vileplume",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "15",
+    "price_usd": 100.18,
+    "image": "https://assets.tcgdex.net/en/base/base2/15/high.webp"
+  },
+  {
+    "id": "base2-59",
+    "pokedex_number": 46,
+    "name": "Paras",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "59",
+    "price_usd": 4.51,
+    "image": "https://assets.tcgdex.net/en/base/base2/59/high.webp"
+  },
+  {
+    "id": "base2-41",
+    "pokedex_number": 47,
+    "name": "Parasect",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "41",
+    "price_usd": 13.87,
+    "image": "https://assets.tcgdex.net/en/base/base2/41/high.webp"
+  },
+  {
+    "id": "base2-63",
+    "pokedex_number": 48,
+    "name": "Venonat",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "63",
+    "price_usd": 0.67,
+    "image": "https://assets.tcgdex.net/en/base/base2/63/high.webp"
+  },
+  {
+    "id": "base2-13",
+    "pokedex_number": 49,
+    "name": "Venomoth",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "13",
+    "price_usd": 96.82,
+    "image": "https://assets.tcgdex.net/en/base/base2/13/high.webp"
+  },
+  {
+    "id": "base1-47",
+    "pokedex_number": 50,
+    "name": "Diglett",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "47",
+    "price_usd": 1.79,
+    "image": "https://assets.tcgdex.net/en/base/base1/47/high.webp"
+  },
+  {
+    "id": "base1-19",
+    "pokedex_number": 51,
+    "name": "Dugtrio",
+    "type": "Fighting",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "19",
+    "price_usd": 7.65,
+    "image": "https://assets.tcgdex.net/en/base/base1/19/high.webp"
+  },
+  {
+    "id": "base2-56",
+    "pokedex_number": 52,
     "name": "Meowth",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Pay Day",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 10,
-            "effect": {
-                "action": "draw_card",
-                "description": "Draw a card."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "56",
+    "price_usd": 5.44,
     "image": "https://assets.tcgdex.net/en/base/base2/56/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-42",
+    "pokedex_number": 53,
     "name": "Persian",
     "type": "Colorless",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Shadow Claw",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 40,
-            "effect": {
-                "action": "discard_random_card",
-                "target": "opponent_hand",
-                "description": "Flip a coin. If heads, discard a random card from your opponent's hand."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "42",
+    "price_usd": 4.63,
     "image": "https://assets.tcgdex.net/en/base/base2/42/high.webp"
-},
-{
+  },
+  {
+    "id": "basep-20",
+    "pokedex_number": 54,
+    "name": "Psyduck",
+    "type": "Water",
+    "rarity": "Promo",
+    "variant": "Normal",
+    "expansion": "Wizards Black Star Promos",
+    "set_id": "basep",
+    "card_number": "20",
+    "price_usd": 99.98,
+    "image": "https://assets.tcgdex.net/en/base/basep/20/high.webp"
+  },
+  {
+    "id": "base3-35",
+    "pokedex_number": 55,
+    "name": "Golduck",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "35",
+    "price_usd": 2.48,
+    "image": "https://assets.tcgdex.net/en/base/base3/35/high.webp"
+  },
+  {
+    "id": "base2-55",
+    "pokedex_number": 56,
+    "name": "Mankey",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "55",
+    "price_usd": 0.58,
+    "image": "https://assets.tcgdex.net/en/base/base2/55/high.webp"
+  },
+  {
+    "id": "base2-43",
+    "pokedex_number": 57,
+    "name": "Primeape",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "43",
+    "price_usd": 8.78,
+    "image": "https://assets.tcgdex.net/en/base/base2/43/high.webp"
+  },
+  {
+    "id": "base1-28",
+    "pokedex_number": 58,
+    "name": "Growlithe",
+    "type": "Fire",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "28",
+    "price_usd": 11.27,
+    "image": "https://assets.tcgdex.net/en/base/base1/28/high.webp"
+  },
+  {
+    "id": "base1-23",
+    "pokedex_number": 59,
+    "name": "Arcanine",
+    "type": "Fire",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "23",
+    "price_usd": 13.21,
+    "image": "https://assets.tcgdex.net/en/base/base1/23/high.webp"
+  },
+  {
+    "id": "ex12-83",
+    "pokedex_number": 59,
+    "name": "Arcanine EX",
+    "type": "Fire",
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX Legend Maker",
+    "set_id": "ex12",
+    "card_number": "83",
+    "price_usd": 89.73,
+    "image": "https://assets.tcgdex.net/en/ex/ex12/83/high.webp"
+  },
+  {
+    "id": "base1-59",
+    "pokedex_number": 60,
+    "name": "Poliwag",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "59",
+    "price_usd": 0.88,
+    "image": "https://assets.tcgdex.net/en/base/base1/59/high.webp"
+  },
+  {
+    "id": "base1-38",
+    "pokedex_number": 61,
+    "name": "Poliwhirl",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "38",
+    "price_usd": 2.24,
+    "image": "https://assets.tcgdex.net/en/base/base1/38/high.webp"
+  },
+  {
+    "id": "base1-13",
+    "pokedex_number": 62,
+    "name": "Poliwrath",
+    "type": "Water",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "13",
+    "price_usd": 87.63,
+    "image": "https://assets.tcgdex.net/en/base/base1/13/high.webp"
+  },
+  {
+    "id": "base1-43",
+    "pokedex_number": 63,
+    "name": "Abra",
+    "type": "Psychic",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "43",
+    "price_usd": 1.02,
+    "image": "https://assets.tcgdex.net/en/base/base1/43/high.webp"
+  },
+  {
+    "id": "base1-32",
+    "pokedex_number": 64,
+    "name": "Kadabra",
+    "type": "Psychic",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "32",
+    "price_usd": 10.33,
+    "image": "https://assets.tcgdex.net/en/base/base1/32/high.webp"
+  },
+  {
+    "id": "base1-1",
+    "pokedex_number": 65,
+    "name": "Alakazam",
+    "type": "Psychic",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "1",
+    "price_usd": 100.72,
+    "image": "https://assets.tcgdex.net/en/base/base1/1/high.webp"
+  },
+  {
+    "id": "base1-52",
+    "pokedex_number": 66,
+    "name": "Machop",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "52",
+    "price_usd": 3.35,
+    "image": "https://assets.tcgdex.net/en/base/base1/52/high.webp"
+  },
+  {
+    "id": "base1-34",
+    "pokedex_number": 67,
+    "name": "Machoke",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "34",
+    "price_usd": 8.82,
+    "image": "https://assets.tcgdex.net/en/base/base1/34/high.webp"
+  },
+  {
+    "id": "base1-8",
+    "pokedex_number": 68,
+    "name": "Machamp",
+    "type": "Fighting",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "8",
+    "price_usd": 68.02,
+    "image": "https://assets.tcgdex.net/en/base/base1/8/high.webp"
+  },
+  {
+    "id": "xyp-XY108",
+    "pokedex_number": 68,
+    "name": "Machamp EX",
+    "type": "Fighting",
+    "rarity": "Promo",
+    "variant": "EX",
+    "expansion": "XY Black Star Promos",
+    "set_id": "xyp",
+    "card_number": "XY108",
+    "price_usd": 44.26,
+    "image": "https://assets.tcgdex.net/en/xy/xyp/XY108/high.webp"
+  },
+  {
+    "id": "base2-49",
+    "pokedex_number": 69,
+    "name": "Bellsprout",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "49",
+    "price_usd": 3.76,
+    "image": "https://assets.tcgdex.net/en/base/base2/49/high.webp"
+  },
+  {
+    "id": "base2-48",
+    "pokedex_number": 70,
+    "name": "Weepinbell",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "48",
+    "price_usd": 7.92,
+    "image": "https://assets.tcgdex.net/en/base/base2/48/high.webp"
+  },
+  {
+    "id": "base2-14",
+    "pokedex_number": 71,
+    "name": "Victreebel",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "14",
+    "price_usd": 33.65,
+    "image": "https://assets.tcgdex.net/en/base/base2/14/high.webp"
+  },
+  {
+    "id": "base3-56",
+    "pokedex_number": 72,
+    "name": "Tentacool",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "56",
+    "price_usd": 0.72,
+    "image": "https://assets.tcgdex.net/en/base/base3/56/high.webp"
+  },
+  {
+    "id": "base3-44",
+    "pokedex_number": 73,
+    "name": "Tentacruel",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "44",
+    "price_usd": 3.31,
+    "image": "https://assets.tcgdex.net/en/base/base3/44/high.webp"
+  },
+  {
+    "id": "base3-47",
+    "pokedex_number": 74,
+    "name": "Geodude",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "47",
+    "price_usd": 4.38,
+    "image": "https://assets.tcgdex.net/en/base/base3/47/high.webp"
+  },
+  {
+    "id": "base3-37",
+    "pokedex_number": 75,
+    "name": "Graveler",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "37",
+    "price_usd": 8.17,
+    "image": "https://assets.tcgdex.net/en/base/base3/37/high.webp"
+  },
+  {
+    "id": "base3-36",
+    "pokedex_number": 76,
+    "name": "Golem",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "36",
+    "price_usd": 6.14,
+    "image": "https://assets.tcgdex.net/en/base/base3/36/high.webp"
+  },
+  {
+    "id": "base1-60",
+    "pokedex_number": 77,
+    "name": "Ponyta",
+    "type": "Fire",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "60",
+    "price_usd": 4.55,
+    "image": "https://assets.tcgdex.net/en/base/base1/60/high.webp"
+  },
+  {
+    "id": "base2-44",
+    "pokedex_number": 78,
+    "name": "Rapidash",
+    "type": "Fire",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "44",
+    "price_usd": 12.37,
+    "image": "https://assets.tcgdex.net/en/base/base2/44/high.webp"
+  },
+  {
+    "id": "base3-55",
+    "pokedex_number": 79,
+    "name": "Slowpoke",
+    "type": "Psychic",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "55",
+    "price_usd": 2.94,
+    "image": "https://assets.tcgdex.net/en/base/base3/55/high.webp"
+  },
+  {
+    "id": "base3-43",
+    "pokedex_number": 80,
+    "name": "Slowbro",
+    "type": "Psychic",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "43",
+    "price_usd": 13.1,
+    "image": "https://assets.tcgdex.net/en/base/base3/43/high.webp"
+  },
+  {
+    "id": "base1-53",
+    "pokedex_number": 81,
+    "name": "Magnemite",
+    "type": "Lightning",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "53",
+    "price_usd": 5.24,
+    "image": "https://assets.tcgdex.net/en/base/base1/53/high.webp"
+  },
+  {
+    "id": "base1-9",
+    "pokedex_number": 82,
+    "name": "Magneton",
+    "type": "Lightning",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "9",
+    "price_usd": 102.97,
+    "image": "https://assets.tcgdex.net/en/base/base1/9/high.webp"
+  },
+  {
+    "id": "base1-27",
+    "pokedex_number": 83,
     "name": "Farfetch'd",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Leek Slap",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "27",
+    "price_usd": 14.17,
     "image": "https://assets.tcgdex.net/en/base/base1/27/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-48",
+    "pokedex_number": 84,
     "name": "Doduo",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Peck",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "48",
+    "price_usd": 1.49,
     "image": "https://assets.tcgdex.net/en/base/base1/48/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-34",
+    "pokedex_number": 85,
     "name": "Dodrio",
     "type": "Colorless",
-    "hp": 80,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Drill Peck",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 40,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 0,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "34",
+    "price_usd": 6.81,
     "image": "https://assets.tcgdex.net/en/base/base2/34/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-41",
+    "pokedex_number": 86,
+    "name": "Seel",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "41",
+    "price_usd": 14.51,
+    "image": "https://assets.tcgdex.net/en/base/base1/41/high.webp"
+  },
+  {
+    "id": "base1-25",
+    "pokedex_number": 87,
+    "name": "Dewgong",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "25",
+    "price_usd": 3.85,
+    "image": "https://assets.tcgdex.net/en/base/base1/25/high.webp"
+  },
+  {
+    "id": "base3-48",
+    "pokedex_number": 88,
+    "name": "Grimer",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "48",
+    "price_usd": 4.87,
+    "image": "https://assets.tcgdex.net/en/base/base3/48/high.webp"
+  },
+  {
+    "id": "base3-13",
+    "pokedex_number": 89,
+    "name": "Muk",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "13",
+    "price_usd": 86.92,
+    "image": "https://assets.tcgdex.net/en/base/base3/13/high.webp"
+  },
+  {
+    "id": "base3-54",
+    "pokedex_number": 90,
+    "name": "Shellder",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "54",
+    "price_usd": 4.84,
+    "image": "https://assets.tcgdex.net/en/base/base3/54/high.webp"
+  },
+  {
+    "id": "base3-32",
+    "pokedex_number": 91,
+    "name": "Cloyster",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "32",
+    "price_usd": 5.87,
+    "image": "https://assets.tcgdex.net/en/base/base3/32/high.webp"
+  },
+  {
+    "id": "base1-50",
+    "pokedex_number": 92,
+    "name": "Gastly",
+    "type": "Psychic",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "50",
+    "price_usd": 5.38,
+    "image": "https://assets.tcgdex.net/en/base/base1/50/high.webp"
+  },
+  {
+    "id": "base1-29",
+    "pokedex_number": 93,
+    "name": "Haunter",
+    "type": "Psychic",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "29",
+    "price_usd": 13.9,
+    "image": "https://assets.tcgdex.net/en/base/base1/29/high.webp"
+  },
+  {
+    "id": "base3-20",
+    "pokedex_number": 94,
+    "name": "Gengar",
+    "type": "Psychic",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "20",
+    "price_usd": 33.79,
+    "image": "https://assets.tcgdex.net/en/base/base3/20/high.webp"
+  },
+  {
+    "id": "ex6-108",
+    "pokedex_number": 94,
+    "name": "Gengar EX",
+    "type": "Psychic",
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX FireRed & LeafGreen",
+    "set_id": "ex6",
+    "card_number": "108",
+    "price_usd": 109.68,
+    "image": "https://assets.tcgdex.net/en/ex/ex6/108/high.webp"
+  },
+  {
+    "id": "base1-56",
+    "pokedex_number": 95,
+    "name": "Onix",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "56",
+    "price_usd": 0.97,
+    "image": "https://assets.tcgdex.net/en/base/base1/56/high.webp"
+  },
+  {
+    "id": "base1-49",
+    "pokedex_number": 96,
+    "name": "Drowzee",
+    "type": "Psychic",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "49",
+    "price_usd": 2.27,
+    "image": "https://assets.tcgdex.net/en/base/base1/49/high.webp"
+  },
+  {
+    "id": "base3-23",
+    "pokedex_number": 97,
+    "name": "Hypno",
+    "type": "Psychic",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "23",
+    "price_usd": 9.48,
+    "image": "https://assets.tcgdex.net/en/base/base3/23/high.webp"
+  },
+  {
+    "id": "base3-51",
+    "pokedex_number": 98,
+    "name": "Krabby",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "51",
+    "price_usd": 2.75,
+    "image": "https://assets.tcgdex.net/en/base/base3/51/high.webp"
+  },
+  {
+    "id": "base3-38",
+    "pokedex_number": 99,
+    "name": "Kingler",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "38",
+    "price_usd": 10.75,
+    "image": "https://assets.tcgdex.net/en/base/base3/38/high.webp"
+  },
+  {
+    "id": "base1-67",
+    "pokedex_number": 100,
+    "name": "Voltorb",
+    "type": "Lightning",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "67",
+    "price_usd": 4.65,
+    "image": "https://assets.tcgdex.net/en/base/base1/67/high.webp"
+  },
+  {
+    "id": "base1-21",
+    "pokedex_number": 101,
+    "name": "Electrode",
+    "type": "Lightning",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "21",
+    "price_usd": 15.89,
+    "image": "https://assets.tcgdex.net/en/base/base1/21/high.webp"
+  },
+  {
+    "id": "base2-52",
+    "pokedex_number": 102,
+    "name": "Exeggcute",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "52",
+    "price_usd": 0.62,
+    "image": "https://assets.tcgdex.net/en/base/base2/52/high.webp"
+  },
+  {
+    "id": "base2-35",
+    "pokedex_number": 103,
+    "name": "Exeggutor",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "35",
+    "price_usd": 10.5,
+    "image": "https://assets.tcgdex.net/en/base/base2/35/high.webp"
+  },
+  {
+    "id": "base2-50",
+    "pokedex_number": 104,
+    "name": "Cubone",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "50",
+    "price_usd": 4.62,
+    "image": "https://assets.tcgdex.net/en/base/base2/50/high.webp"
+  },
+  {
+    "id": "base2-39",
+    "pokedex_number": 105,
+    "name": "Marowak",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "39",
+    "price_usd": 10.91,
+    "image": "https://assets.tcgdex.net/en/base/base2/39/high.webp"
+  },
+  {
+    "id": "base3-22",
+    "pokedex_number": 106,
+    "name": "Hitmonlee",
+    "type": "Fighting",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "22",
+    "price_usd": 15.9,
+    "image": "https://assets.tcgdex.net/en/base/base3/22/high.webp"
+  },
+  {
+    "id": "base1-7",
+    "pokedex_number": 107,
+    "name": "Hitmonchan",
+    "type": "Fighting",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "7",
+    "price_usd": 95.71,
+    "image": "https://assets.tcgdex.net/en/base/base1/7/high.webp"
+  },
+  {
+    "id": "base2-38",
+    "pokedex_number": 108,
     "name": "Lickitung",
     "type": "Colorless",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Continuous Lick",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 60,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "description": "Flip a coin until you get tails. This attack does 60 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "38",
+    "price_usd": 5.09,
     "image": "https://assets.tcgdex.net/en/base/base2/38/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-51",
+    "pokedex_number": 109,
+    "name": "Koffing",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "51",
+    "price_usd": 3.12,
+    "image": "https://assets.tcgdex.net/en/base/base1/51/high.webp"
+  },
+  {
+    "id": "base3-45",
+    "pokedex_number": 110,
+    "name": "Weezing",
+    "type": "Grass",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "45",
+    "price_usd": 11.13,
+    "image": "https://assets.tcgdex.net/en/base/base3/45/high.webp"
+  },
+  {
+    "id": "base2-61",
+    "pokedex_number": 111,
+    "name": "Rhyhorn",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "61",
+    "price_usd": 1.89,
+    "image": "https://assets.tcgdex.net/en/base/base2/61/high.webp"
+  },
+  {
+    "id": "base2-45",
+    "pokedex_number": 112,
+    "name": "Rhydon",
+    "type": "Fighting",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "45",
+    "price_usd": 4.0,
+    "image": "https://assets.tcgdex.net/en/base/base2/45/high.webp"
+  },
+  {
+    "id": "base1-3",
+    "pokedex_number": 113,
     "name": "Chansey",
     "type": "Colorless",
-    "hp": 120,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Gentle Slap",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 60,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "3",
+    "price_usd": 42.91,
     "image": "https://assets.tcgdex.net/en/base/base1/3/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-66",
+    "pokedex_number": 114,
+    "name": "Tangela",
+    "type": "Grass",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "66",
+    "price_usd": 3.41,
+    "image": "https://assets.tcgdex.net/en/base/base1/66/high.webp"
+  },
+  {
+    "id": "base2-21",
+    "pokedex_number": 115,
     "name": "Kangaskhan",
     "type": "Colorless",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Dizzy Punch",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "coin_flip_multiple",
-                "bonus_damage_per_heads": 30,
-                "description": "Flip 2 coins. This attack does 30 damage for each heads."
-            }
-        }
-    ],
-    "retreat_cost": 3,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "21",
+    "price_usd": 6.94,
     "image": "https://assets.tcgdex.net/en/base/base2/21/high.webp"
-},
-{
+  },
+  {
+    "id": "base3-49",
+    "pokedex_number": 116,
+    "name": "Horsea",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "49",
+    "price_usd": 4.38,
+    "image": "https://assets.tcgdex.net/en/base/base3/49/high.webp"
+  },
+  {
+    "id": "base3-42",
+    "pokedex_number": 117,
+    "name": "Seadra",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "42",
+    "price_usd": 8.14,
+    "image": "https://assets.tcgdex.net/en/base/base3/42/high.webp"
+  },
+  {
+    "id": "base2-53",
+    "pokedex_number": 118,
+    "name": "Goldeen",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "53",
+    "price_usd": 2.17,
+    "image": "https://assets.tcgdex.net/en/base/base2/53/high.webp"
+  },
+  {
+    "id": "base2-46",
+    "pokedex_number": 119,
+    "name": "Seaking",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "46",
+    "price_usd": 3.62,
+    "image": "https://assets.tcgdex.net/en/base/base2/46/high.webp"
+  },
+  {
+    "id": "base1-65",
+    "pokedex_number": 120,
+    "name": "Staryu",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "65",
+    "price_usd": 2.16,
+    "image": "https://assets.tcgdex.net/en/base/base1/65/high.webp"
+  },
+  {
+    "id": "base1-64",
+    "pokedex_number": 121,
+    "name": "Starmie",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "64",
+    "price_usd": 0.73,
+    "image": "https://assets.tcgdex.net/en/base/base1/64/high.webp"
+  },
+  {
+    "id": "base2-22",
+    "pokedex_number": 122,
+    "name": "Mr. Mime",
+    "type": "Psychic",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "22",
+    "price_usd": 15.32,
+    "image": "https://assets.tcgdex.net/en/base/base2/22/high.webp"
+  },
+  {
+    "id": "base2-10",
+    "pokedex_number": 123,
+    "name": "Scyther",
+    "type": "Grass",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "10",
+    "price_usd": 36.62,
+    "image": "https://assets.tcgdex.net/en/base/base2/10/high.webp"
+  },
+  {
+    "id": "base1-31",
+    "pokedex_number": 124,
+    "name": "Jynx",
+    "type": "Psychic",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "31",
+    "price_usd": 2.0,
+    "image": "https://assets.tcgdex.net/en/base/base1/31/high.webp"
+  },
+  {
+    "id": "base1-20",
+    "pokedex_number": 125,
+    "name": "Electabuzz",
+    "type": "Lightning",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "20",
+    "price_usd": 20.13,
+    "image": "https://assets.tcgdex.net/en/base/base1/20/high.webp"
+  },
+  {
+    "id": "base1-36",
+    "pokedex_number": 126,
+    "name": "Magmar",
+    "type": "Fire",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "36",
+    "price_usd": 7.31,
+    "image": "https://assets.tcgdex.net/en/base/base1/36/high.webp"
+  },
+  {
+    "id": "base2-25",
+    "pokedex_number": 127,
+    "name": "Pinsir",
+    "type": "Grass",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "25",
+    "price_usd": 21.62,
+    "image": "https://assets.tcgdex.net/en/base/base2/25/high.webp"
+  },
+  {
+    "id": "base2-47",
+    "pokedex_number": 128,
     "name": "Tauros",
     "type": "Colorless",
-    "hp": 100,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Horn Attack",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 50,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "47",
+    "price_usd": 5.3,
     "image": "https://assets.tcgdex.net/en/base/base2/47/high.webp"
-},
-{
+  },
+  {
+    "id": "base1-35",
+    "pokedex_number": 129,
+    "name": "Magikarp",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "35",
+    "price_usd": 3.55,
+    "image": "https://assets.tcgdex.net/en/base/base1/35/high.webp"
+  },
+  {
+    "id": "base1-6",
+    "pokedex_number": 130,
+    "name": "Gyarados",
+    "type": "Water",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "6",
+    "price_usd": 24.96,
+    "image": "https://assets.tcgdex.net/en/base/base1/6/high.webp"
+  },
+  {
+    "id": "base3-10",
+    "pokedex_number": 131,
+    "name": "Lapras",
+    "type": "Water",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "10",
+    "price_usd": 93.48,
+    "image": "https://assets.tcgdex.net/en/base/base3/10/high.webp"
+  },
+  {
+    "id": "base3-18",
+    "pokedex_number": 132,
     "name": "Ditto",
     "type": "Colorless",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Copy Anything",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": null,
-            "effect": {
-                "action": "copy_opponent_attack",
-                "description": "Choose 1 of your opponent's Pokémon's attacks and use it as this attack. If this Pokémon doesn’t have the necessary Energy to use that attack, this attack does nothing."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "18",
+    "price_usd": 35.35,
     "image": "https://assets.tcgdex.net/en/base/base3/18/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-51",
+    "pokedex_number": 133,
     "name": "Eevee",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "51",
+    "price_usd": 2.7,
     "image": "https://assets.tcgdex.net/en/base/base2/51/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-12",
+    "pokedex_number": 134,
+    "name": "Vaporeon",
+    "type": "Water",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "12",
+    "price_usd": 22.02,
+    "image": "https://assets.tcgdex.net/en/base/base2/12/high.webp"
+  },
+  {
+    "id": "base2-20",
+    "pokedex_number": 135,
+    "name": "Jolteon",
+    "type": "Lightning",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "20",
+    "price_usd": 28.26,
+    "image": "https://assets.tcgdex.net/en/base/base2/20/high.webp"
+  },
+  {
+    "id": "base2-19",
+    "pokedex_number": 136,
+    "name": "Flareon",
+    "type": "Fire",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "19",
+    "price_usd": 24.45,
+    "image": "https://assets.tcgdex.net/en/base/base2/19/high.webp"
+  },
+  {
+    "id": "base1-39",
+    "pokedex_number": 137,
     "name": "Porygon",
     "type": "Colorless",
-    "hp": 50,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Sharpen",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": {
-        "action": "reveal_top_card",
-        "description": "Once during your turn, you may look at the top card of your deck."
-    },
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "39",
+    "price_usd": 2.77,
     "image": "https://assets.tcgdex.net/en/base/base1/39/high.webp"
-},
-{
+  },
+  {
+    "id": "base3-52",
+    "pokedex_number": 138,
+    "name": "Omanyte",
+    "type": "Water",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "52",
+    "price_usd": 3.01,
+    "image": "https://assets.tcgdex.net/en/base/base3/52/high.webp"
+  },
+  {
+    "id": "base3-40",
+    "pokedex_number": 139,
+    "name": "Omastar",
+    "type": "Water",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "40",
+    "price_usd": 3.0,
+    "image": "https://assets.tcgdex.net/en/base/base3/40/high.webp"
+  },
+  {
+    "id": "base3-50",
+    "pokedex_number": 140,
+    "name": "Kabuto",
+    "type": "Fighting",
+    "rarity": "Common",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "50",
+    "price_usd": 4.41,
+    "image": "https://assets.tcgdex.net/en/base/base3/50/high.webp"
+  },
+  {
+    "id": "base3-24",
+    "pokedex_number": 141,
+    "name": "Kabutops",
+    "type": "Fighting",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "24",
+    "price_usd": 18.01,
+    "image": "https://assets.tcgdex.net/en/base/base3/24/high.webp"
+  },
+  {
+    "id": "base3-1",
+    "pokedex_number": 142,
     "name": "Aerodactyl",
     "type": "Colorless",
-    "hp": 100,
-    "weakness": "Electric",
-    "attacks": [
-        {
-            "name": "Primal Wingbeat",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": null,
-            "effect": {
-                "action": "shuffle_opponent_active",
-                "condition": "coin_flip_heads",
-                "description": "Flip a coin. If heads, your opponent shuffles their Active Pokémon into their deck."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Fossil",
+    "set_id": "base3",
+    "card_number": "1",
+    "price_usd": 83.69,
     "image": "https://assets.tcgdex.net/en/base/base3/1/high.webp"
-},
-{
+  },
+  {
+    "id": "base2-11",
+    "pokedex_number": 143,
     "name": "Snorlax",
     "type": "Colorless",
-    "hp": 150,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Rollout",
-            "cost": {
-                "colorless": 4
-            },
-            "damage": 70,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 4,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Jungle",
+    "set_id": "base2",
+    "card_number": "11",
+    "price_usd": 50.32,
     "image": "https://assets.tcgdex.net/en/base/base2/11/high.webp"
-},
-{
-    "name": "Minccino",
+  },
+  {
+    "id": "basep-22",
+    "pokedex_number": 144,
+    "name": "Articuno",
+    "type": "Water",
+    "rarity": "Promo",
+    "variant": "Normal",
+    "expansion": "Wizards Black Star Promos",
+    "set_id": "basep",
+    "card_number": "22",
+    "price_usd": 44.35,
+    "image": "https://assets.tcgdex.net/en/base/basep/22/high.webp"
+  },
+  {
+    "id": "np-32",
+    "pokedex_number": 144,
+    "name": "Articuno EX",
+    "type": "Water",
+    "rarity": "Promo",
+    "variant": "EX",
+    "expansion": "Nintendo Black Star Promos",
+    "set_id": "np",
+    "card_number": "32",
+    "price_usd": 29.71,
+    "image": "https://assets.tcgdex.net/en/pop/np/32/high.webp"
+  },
+  {
+    "id": "base1-16",
+    "pokedex_number": 145,
+    "name": "Zapdos",
+    "type": "Lightning",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "16",
+    "price_usd": 33.12,
+    "image": "https://assets.tcgdex.net/en/base/base1/16/high.webp"
+  },
+  {
+    "id": "np-33",
+    "pokedex_number": 145,
+    "name": "Zapdos EX",
+    "type": "Lightning",
+    "rarity": "Promo",
+    "variant": "EX",
+    "expansion": "Nintendo Black Star Promos",
+    "set_id": "np",
+    "card_number": "33",
+    "price_usd": 42.18,
+    "image": "https://assets.tcgdex.net/en/pop/np/33/high.webp"
+  },
+  {
+    "id": "basep-21",
+    "pokedex_number": 146,
+    "name": "Moltres",
+    "type": "Fire",
+    "rarity": "Promo",
+    "variant": "Normal",
+    "expansion": "Wizards Black Star Promos",
+    "set_id": "basep",
+    "card_number": "21",
+    "price_usd": 83.57,
+    "image": "https://assets.tcgdex.net/en/base/basep/21/high.webp"
+  },
+  {
+    "id": "np-31",
+    "pokedex_number": 146,
+    "name": "Moltres EX",
+    "type": "Fire",
+    "rarity": "Promo",
+    "variant": "EX",
+    "expansion": "Nintendo Black Star Promos",
+    "set_id": "np",
+    "card_number": "31",
+    "price_usd": 77.25,
+    "image": "https://assets.tcgdex.net/en/pop/np/31/high.webp"
+  },
+  {
+    "id": "base1-26",
+    "pokedex_number": 147,
+    "name": "Dratini",
     "type": "Colorless",
-    "hp": 60,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tail Smack",
-            "cost": {
-                "colorless": 1
-            },
-            "damage": 20,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/88/high.webp"
-},
-{
-    "name": "Cinccino",
+    "rarity": "Uncommon",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "26",
+    "price_usd": 12.16,
+    "image": "https://assets.tcgdex.net/en/base/base1/26/high.webp"
+  },
+  {
+    "id": "base1-18",
+    "pokedex_number": 148,
+    "name": "Dragonair",
     "type": "Colorless",
-    "hp": 90,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Do the Wave",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": {
-                "action": "bonus_damage_per_bench",
-                "amount": 30,
-                "description": "This attack does 30 damage for each of your Benched Pokémon."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/bw/bw1/89/high.webp"
-},
-{
-    "name": "Wooloo",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "18",
+    "price_usd": 33.14,
+    "image": "https://assets.tcgdex.net/en/base/base1/18/high.webp"
+  },
+  {
+    "id": "basep-5",
+    "pokedex_number": 149,
+    "name": "Dragonite",
     "type": "Colorless",
-    "hp": 70,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Tackle",
-            "cost": {
-                "colorless": 2
-            },
-            "damage": 30,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swshp/SWSH011/high.webp"
-},
-{
-    "name": "Dubwool",
-    "type": "Colorless",
-    "hp": 120,
-    "weakness": "Fighting",
-    "attacks": [
-        {
-            "name": "Rolling Tackle",
-            "cost": {
-                "colorless": 3
-            },
-            "damage": 80,
-            "effect": null
-        }
-    ],
-    "retreat_cost": 2,
-    "stage": "Stage 1",
-    "effect": null,
-    "image": "https://assets.tcgdex.net/en/swsh/swsh1/154/high.webp"
-},
-{
+    "rarity": "Promo",
+    "variant": "Normal",
+    "expansion": "Wizards Black Star Promos",
+    "set_id": "basep",
+    "card_number": "5",
+    "price_usd": 51.17,
+    "image": "https://assets.tcgdex.net/en/base/basep/5/high.webp"
+  },
+  {
+    "id": "base1-10",
+    "pokedex_number": 150,
+    "name": "Mewtwo",
+    "type": "Psychic",
+    "rarity": "Rare Holo",
+    "variant": "Normal",
+    "expansion": "Base Set",
+    "set_id": "base1",
+    "card_number": "10",
+    "price_usd": 46.5,
+    "image": "https://assets.tcgdex.net/en/base/base1/10/high.webp"
+  },
+  {
+    "id": "ex1-101",
+    "pokedex_number": 150,
+    "name": "Mewtwo EX",
+    "type": "Psychic",
+    "rarity": "Rare Holo EX",
+    "variant": "EX",
+    "expansion": "EX Ruby & Sapphire",
+    "set_id": "ex1",
+    "card_number": "101",
+    "price_usd": 125.63,
+    "image": "https://assets.tcgdex.net/en/ex/ex1/101/high.webp"
+  },
+  {
+    "id": "basep-47",
+    "pokedex_number": 151,
     "name": "Mew",
     "type": "Psychic",
-    "hp": 60,
-    "weakness": "Dark",
-    "attacks": [
-        {
-            "name": "Psy Report",
-            "cost": {
-                "psychic": 1
-            },
-            "damage": 20,
-            "effect": {
-                "action": "reveal_hand",
-                "target": "opponent",
-                "description": "Your opponent reveals their hand."
-            }
-        }
-    ],
-    "retreat_cost": 1,
-    "stage": "Basic",
-    "effect": null,
+    "rarity": "Promo",
+    "variant": "Normal",
+    "expansion": "Wizards Black Star Promos",
+    "set_id": "basep",
+    "card_number": "47",
+    "price_usd": 85.99,
     "image": "https://assets.tcgdex.net/en/base/basep/47/high.webp"
-}
+  }
 ]
