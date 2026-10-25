@@ -416,6 +416,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@tcgdex/sdk@^2.9.0",
         "npm:tcgapi@0.3"
       ]
     }

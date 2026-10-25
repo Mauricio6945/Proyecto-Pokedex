@@ -1,31 +1,36 @@
 import { useEffect, useState } from "react";
-import { getCards } from "./api/Cardapi"
+import { getCards } from "./api/Cardapi";
+import CardLayout from "./components/CardLayout";
 
 function App() {
-    const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [error, setError] = useState("");
 
-    useEffect(() => {
-        const fetchCards = async () => {
-        const data = await getCards();
-        setCards(data);
-        };
-        fetchCards();}
-        , []);
+  useEffect(() => {
+    getCards()
+      .then(setCards)
+      .catch((fetchError) => {
+        console.error("Failed to load cards:", fetchError);
+        setError("No se pudieron cargar las cartas. Comprueba que la API esté ejecutándose.");
+      });
+  }, []);
 
-    return (
-        <div className="App">
-            <h1>Pokedex</h1>
-            <div className="card-container">
-                {cards.map((card) => (
-                    <div key={card.id} className="card">
-                        <img src={card.image} alt={card.name} />
-                        <h2>{card.name}</h2>
-                        <p>{card.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <main className="container">
+      <h1>Cartas</h1>
+      <p className="subtitle">Visualización general de las cartas</p>
+
+      {error ? (
+        <p role="alert">{error}</p>
+      ) : (
+        <section className="card-grid">
+          {cards.map((card) => (
+            <CardLayout key={card.id} card={card} />
+          ))}
+        </section>
+      )}
+    </main>
+  );
 }
 
-export default App
+export default App;
