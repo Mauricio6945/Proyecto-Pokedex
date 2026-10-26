@@ -17,16 +17,20 @@ function App() {
 
   return (
     <main className="container">
+    <header className="header">
+     <div>
       <h1>Cartas</h1>
       <p className="subtitle">Visualización general de las cartas</p>
+     </div>
+     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="Poké Ball" id="pokeball" />
+    </header>
 
-      {error ? (
-        <p role="alert">{error}</p>
-      ) : (
-        <section className="card-grid">
-          {cards.map((card) => (<CardLayout key={card.id} card={card} />))}
-        </section>
-      )}
+    <input type="text" placeholder="¿Qué carta buscas?" id= "searchbar"/>
+
+
+    <section className="card-grid">
+      {cards.map((card) => (<CardLayout key={card.id} card={card} />))}
+    </section>
     </main>
   );
 }
