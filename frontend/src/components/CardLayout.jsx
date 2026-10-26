@@ -2,15 +2,11 @@ function CardLayout( { card } ){
       return (
     <article className="card">
       <div className="card-top">
-        <span className="card-menu">...</span>
       </div>
 
       <div className="card-middle">
         <div className="name-row">
-          <div className="name-left">
-            <img className="user-icon" src="/user-icon.svg" alt="Usuario" />
             <h2>{card.name}</h2>
-          </div>
           <span className="card-code">{card.pokedex_number}</span>
         </div>
         <p>{card.type}</p>

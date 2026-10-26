@@ -24,9 +24,7 @@ function App() {
         <p role="alert">{error}</p>
       ) : (
         <section className="card-grid">
-          {cards.map((card) => (
-            <CardLayout key={card.id} card={card} />
-          ))}
+          {cards.map((card) => (<CardLayout key={card.id} card={card} />))}
         </section>
       )}
     </main>
