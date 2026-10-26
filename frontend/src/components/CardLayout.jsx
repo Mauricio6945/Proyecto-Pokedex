@@ -11,13 +11,22 @@ function CardLayout( { card } ){
         </div>
         <p>{card.type}</p>
       </div>
+
       <img src={card.image} alt={`Imagen de ${card.name}`} />
 
       <div className="card-row">
-        <span className="card-type">Tipo: {card.type}</span>
-        <span className="card-rarity">Rareza: {card.rarity}</span>
-        <span className="card-variant">Variante: {card.variant}</span>
-        <span className="card-precio">Precio: {card.price_usd}</span>
+        <div>
+            <span className="card-type">Tipo: {card.type}</span>
+        </div>
+        <div>
+            <span className="card-rarity">Rareza: {card.rarity}</span>
+        </div>
+        <div>
+            <span className="card-variant">Variante: {card.variant}</span>
+        </div>
+        <div>
+            <span className="card-precio">Precio: {card.price_usd}</span>
+        </div>
       </div>
     </article>
   );

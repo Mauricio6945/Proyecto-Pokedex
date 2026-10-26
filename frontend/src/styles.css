@@ -9,6 +9,7 @@ body {
   max-width: 980px;
   margin: 0 auto;
   padding: 24px 16px;
+  background: white;
 }
 
 h1 {
@@ -22,7 +23,7 @@ h1 {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -52,6 +53,7 @@ h1 {
   border: 1px solid #e5e7eb;
   border-radius: 999px;
   padding: 4px 10px;
+  justify-content: left;
 }
 
 .card-menu {
@@ -105,5 +107,37 @@ h1 {
 @media (max-width: 800px) {
   .card-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
+
+body {
+  background-color: #ff9a9e; 
+  animation: slowBgChange 10s infinite alternate ease-in-out; 
+}
+
+@keyframes slowBgChange {
+  0% {
+    background-color: #FFB6B6;
+  }
+  20% {
+    background-color: #FFD5D5;
+  }
+  40% {
+    background-color: #FFAAAA;
+  }
+  60% {
+    background-color: #FF8080;
+  }
+  80% {
+    background-color: #FF5555;
+  }
+  100% {
+    background-color: #FF2B2B;
   }
 }
