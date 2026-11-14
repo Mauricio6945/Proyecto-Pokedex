@@ -25,6 +25,9 @@ function CardLayout( { card } ){
             <span className="card-variant">Variante: {card.variant}</span>
         </div>
         <div>
+            <span className="card-expansion">Expansión: {card.expansion}</span>
+        </div>
+        <div>
             <span className="card-precio">Precio: {card.price_usd}</span>
         </div>
       </div>
