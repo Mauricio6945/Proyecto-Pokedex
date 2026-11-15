@@ -1,12 +1,9 @@
-function CardLayout( { card } ){
-      return (
+function CardLayout({ card, quantity, actionLabel, onAction }) {
+  return (
     <article className="card">
-      <div className="card-top">
-      </div>
-
       <div className="card-middle">
         <div className="name-row">
-            <h2>{card.name}</h2>
+          <h2>{card.name}</h2>
           <span className="card-code">{card.pokedex_number}</span>
         </div>
         <p>{card.type}</p>
@@ -15,24 +12,20 @@ function CardLayout( { card } ){
       <img src={card.image} alt={`Imagen de ${card.name}`} />
 
       <div className="card-row">
-        <div>
-            <span className="card-type">Tipo: {card.type}</span>
-        </div>
-        <div>
-            <span className="card-rarity">Rareza: {card.rarity}</span>
-        </div>
-        <div>
-            <span className="card-variant">Variante: {card.variant}</span>
-        </div>
-        <div>
-            <span className="card-expansion">Expansión: {card.expansion}</span>
-        </div>
-        <div>
-            <span className="card-precio">Precio: {card.price_usd}</span>
-        </div>
+        <div>Tipo: {card.type}</div>
+        <div>Rareza: {card.rarity}</div>
+        <div>Variante: {card.variant}</div>
+        <div>Expansión: {card.expansion}</div>
+        <div>Precio estimado: US${card.price_usd}</div>
+        {quantity !== undefined && <strong>Cantidad: {quantity}</strong>}
       </div>
+      {onAction && (
+        <button type="button" className="card-action" onClick={onAction}>
+          {actionLabel}
+        </button>
+      )}
     </article>
   );
 }
 
-export default CardLayout
+export default CardLayout;

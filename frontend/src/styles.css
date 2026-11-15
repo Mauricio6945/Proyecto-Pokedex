@@ -179,8 +179,7 @@ body {
   color: #374151;
 }
 
-.filter-group input,
-.filter-group select {
+.filter-group input,.filter-group select {
   width: 100%;
   min-height: 42px;
   padding: 10px;
@@ -193,8 +192,7 @@ body {
 }
 
 
-.filter-group input:focus,
-.filter-group select:focus {
+.filter-group input:focus,.filter-group select:focus {
   outline: none;
   border-color: #ef4444;
 }
@@ -224,4 +222,43 @@ body {
 .error-message {
   color: #b91c1c;
 }
-/* --------------------------------------------- */
+
+.user-actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  flex-wrap: wrap; 
+}
+
+.login-button, .user-actions button, .navigation button, .card-action {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navigation { 
+  display: flex; 
+  gap: 10px; 
+  margin: 18px 0; 
+  flex-wrap: wrap; 
+}
+
+.card-action { 
+  margin-top: 12px; 
+}
+
+.card-row { 
+  display: grid; 
+  gap: 6px; 
+  font-size: 0.9rem; 
+  align-items: center; 
+  max-width: 100%; 
+  max-height: 240px; 
+  object-fit: contain; 
+}

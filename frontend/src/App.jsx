@@ -1,12 +1,23 @@
 import { useEffect, useState } from "react";
-import { getCards } from "./api/Cardapi";
+import {
+  addToInventory,
+  getCards,
+  getInventory,
+  getMe,
+  logout,
+  removeFromInventory,
+} from "./api/Cardapi";
 import CardLayout from "./components/CardLayout";
 
 function App() {
-  // Cartas obtenidas desde el backend
+
   const [cards, setCards] = useState([]);
+  const [user, setUser] = useState(null);
+  const [inventory, setInventory] = useState([]);
+  const [view, setView] = useState("catalog");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
 
   // Estados de los filtros
   const [searchName, setSearchName] = useState("");
@@ -15,15 +26,19 @@ function App() {
   const [selectedVariant, setSelectedVariant] = useState("");
 
   // Obtener las cartas desde la API
-  useEffect(() => {getCards().then(setCards).catch((fetchError) => {console.error("Failed to load cards:", fetchError);
-    setError("No se pudieron cargar las cartas.");}).finally(() => setLoading(false));
+  useEffect(() => {Promise.all([getCards(), getMe()])
+      .then(async ([loadedCards, loadedUser]) => {
+        setCards(loadedCards);
+        setUser(loadedUser);
+        if (loadedUser) setInventory(await getInventory());
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
   // Obtener valores únicos para los filtros
   function getUniqueValues(field) {
-    return [...new Set(cards.map((card) => card[field]))]
-      .filter(Boolean)
-      .sort();
+    return [...new Set(cards.map((card) => card[field]))].filter(Boolean).sort();
   }
 
   const rarities = getUniqueValues("rarity");
@@ -53,6 +68,49 @@ function App() {
     );
   });
 
+  const inventoryCards = inventory.map((item) => {
+   const card = cards.find((candidate) => candidate.id === item.cardId);
+   return card ? { ...card, quantity: item.quantity } : null;
+  }).filter(Boolean);
+
+  async function refreshInventory() {
+    setInventory(await getInventory());
+  }
+
+  async function handleAdd(cardId) {
+    try {
+      setMessage("");
+      await addToInventory(cardId);
+      await refreshInventory();
+      setMessage("Carta agregada al inventario.");
+    } catch (err) {
+      setMessage(err.message);
+    }
+  }
+
+  async function handleRemove(cardId) {
+    try {
+      setMessage("");
+      await removeFromInventory(cardId);
+      await refreshInventory();
+      setMessage("Se quitó una copia de la carta.");
+    } catch (err) {
+      setMessage(err.message);
+    }
+  }
+
+  async function handleLogout() {
+    try {
+      await logout();
+      setUser(null);
+      setInventory([]);
+      setView("catalog");
+      setMessage("Sesión cerrada.");
+    } catch (err) {
+      setMessage(err.message);
+    }
+  }
+
   // Restablecer todos los filtros
   function clearFilters() {
     setSearchName("");
@@ -65,9 +123,9 @@ function App() {
     <main className="container">
       <header className="header">
         <div>
-          <h1>Cartas</h1>
+          <h1>Pokedex de Cartas</h1>
           <p className="subtitle">
-            Visualización general de las cartas
+            Catalogo publico, e inventario personal
           </p>
         </div>
 
@@ -76,107 +134,92 @@ function App() {
           alt="Poké Ball"
           id="pokeball"
         />
+        <div className="user-actions">
+          {user ? (
+            <>
+              <span>Hola, {user.name}</span>
+              <button type="button" onClick={handleLogout}>Cerrar sesión</button>
+            </>
+          ) : (
+            <a className="login-button" href="/auth/google">Iniciar sesión con Google</a>
+          )}
+        </div>
       </header>
 
-      {}
-      <section className="filters">
+      <nav className="navigation">
+        <button type="button" onClick={() => setView("catalog")}>Catálogo</button>
+        {user && (
+          <button type="button" onClick={() => setView("inventory")}>
+            Mi inventario ({inventory.reduce((total, item) => total + item.quantity, 0)})
+          </button>
+        )}
+      </nav>
 
-        {/* Buscar por nombre */}
-        <div className="filter-group">
-          <label htmlFor="searchbar">Nombre</label>
-          <input
-            type="text"
-            id="searchbar"
-            placeholder="¿Qué carta buscas?"
-            value={searchName}
-            onChange={(event) => setSearchName(event.target.value)}
-          />
-        </div>
-
-        {/* Filtrar por rareza */}
-        <div className="filter-group">
-          <label htmlFor="rarity">Rareza</label>
-          <select
-            id="rarity"
-            value={selectedRarity}
-            onChange={(event) => setSelectedRarity(event.target.value)}
-          >
-            <option value="">Todas las rarezas</option>
-            {rarities.map((rarity) => (
-              <option key={rarity} value={rarity}>
-                {rarity}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Filtrar por expansión */}
-        <div className="filter-group">
-          <label htmlFor="expansion">Expansión</label>
-          <select
-            id="expansion"
-            value={selectedExpansion}
-            onChange={(event) => setSelectedExpansion(event.target.value)}
-          >
-            <option value="">Todas las expansiones</option>
-            {expansions.map((expansion) => (
-              <option key={expansion} value={expansion}>
-                {expansion}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Filtrar por variante */}
-        <div className="filter-group">
-          <label htmlFor="variant">Variante</label>
-          <select
-            id="variant"
-            value={selectedVariant}
-            onChange={(event) => setSelectedVariant(event.target.value)}
-          >
-            <option value="">Todas las variantes</option>
-            {variants.map((variant) => (
-              <option key={variant} value={variant}>
-                {variant}
-              </option>
-            ))}
-          </select>
-        </div>
-
-      </section>
-
-      {/* Botón para limpiar filtros */}
-      <button
-        className="clear-button"
-        onClick={clearFilters}
-      >
-        Limpiar filtros
-      </button>
-
-      {/* Cantidad de resultados */}
-      {!loading && !error && (
-        <p className="results-count">
-          Se encontraron {filteredCards.length} cartas
-        </p>
-      )}
-
-      {/* Mensajes de estado */}
-      {loading && <p>Cargando cartas...</p>}
-
+      {loading && <p>Cargando...</p>}
       {error && <p className="error-message">{error}</p>}
+      {message && <p role="status">{message}</p>}
 
-      {!loading && !error && filteredCards.length === 0 && (
-        <p>No se encontraron cartas con estos filtros.</p>
+      {!loading && !error && view === "catalog" && (
+        <>
+          <section className="filters">
+            <div className="filter-group">
+              <label htmlFor="searchbar">Nombre</label>
+              <input id="searchbar" type="text" placeholder="¿Qué carta buscas?"
+                value={searchName} onChange={(e) => setSearchName(e.target.value)} />
+            </div>
+            <div className="filter-group">
+              <label htmlFor="rarity">Rareza</label>
+              <select id="rarity" value={selectedRarity}
+                onChange={(e) => setSelectedRarity(e.target.value)}>
+                <option value="">Todas las rarezas</option>
+                {rarities.map((value) => <option key={value}>{value}</option>)}
+              </select>
+            </div>
+            <div className="filter-group">
+              <label htmlFor="expansion">Expansión</label>
+              <select id="expansion" value={selectedExpansion}
+                onChange={(e) => setSelectedExpansion(e.target.value)}>
+                <option value="">Todas las expansiones</option>
+                {expansions.map((value) => <option key={value}>{value}</option>)}
+              </select>
+            </div>
+            <div className="filter-group">
+              <label htmlFor="variant">Variante</label>
+              <select id="variant" value={selectedVariant}
+                onChange={(e) => setSelectedVariant(e.target.value)}>
+                <option value="">Todas las variantes</option>
+                {variants.map((value) => <option key={value}>{value}</option>)}
+              </select>
+            </div>
+          </section>
+          <button type="button" className="clear-button" onClick={clearFilters}>
+            Limpiar filtros
+          </button>
+          <p className="results-count">Se encontraron {filteredCards.length} cartas.</p>
+          {!user && <p>Inicia sesión para agregar cartas a tu inventario.</p>}
+          <section className="card-grid">
+            {filteredCards.map((card) => (
+              <CardLayout key={card.id} card={card}
+                actionLabel="Agregar a mi inventario"
+                onAction={user ? () => handleAdd(card.id) : undefined} />
+            ))}
+          </section>
+        </>
       )}
 
-      {/* Mostrar cartas filtradas */}
-      <section className="card-grid">
-        {filteredCards.map((card) => (
-          <CardLayout key={card.id} card={card} />
-        ))}
-      </section>
-
+      {!loading && !error && view === "inventory" && user && (
+        <>
+          <h2>Mi inventario</h2>
+          {inventoryCards.length === 0 && <p>Aún no tienes cartas en tu inventario.</p>}
+          <section className="card-grid">
+            {inventoryCards.map((card) => (
+              <CardLayout key={card.id} card={card} quantity={card.quantity}
+                actionLabel="Quitar una copia"
+                onAction={() => handleRemove(card.id)} />
+            ))}
+          </section>
+        </>
+      )}
     </main>
   );
 }
