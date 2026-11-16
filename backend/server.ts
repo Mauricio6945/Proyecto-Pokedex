@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { createRemoteJWKSet, jwtVerify } from "npm:jose@^6";
 
-
+// Configuración principal del servidor y credenciales de autenticación con Google.
 const GOOGLE_CLIENT_ID = Deno.env.get("GOOGLE_CLIENT_ID");
 const GOOGLE_CLIENT_SECRET = Deno.env.get("GOOGLE_CLIENT_SECRET");
 const FRONTEND_ORIGIN = Deno.env.get("FRONTEND_ORIGIN") ?? "http://localhost:5173";
@@ -11,15 +11,17 @@ const REDIRECT_URI = `${FRONTEND_ORIGIN}/auth/google/callback`;
 const SECURE_COOKIE = FRONTEND_ORIGIN.startsWith("https://");
 const SESSION_SECONDS = 7 * 24 * 60 * 60;
 
-//Error cuando no se encuentran las variables de entorno GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET
+// Se valida que las variables de entorno necesarias existan antes de iniciar la API.
 if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
   throw new Error("Faltan GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET en backend/.env");
 }
 
+// Rutas de archivos de datos y base de SQLite.
 const dataPath = new URL("./pokemon.json", import.meta.url);
 const dbPath = fileURLToPath(new URL("./pokedex.db", import.meta.url));
 const db = new DatabaseSync(dbPath);
 
+// Inicialización del esquema de base de datos con las tablas de usuarios, sesiones y inventario.
 db.exec(`
   PRAGMA foreign_keys = ON;
   CREATE TABLE IF NOT EXISTS users (
@@ -41,22 +43,28 @@ db.exec(`
   );
 `);
 
+// Tipos auxiliares para trabajar con información del usuario y del inventario.
 type User = { id: string; name: string; email: string; picture: string | null };
 type InventoryRow = { cardId: string; quantity: number };
+
+// Conjunto de claves públicas de Google para verificar los JWT emitidos durante el login OAuth.
 const googleKeys = createRemoteJWKSet(
   new URL("https://www.googleapis.com/oauth2/v3/certs"),
 );
 
+// Genera un token aleatorio para el estado OAuth y la sesión del usuario.
 function randomToken(): string {
   return Array.from(crypto.getRandomValues(new Uint8Array(32)), (byte) =>
     byte.toString(16).padStart(2, "0")
   ).join("");
 }
 
+// Genera un hash seguro del token para almacenarlo en la base de datos sin guardar el valor original.
 function hashToken(value: string): string {
   return createHash("sha256").update(value).digest("hex");
 }
 
+// Obtiene el valor de una cookie a partir del encabezado HTTP de la solicitud.
 function getCookie(request: Request, name: string): string | null {
   const cookieHeader = request.headers.get("cookie") ?? "";
   const entry = cookieHeader.split(";").map((part) => part.trim())
@@ -64,15 +72,18 @@ function getCookie(request: Request, name: string): string | null {
   return entry ? entry.slice(name.length + 1) : null;
 }
 
+// Crea un cookie HTTP con los parámetros de seguridad necesarios para la sesión y OAuth.
 function makeCookie(name: string, value: string, maxAge: number, path = "/"): string {
   return `${name}=${value}; Max-Age=${maxAge}; Path=${path}; HttpOnly; SameSite=Lax${SECURE_COOKIE ? "; Secure" : ""}`;
 }
 
+// Recupera el usuario autenticado a partir de la sesión guardada en la cookie.
 function getUser(request: Request): User | null {
   const sessionId = getCookie(request, "pokedex_session");
 
   if (!sessionId) return null;
-    const row = db.prepare(`
+
+  const row = db.prepare(`
     SELECT u.google_id AS id, u.name, u.email, u.picture
     FROM sessions AS s
     JOIN users AS u ON u.google_id = s.google_id
@@ -82,18 +93,22 @@ function getUser(request: Request): User | null {
   return (row as User | undefined) ?? null;
 }
 
+// Lee el archivo JSON con la información de las cartas disponibles en la aplicación.
 async function readCards(): Promise<Array<{ id: string }>> {
   return JSON.parse(await Deno.readTextFile(dataPath));
 }
 
+// Respuesta reutilizable para endpoints protegidos cuando el usuario no autenticado intenta acceder.
 function unauthenticated(): Response {
   return Response.json({ error: "Debes iniciar sesión" }, { status: 401 });
 }
 
+// Verifica que la solicitud provenga del origen permitido del frontend.
 function checkOrigin(request: Request): boolean {
   return request.headers.get("origin") === FRONTEND_ORIGIN;
 }
 
+// Handler auxiliar para servir la colección de cartas del archivo JSON.
 async function cardsHandler(_request: Request): Promise<Response> {
   const fileContents = await Deno.readTextFile(dataPath);
   const cards = JSON.parse(fileContents);
@@ -105,15 +120,18 @@ async function cardsHandler(_request: Request): Promise<Response> {
   });
 }
 
+// Punto de entrada principal: recibe cada solicitud HTTP y despacha a la ruta apropiada.
 Deno.serve({ port: 8000 }, async (request) => {
   const url = new URL(request.url);
   const path = url.pathname;
 
   try {
+    // Endpoint público para devolver el catálogo de cartas disponible.
     if (request.method === "GET" && path === "/api/cards") {
       return Response.json(await readCards());
     }
-// Paso 1: enviar al usuario a Google.
+
+    // Paso 1 del flujo OAuth con Google: redirigir al usuario a la pantalla de consentimento.
     if (request.method === "GET" && path === "/auth/google") {
       const state = randomToken();
       const nonce = randomToken();
@@ -127,23 +145,26 @@ Deno.serve({ port: 8000 }, async (request) => {
         nonce,
       }).toString();
 
+      // Se guardan state y nonce como cookies para verificar el callback y evitar ataques CSRF.
       const headers = new Headers({ location: googleUrl.toString() });
       headers.append("set-cookie", makeCookie("oauth_state", state, 600, "/auth/google/callback"));
       headers.append("set-cookie", makeCookie("oauth_nonce", nonce, 600, "/auth/google/callback"));
       return new Response(null, { status: 302, headers });
     }
 
-    // Paso 2: Google devuelve un código; el backend lo comprueba.
+    // Paso 2 del flujo OAuth: Google responde con el código de autorización y el backend lo intercambia por un token.
     if (request.method === "GET" && path === "/auth/google/callback") {
       const state = url.searchParams.get("state");
       const code = url.searchParams.get("code");
       const expectedState = getCookie(request, "oauth_state");
       const expectedNonce = getCookie(request, "oauth_nonce");
 
+      // Validación básica del callback para asegurar que la respuesta corresponde a esta sesión.
       if (!state || !code || !expectedState || !expectedNonce || state !== expectedState) {
         return Response.json({ error: "Login cancelado o verificación de estado fallida" }, { status: 400 });
       }
 
+      // Se solicita el token de acceso a Google con el código recibido.
       const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
         method: "POST",
         headers: { "content-type": "application/x-www-form-urlencoded" },
@@ -164,6 +185,7 @@ Deno.serve({ port: 8000 }, async (request) => {
         return Response.json({ error: "Falta el token de identidad" }, { status: 401 });
       }
 
+      // Verificación del JWT con la clave pública de Google para confirmar identidad y audiencia.
       const { payload } = await jwtVerify(tokens.id_token, googleKeys, {
         issuer: ["https://accounts.google.com", "accounts.google.com"],
         audience: GOOGLE_CLIENT_ID,
@@ -178,6 +200,7 @@ Deno.serve({ port: 8000 }, async (request) => {
         return Response.json({ error: "La identidad de Google no es válida" }, { status: 401 });
       }
 
+      // Se guarda o actualiza el usuario en la BD con la información recibida de Google.
       const name = typeof payload.name === "string" ? payload.name : payload.email;
       const picture = typeof payload.picture === "string" ? payload.picture : null;
       db.prepare(`
@@ -186,10 +209,12 @@ Deno.serve({ port: 8000 }, async (request) => {
           name = excluded.name, email = excluded.email, picture = excluded.picture
       `).run(payload.sub, name, payload.email, picture);
 
+      // Se crea una sesión local para mantener la autenticación del usuario en el navegador.
       const sessionId = randomToken();
       db.prepare("INSERT INTO sessions (session_hash, google_id, expires_at) VALUES (?, ?, ?)")
         .run(hashToken(sessionId), payload.sub, Date.now() + SESSION_SECONDS * 1000);
 
+      // Limpia los cookies temporales de OAuth y deja solo la sesión válida del usuario.
       const headers = new Headers({ location: "/" });
       headers.append("set-cookie", makeCookie("oauth_state", "", 0, "/auth/google/callback"));
       headers.append("set-cookie", makeCookie("oauth_nonce", "", 0, "/auth/google/callback"));
@@ -197,16 +222,17 @@ Deno.serve({ port: 8000 }, async (request) => {
       return new Response(null, { status: 302, headers });
     }
 
-    // Saber si el usuario ha iniciado sesión.
+    // Devuelve el usuario actual si existe una sesión válida en las cookies.
     if (request.method === "GET" && path === "/api/me") {
       return Response.json({ user: getUser(request) });
     }
 
-    // Evitar solicitudes de escritura iniciadas desde otros orígenes.
+    // Protege los métodos de escritura para que no sean enviados desde un origen no autorizado.
     if (["POST", "DELETE", "PUT", "PATCH"].includes(request.method) && !checkOrigin(request)) {
       return Response.json({ error: "Origen de solicitud no autorizado" }, { status: 403 });
     }
 
+    // Cierra la sesión actual eliminando su registro en la base de datos y la cookie del navegador.
     if (request.method === "POST" && path === "/auth/logout") {
       const sessionId = getCookie(request, "pokedex_session");
       if (sessionId) {
@@ -217,11 +243,12 @@ Deno.serve({ port: 8000 }, async (request) => {
       return new Response(null, { status: 204, headers });
     }
 
-    // Los tres endpoints de inventario son PRIVADOS.
+    // Colección de rutas protegidas para consultar y modificar el inventario del usuario autenticado.
     if (path === "/api/inventory" || path.startsWith("/api/inventory/")) {
       const user = getUser(request);
       if (!user) return unauthenticated();
 
+      // Obtiene la colección completa del usuario, ordenada por ID de carta.
       if (request.method === "GET" && path === "/api/inventory") {
         const items = db.prepare(`
           SELECT card_id AS cardId, quantity
@@ -230,6 +257,7 @@ Deno.serve({ port: 8000 }, async (request) => {
         return Response.json(items);
       }
 
+      // Agrega una nueva carta al inventario del usuario o aumenta su cantidad si ya existe.
       if (request.method === "POST" && path === "/api/inventory") {
         const body = await request.json().catch(() => null);
         const cardId = body && typeof body === "object" && "cardId" in body &&
@@ -244,6 +272,7 @@ Deno.serve({ port: 8000 }, async (request) => {
         return Response.json({ message: "Carta agregada" }, { status: 201 });
       }
 
+      // Elimina una unidad de la carta indicada; si llega a cero, se borra del inventario.
       if (request.method === "DELETE" && path.startsWith("/api/inventory/")) {
         const cardId = decodeURIComponent(path.slice("/api/inventory/".length));
         const row = db.prepare(
@@ -262,11 +291,14 @@ Deno.serve({ port: 8000 }, async (request) => {
       }
     }
 
+    // Ruta por defecto para errores de URL no implementada.
     return Response.json({ error: "Endpoint no encontrado" }, { status: 404 });
   } catch (error) {
+    // Captura errores inesperados y responde con un 500 para no filtrar detalles internos.
     console.error("Error del servidor:", error);
     return Response.json({ error: "Error interno del servidor" }, { status: 500 });
-   }
+  }
 });
 
+// Mensaje de arranque del servidor para facilitar la depuración local.
 console.log("API en http://localhost:8000");
