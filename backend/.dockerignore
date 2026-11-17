@@ -1,0 +1,9 @@
+# Nunca incluir secretos ni datos privados en la imagen.
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+node_modules
+.git
+*.log
