@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://REEMPLAZAR-POR-TU-BACKEND.onrender.com/api/:path*"
+      "destination": "https://proyecto-pokedex-e9uj.onrender.com/api/:path*"
     },
     {
       "source": "/auth/:path*",
-      "destination": "https://REEMPLAZAR-POR-TU-BACKEND.onrender.com/auth/:path*"
+      "destination": "https://proyecto-pokedex-e9uj.onrender.com/auth/:path*"
     },
     {
       "source": "/(.*)",

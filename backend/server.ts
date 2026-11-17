@@ -6,7 +6,7 @@ import { createRemoteJWKSet, jwtVerify } from "npm:jose@^6";
 //Configuración principal del servidor y credenciales de autenticación con Google.
 const GOOGLE_CLIENT_ID = Deno.env.get("GOOGLE_CLIENT_ID");
 const GOOGLE_CLIENT_SECRET = Deno.env.get("GOOGLE_CLIENT_SECRET");
-const FRONTEND_ORIGIN = Deno.env.get("FRONTEND_ORIGIN") ?? "http://localhost:5173";
+const FRONTEND_ORIGIN = (Deno.env.get("FRONTEND_ORIGIN") ?? "http://localhost:5173").replace(/\/$/, "");
 const REDIRECT_URI = `${FRONTEND_ORIGIN}/auth/google/callback`;
 const SECURE_COOKIE = FRONTEND_ORIGIN.startsWith("https://");
 const SESSION_SECONDS = 7 * 24 * 60 * 60;
@@ -18,7 +18,7 @@ if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
 
 //Rutas de archivos de datos y base de SQLite.
 const dataPath = new URL("./pokemon.json", import.meta.url);
-const dbPath = fileURLToPath(new URL("./pokedex.db", import.meta.url));
+const dbPath = Deno.env.get("POKEDEX_DB_PATH") ?? fileURLToPath(new URL("./pokedex.db", import.meta.url));
 const db = new DatabaseSync(dbPath);
 
 //Inicialización del esquema de base de datos con las tablas de usuarios, sesiones y inventario.
@@ -122,11 +122,17 @@ async function cardsHandler(_request: Request): Promise<Response> {
 }
 
 //Punto de entrada principal: recibe cada solicitud HTTP y despacha a la ruta apropiada.
-Deno.serve({ port: 8000 }, async (request) => {
+const port = Number(Deno.env.get("PORT") ?? "8000");
+Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
   const url = new URL(request.url);
   const path = url.pathname;
 
   try {
+    //Endpoint de estado: útil para verificar que el backend desplegado responde.
+    if (request.method === "GET" && path === "/api/health") {
+      return Response.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+    }
+
     //Endpoint público para devolver el catálogo de cartas disponible.
     if (request.method === "GET" && path === "/api/cards") {
       return Response.json(await readCards());
@@ -225,7 +231,7 @@ Deno.serve({ port: 8000 }, async (request) => {
 
     //Devuelve el usuario actual si existe una sesion valida en las cookies.
     if (request.method === "GET" && path === "/api/me") {
-      return Response.json({ user: getUser(request) });
+      return Response.json({ user: getUser(request) }, { headers: { "Cache-Control": "no-store" } });
     }
 
     //Protege los metodos de escritura para que no sean enviados desde un origen no autorizado.
@@ -256,7 +262,7 @@ Deno.serve({ port: 8000 }, async (request) => {
           SELECT card_id AS cardId, quantity
           FROM inventory WHERE google_id = ? ORDER BY card_id 
         `).all(user.id) as InventoryRow[];
-        return Response.json(items);
+        return Response.json(items, { headers: { "Cache-Control": "no-store" } });
       }
 
       // Agrega una nueva carta al inventario del usuario o aumenta su cantidad si ya existe.
@@ -303,4 +309,4 @@ Deno.serve({ port: 8000 }, async (request) => {
 });
 
 //Mensaje de arranque del servidor (API escucha)
-console.log("API en http://localhost:8000");
+console.log(`API escuchando en 0.0.0.0:${port}`);
