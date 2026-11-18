@@ -10,23 +10,26 @@ import {
 import CardLayout from "./components/CardLayout";
 
 function App() {
-
+  // Estado de datos cargados desde el backend.
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);
   const [inventory, setInventory] = useState([]);
+
+  // Estado de interfaz: vista activa, carga y mensajes visibles al usuario.
   const [view, setView] = useState("catalog");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
-  // Estados de los filtros
+  // Estados controlados por los campos de filtrado del catalogo.
   const [searchName, setSearchName] = useState("");
   const [selectedRarity, setSelectedRarity] = useState("");
   const [selectedExpansion, setSelectedExpansion] = useState("");
   const [selectedVariant, setSelectedVariant] = useState("");
 
-  // Obtener las cartas desde la API
-  useEffect(() => {Promise.all([getCards(), getMe()])
+  // Al montar la aplicacion se cargan el catalogo y la sesion actual.
+  useEffect(() => {
+    Promise.all([getCards(), getMe()])
       .then(async ([loadedCards, loadedUser]) => {
         setCards(loadedCards);
         setUser(loadedUser);
@@ -45,7 +48,7 @@ function App() {
   const expansions = getUniqueValues("expansion");
   const variants = getUniqueValues("variant");
 
-  // Filtrar las cartas según los criterios seleccionados
+  // Combinacion de filtros: una carta debe cumplir todos los criterios activos.
   const filteredCards = cards.filter((card) => {
     const matchesName = card.name
       .toLowerCase()
@@ -68,15 +71,18 @@ function App() {
     );
   });
 
+  // Relaciona los datos de inventario con la informacion completa de cada carta.
   const inventoryCards = inventory.map((item) => {
    const card = cards.find((candidate) => candidate.id === item.cardId);
    return card ? { ...card, quantity: item.quantity } : null;
   }).filter(Boolean);
 
+  // Vuelve a consultar el inventario despues de cualquier cambio.
   async function refreshInventory() {
     setInventory(await getInventory());
   }
 
+  // Agrega una carta y muestra el resultado de la operacion.
   async function handleAdd(cardId) {
     try {
       setMessage("");
@@ -88,6 +94,7 @@ function App() {
     }
   }
 
+  // Quita una copia y muestra el resultado de la operacion.
   async function handleRemove(cardId) {
     try {
       setMessage("");
@@ -99,6 +106,7 @@ function App() {
     }
   }
 
+  // Cierra la sesion y vuelve el catalogo a su vista inicial.
   async function handleLogout() {
     try {
       await logout();

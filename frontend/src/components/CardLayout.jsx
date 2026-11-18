@@ -1,3 +1,4 @@
+// Tarjeta reutilizable que muestra la informacion principal de una carta.
 function CardLayout({ card, quantity, actionLabel, onAction }) {
   return (
     <article className="card">
@@ -9,8 +10,10 @@ function CardLayout({ card, quantity, actionLabel, onAction }) {
         <p>{card.type}</p>
       </div>
 
+      {/* La imagen conserva el nombre de la carta como texto alternativo. */}
       <img src={card.image} alt={`Imagen de ${card.name}`} />
 
+      {/* Datos secundarios usados tanto en catalogo como en inventario. */}
       <div className="card-row">
         <div>Tipo: {card.type}</div>
         <div>Rareza: {card.rarity}</div>
@@ -19,6 +22,8 @@ function CardLayout({ card, quantity, actionLabel, onAction }) {
         <div>Precio estimado: US${card.price_usd}</div>
         {quantity !== undefined && <strong>Cantidad: {quantity}</strong>}
       </div>
+
+      {/* Solo se muestra una accion cuando el componente recibe su manejador. */}
       {onAction && (
         <button type="button" className="card-action" onClick={onAction}>
           {actionLabel}

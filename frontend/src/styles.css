@@ -5,6 +5,7 @@ body {
   color: #111827;
 }
 
+/* Contenedor principal que centra y limita el ancho de la interfaz. */
 .container {
   max-width: 980px;
   margin: 0 auto;
@@ -16,6 +17,7 @@ h1 {
   margin: 0;
 }
 
+/* Texto de presentacion debajo del titulo principal. */
 .subtitle {
   margin: 6px 0 20px;
   color: #6b7280;
@@ -27,6 +29,7 @@ h1 {
   gap: 12px;
 }
 
+/* Contenedor visual compartido por las tarjetas del catalogo e inventario. */
 .card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -65,6 +68,7 @@ h1 {
   font-size: 1.5rem;
 }
 
+/* Mantiene juntos el nombre y el codigo de cada carta. */
 .name-row {
   display: flex;
   align-items: center;
@@ -105,6 +109,7 @@ h1 {
 }
 
 @media (max-width: 800px) {
+  /* En pantallas pequenas las cartas ocupan una sola columna. */
   .card-grid {
     grid-template-columns: 1fr;
   }
@@ -115,7 +120,7 @@ img {
     max-height: 60%;
 }
 
-
+/* Fondo principal con transicion automatica entre tonos claros y oscuros. */
 body {
   background-color: #ff9a9e; 
   animation: slowBgChange 10s infinite alternate ease-in-out; 
@@ -142,6 +147,7 @@ body {
   }
 }
 
+/* Tamaño fijo del icono mostrado junto al encabezado. */
 #pokeball {
   margin-left: auto;
   flex: 0 0 auto;
@@ -156,7 +162,7 @@ body {
   gap: 16px;
 }
 
-/*Estilos para los filtros*/
+/* Controles agrupados para buscar y filtrar el catalogo. */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -171,7 +177,6 @@ body {
   gap: 6px;
   flex: 1 1 180px;
 }
-
 
 .filter-group label {
   font-size: 14px;
@@ -191,12 +196,12 @@ body {
   box-sizing: border-box;
 }
 
-
 .filter-group input:focus,.filter-group select:focus {
   outline: none;
   border-color: #ef4444;
 }
 
+/* Accion principal para eliminar todos los criterios activos. */
 .clear-button {
   background-color: #ef4444;
   color: white;
@@ -212,7 +217,7 @@ body {
   background-color: #dc2626;
 }
 
-
+/* Texto informativo que muestra cuantas coincidencias encontro el filtro. */
 .results-count {
   font-size: 14px;
   color: #6b7280;
@@ -223,6 +228,7 @@ body {
   color: #b91c1c;
 }
 
+/* Acciones de usuario y botones de navegacion compartidos. */
 .user-actions { 
   display: flex; 
   align-items: center; 
