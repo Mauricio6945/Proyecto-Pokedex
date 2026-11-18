@@ -195,7 +195,7 @@ body {
   background-repeat: repeat;
   background-size: 176px 180px;
   background-blend-mode: soft-light;
-  animation: slowBgChange 10s infinite alternate ease-in-out; 
+  animation: slowBgChange 30s infinite alternate ease-in-out; 
 }
 
 @keyframes slowBgChange {
@@ -203,7 +203,7 @@ body {
     background-color: #FFB6B6;
   }
   33% {
-    background-color: #FFD5D5;
+    background-color: #d9a4a4;
   }
   66% {
     background-color: #FFAAAA;
@@ -479,4 +479,29 @@ body {
   max-width: 100%; 
   max-height: 240px; 
   object-fit: contain; 
+}
+
+/* Consistent hover and pressed feedback for every interactive button. */
+button,
+.login-button {
+  transition: filter 140ms ease, transform 100ms ease, box-shadow 140ms ease;
+}
+
+button:not(:disabled):hover,
+.login-button:hover {
+  filter: grayscale(32%) brightness(0.98);
+}
+
+button:not(:disabled):active,
+.login-button:active {
+  filter: grayscale(42%) brightness(0.9);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 18%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  .login-button {
+    transition: none;
+  }
 }
