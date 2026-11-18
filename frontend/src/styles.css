@@ -217,6 +217,19 @@ body {
   background-color: #dc2626;
 }
 
+.set-progress-toggle {
+  margin: 0 0 14px;
+}
+
+.set-progress-list {
+  margin: 0 0 18px;
+  padding: 14px 18px 14px 34px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  line-height: 1.8;
+}
+
 /* Texto informativo que muestra cuantas coincidencias encontro el filtro. */
 .results-count {
   font-size: 14px;

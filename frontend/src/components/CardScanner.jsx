@@ -60,14 +60,14 @@ function CardScanner({ cards, onAdd }) {
     if (!file || scanning) return;
 
     setScanning(true);
-    setStatus("Leyendo el nombre de la carta...");
+    setStatus("Analizando carta...");
     let worker;
     try {
       worker = await createWorker("eng");
       const { data: { text } } = await worker.recognize(file);
       setRecognizedText(text.trim());
       setSearch("");
-      setStatus(text.trim() ? "Revisa las opciones y elige la carta correspondiente." : "No se pudo leer texto. Puedes buscar el nombre manualmente.");
+      setStatus(text.trim() ? "Revisa las opciones y elige la carta correspondiente." : "No se pudo leer texto. Busca la carta manualmente.");
     } catch (error) {
       setStatus(error.message || "No se pudo procesar la imagen.");
     } finally {
@@ -117,13 +117,13 @@ function CardScanner({ cards, onAdd }) {
         <>
           <div className="filter-group scanner-search">
             <label htmlFor="scanner-search">Buscando carta</label>
-            <input id="scanner-search" type="search" placeholder="Escribe o corrige el nombre"
+            <input id="scanner-search" type="search" placeholder="No se encontro la carta buscada?, busquela aqui"
               value={search} onChange={(event) => setSearch(event.target.value)} />
           </div>
           <p className="results-count">
             {search.trim() ? "Resultados del catálogo" : "Opciones sugeridas por el OCR"}: {visibleCards.length}
           </p>
-          {visibleCards.length === 0 && <p>No hay coincidencias. Prueba con otra parte del nombre.</p>}
+          {visibleCards.length === 0 && <p>No hay coincidencias.</p>}
           <section className="card-grid">
             {visibleCards.map((card) => (
               <CardLayout key={card.id} card={card} actionLabel="Añadir esta carta"

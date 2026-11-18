@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { addToInventory, getInventory, removeFromInventory } from "../api/Cardapi";
 import CardLayout from "./CardLayout";
 
@@ -30,6 +31,8 @@ export function useInventoryHandler({ setInventory, setMessage }) {
 
 // Presenta las cartas existentes en el inventario junto con sus cantidades.
 function InventoryHandler({ cards, inventory, onRemove }) {
+  const [showSetProgress, setShowSetProgress] = useState(false);
+
   // Une cada registro del inventario con los datos completos de su carta.
   const inventoryCards = inventory
     .map((item) => {
@@ -38,9 +41,38 @@ function InventoryHandler({ cards, inventory, onRemove }) {
     })
     .filter(Boolean);
 
+  // Cuenta cartas distintas por expansión para medir el progreso de colección.
+  const ownedCardIds = new Set(inventory.map((item) => item.cardId));
+  const setProgress = cards.reduce((sets, card) => {
+    const setName = card.expansion || card.set_id || "Set desconocido";
+    if (!sets[setName]) sets[setName] = { total: 0, owned: 0 };
+    sets[setName].total += 1;
+    if (ownedCardIds.has(card.id)) sets[setName].owned += 1;
+    return sets;
+  }, {});
+
   return (
     <>
       <h2>Mi inventario</h2>
+      <button
+        type="button"
+        className="clear-button set-progress-toggle"
+        aria-expanded={showSetProgress}
+        onClick={() => setShowSetProgress((visible) => !visible)}
+      >
+        Cartas por set
+      </button>
+      {showSetProgress && (
+        <ul className="set-progress-list">
+          {Object.entries(setProgress)
+            .sort(([setA], [setB]) => setA.localeCompare(setB))
+            .map(([setName, progress]) => (
+              <li key={setName}>
+                {setName}: {progress.owned}/{progress.total}
+              </li>
+            ))}
+        </ul>
+      )}
       {inventoryCards.length === 0 && <p>Aún no tienes cartas en tu inventario.</p>}
       <section className="card-grid">
         {inventoryCards.map((card) => (
