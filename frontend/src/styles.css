@@ -10,7 +10,7 @@ body {
   max-width: 980px;
   margin: 0 auto;
   padding: 24px 16px;
-  background: white;
+  background: rgb(255 255 255 / 92%);
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 /* Texto de presentacion debajo del titulo principal. */
 .subtitle {
   margin: 6px 0 20px;
-  color: #6b7280;
+  color: black;
 }
 
 .card-row {
@@ -28,7 +28,11 @@ h1 {
   display: flex;
   gap: 6px;
   font-family: Roboto , BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+  font-weight: 550;
   align-items: center;
+  background: #f3f4f6;
+  padding: 6px 6px;
+  border:#111827  1px solid;
 }
 .card-grid {
   display: grid;
@@ -39,7 +43,7 @@ h1 {
 /* Contenedor visual compartido por las tarjetas del catalogo e inventario. */
 .card {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #120D08;
   border-radius: 18px;
   padding: 16px;
   min-height: 180px;
@@ -47,6 +51,63 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.card--grass { 
+  background-color: #96dd5f; 
+  background-image: linear-gradient(145deg, #b8f08d 0%, #96dd5f 56%, #77c849 100%);
+}
+
+.card--fire { 
+  background-color: #f65a5a;
+  background-image: linear-gradient(145deg, #fa9999 0%, #f65a5a 56%, #da3e3e 100%);
+}
+
+ .card--fighting {
+   background-color: #e2735a; 
+   background-image: linear-gradient(145deg, #f3a18e 0%, #e2735a 56%, #c65d45 100%);
+}
+
+.card--water { 
+  background-color: #8fe0f5;
+  background-image: linear-gradient(145deg, #c0f0fa 0%, #8fe0f5 56%, #69c4df 100%);
+}
+
+.card--colorless { 
+  background-color: #dbeaf0; 
+  background-image: linear-gradient(145deg, #f2f8fa 0%, #dbeaf0 56%, #c0d5de 100%);
+}
+
+.card--lightning {
+   background-color: #e6e670;
+   background-image: linear-gradient(145deg, #f5f5a9 0%, #e6e670 56%, #cdcd4b 100%);
+}
+
+.card--psychic {
+ background-color: #d69cf7;
+ background-image: linear-gradient(145deg, #eac8fc 0%, #d69cf7 56%, #b97de0 100%);
+}
+
+.card--dark { 
+  background-color: #5c548c; 
+  background-image: linear-gradient(145deg, #817aa8 0%, #5c548c 56%, #45406f 100%);
+}
+
+.card--metal { 
+  background-color: #6871a6;
+  background-image: linear-gradient(145deg, #9199c4 0%, #6871a6 56%, #505987 100%);
+}
+
+.card--fairy { 
+  background-color: #d48cb7; 
+  background-image: linear-gradient(145deg, #e7b1ce 0%, #d48cb7 56%, #b96e9b 100%);
+}
+
+.card--dragon {
+   background-color: #91704b; 
+   background-image: linear-gradient(145deg, #b49675 0%, #91704b 56%, #735536 100%);
+}
+
+
 
 .card-top {
   display: flex;
@@ -130,6 +191,10 @@ img {
 /* Fondo principal con transicion automatica entre tonos claros y oscuros. */
 body {
   background-color: #ff9a9e; 
+  background-image: url("./img/background_pokeball.png");
+  background-repeat: repeat;
+  background-size: 176px 180px;
+  background-blend-mode: soft-light;
   animation: slowBgChange 10s infinite alternate ease-in-out; 
 }
 

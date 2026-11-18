@@ -1,10 +1,26 @@
 import { useI18n } from "../i18n";
 
+const typeClasses = {
+  grass: "grass",
+  fire: "fire",
+  fighting: "fighting",
+  water: "water",
+  colorless: "colorless",
+  lightning: "lightning",
+  lighting: "lightning",
+  psychic: "psychic",
+  dark: "dark",
+  metal: "metal",
+  fairy: "fairy",
+  dragon: "dragon",
+};
+
 // Tarjeta reutilizable que muestra la informacion principal de una carta.
 function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabel, onSecondaryAction }) {
   const { t } = useI18n();
+  const typeClass = typeClasses[card.type?.trim().toLowerCase()];
   return (
-    <article className="card">
+    <article className={`card${typeClass ? ` card--${typeClass}` : ""}`}>
       <div className="card-middle">
         <div className="name-row">
           <h2>{card.name}</h2>
