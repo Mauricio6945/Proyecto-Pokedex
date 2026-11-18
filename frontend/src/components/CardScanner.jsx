@@ -115,9 +115,8 @@ function CardScanner({ cards, onAdd }) {
       {status && <p role="status" aria-live="polite">{status}</p>}
       {(recognizedText || status.includes("No se pudo leer")) && (
         <>
-          {recognizedText && <p><strong>Texto reconocido:</strong> {recognizedText}</p>}
           <div className="filter-group scanner-search">
-            <label htmlFor="scanner-search">Buscar carta por nombre</label>
+            <label htmlFor="scanner-search">Buscando carta</label>
             <input id="scanner-search" type="search" placeholder="Escribe o corrige el nombre"
               value={search} onChange={(event) => setSearch(event.target.value)} />
           </div>
