@@ -42,6 +42,29 @@ export function removeFromInventory(cardId) {
   });
 }
 
+// Obtiene los mazos del usuario junto con las cartas que contiene cada uno.
+export function getDecks() {
+  return apiRequest("/api/decks");
+}
+
+// Crea un mazo personal con el nombre indicado.
+export function createDeck(name) {
+  return apiRequest("/api/decks", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ name }),
+  });
+}
+
+// Añade una copia de una carta a uno de los mazos del usuario.
+export function addCardToDeck(deckId, cardId) {
+  return apiRequest(`/api/decks/${encodeURIComponent(deckId)}/cards`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ cardId }),
+  });
+}
+
 // Finaliza la sesion del usuario en el backend.
 export function logout() {
   return apiRequest("/auth/logout", { method: "POST" });

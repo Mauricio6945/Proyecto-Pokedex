@@ -306,6 +306,81 @@ body {
   margin-top: 12px; 
 }
 
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.card-actions .card-action {
+  flex: 1 1 0;
+  min-width: 0;
+  margin-top: 0;
+  padding: 10px 8px;
+  font-size: 0.85rem;
+}
+
+.secondary-card-action {
+  background: #374151;
+}
+
+.deck-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgb(17 24 39 / 55%);
+}
+
+.deck-dialog {
+  width: min(100%, 420px);
+  padding: 22px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 16px 50px rgb(0 0 0 / 25%);
+}
+
+.deck-dialog h3 { margin-top: 0; }
+.deck-dialog label { display: block; margin-bottom: 6px; font-weight: bold; }
+.deck-dialog select, .deck-create-controls input {
+  min-height: 42px;
+  padding: 9px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+.deck-dialog select { width: 100%; }
+
+.deck-dialog-actions, .deck-create-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.deck-dialog-actions > * { flex: 1; }
+
+.deck-cancel-button {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deck-create-form { max-width: 620px; margin: 18px 0 24px; }
+.deck-create-form label { display: block; margin-bottom: 6px; font-weight: bold; }
+.deck-create-controls input { flex: 1; min-width: 0; }
+.deck-create-controls .card-action { margin-top: 0; }
+.decks-list { display: grid; gap: 20px; }
+.deck-panel { padding: 18px; border: 1px solid #e5e7eb; border-radius: 14px; }
+.deck-panel h3 { margin-top: 0; }
+
 .card-row { 
   display: grid; 
   gap: 6px; 

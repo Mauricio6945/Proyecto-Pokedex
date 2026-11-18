@@ -42,6 +42,19 @@ db.exec(`
     quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity >= 1),
     PRIMARY KEY (google_id, card_id)
   );
+  CREATE TABLE IF NOT EXISTS decks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    google_id TEXT NOT NULL REFERENCES users(google_id),
+    name TEXT NOT NULL,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch()),
+    UNIQUE (google_id, name)
+  );
+  CREATE TABLE IF NOT EXISTS deck_cards (
+    deck_id INTEGER NOT NULL REFERENCES decks(id) ON DELETE CASCADE,
+    card_id TEXT NOT NULL,
+    quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity >= 1),
+    PRIMARY KEY (deck_id, card_id)
+  );
 `);
 
 // Tipos auxiliares para trabajar con información del usuario y del inventario.
@@ -248,6 +261,82 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       const headers = new Headers();
       headers.append("set-cookie", makeCookie("pokedex_session", "", 0));
       return new Response(null, { status: 204, headers });
+    }
+
+    // Rutas protegidas para consultar y administrar los mazos del usuario.
+    if (path === "/api/decks" || path.startsWith("/api/decks/")) {
+      const user = getUser(request);
+      if (!user) return unauthenticated();
+
+      if (request.method === "GET" && path === "/api/decks") {
+        const decks = db.prepare(
+          "SELECT id, name FROM decks WHERE google_id = ? ORDER BY created_at, id",
+        ).all(user.id) as Array<{ id: number; name: string }>;
+        const deckCards = db.prepare(`
+          SELECT dc.deck_id AS deckId, dc.card_id AS cardId, dc.quantity
+          FROM deck_cards AS dc
+          JOIN decks AS d ON d.id = dc.deck_id
+          WHERE d.google_id = ? ORDER BY dc.deck_id, dc.card_id
+        `).all(user.id) as Array<{ deckId: number; cardId: string; quantity: number }>;
+        return Response.json(decks.map((deck) => ({
+          ...deck,
+          cards: deckCards.filter((card) => card.deckId === deck.id)
+            .map(({ cardId, quantity }) => ({ cardId, quantity })),
+        })), { headers: { "Cache-Control": "no-store" } });
+      }
+
+      if (request.method === "POST" && path === "/api/decks") {
+        const body = await request.json().catch(() => null);
+        const name = body && typeof body === "object" && "name" in body &&
+            typeof body.name === "string" ? body.name.trim() : "";
+        if (!name || name.length > 60) {
+          return Response.json({ error: "El nombre debe tener entre 1 y 60 caracteres" }, { status: 400 });
+        }
+        try {
+          const result = db.prepare(
+            "INSERT INTO decks (google_id, name) VALUES (?, ?)",
+          ).run(user.id, name);
+          return Response.json({ id: Number(result.lastInsertRowid), name, cards: [] }, { status: 201 });
+        } catch (error) {
+          if (error instanceof Error && error.message.includes("UNIQUE constraint failed")) {
+            return Response.json({ error: "Ya tienes un mazo con ese nombre" }, { status: 409 });
+          }
+          throw error;
+        }
+      }
+
+      const deckCardsPath = path.match(/^\/api\/decks\/(\d+)\/cards$/);
+      if (request.method === "POST" && deckCardsPath) {
+        const deckId = Number(deckCardsPath[1]);
+        const deck = db.prepare(
+          "SELECT id FROM decks WHERE id = ? AND google_id = ?",
+        ).get(deckId, user.id);
+        if (!deck) return Response.json({ error: "Mazo no encontrado" }, { status: 404 });
+
+        const body = await request.json().catch(() => null);
+        const cardId = body && typeof body === "object" && "cardId" in body &&
+            typeof body.cardId === "string" ? body.cardId : null;
+        if (!cardId || !(await readCards()).some((card) => card.id === cardId)) {
+          return Response.json({ error: "Carta no válida" }, { status: 400 });
+        }
+        const owned = db.prepare(
+          "SELECT quantity FROM inventory WHERE google_id = ? AND card_id = ?",
+        ).get(user.id, cardId) as { quantity: number } | undefined;
+        if (!owned) return Response.json({ error: "La carta no está en tu inventario" }, { status: 400 });
+
+        const inDeck = db.prepare(
+          "SELECT quantity FROM deck_cards WHERE deck_id = ? AND card_id = ?",
+        ).get(deckId, cardId) as { quantity: number } | undefined;
+        if ((inDeck?.quantity ?? 0) >= owned.quantity) {
+          return Response.json({ error: "Este mazo ya contiene todas las copias que tienes de esta carta" }, { status: 400 });
+        }
+
+        db.prepare(`
+          INSERT INTO deck_cards (deck_id, card_id, quantity) VALUES (?, ?, 1)
+          ON CONFLICT(deck_id, card_id) DO UPDATE SET quantity = quantity + 1
+        `).run(deckId, cardId);
+        return Response.json({ message: "Carta añadida al mazo" }, { status: 201 });
+      }
     }
 
     //Coleccion de rutas protegidas para consultar y modificar el inventario del usuario autenticado.

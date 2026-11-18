@@ -1,5 +1,5 @@
 // Tarjeta reutilizable que muestra la informacion principal de una carta.
-function CardLayout({ card, quantity, actionLabel, onAction }) {
+function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabel, onSecondaryAction }) {
   return (
     <article className="card">
       <div className="card-middle">
@@ -24,11 +24,18 @@ function CardLayout({ card, quantity, actionLabel, onAction }) {
       </div>
 
       {/* Solo se muestra una accion cuando el componente recibe su manejador. */}
-      {onAction && (
+      {onAction && onSecondaryAction ? (
+        <div className="card-actions">
+          <button type="button" className="card-action" onClick={onAction}>{actionLabel}</button>
+          <button type="button" className="card-action secondary-card-action" onClick={onSecondaryAction}>
+            {secondaryActionLabel}
+          </button>
+        </div>
+      ) : onAction ? (
         <button type="button" className="card-action" onClick={onAction}>
           {actionLabel}
         </button>
-      )}
+      ) : null}
     </article>
   );
 }

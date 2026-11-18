@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { getCards, getInventory, getMe } from "./api/Cardapi";
+import { addCardToDeck, createDeck, getCards, getDecks, getInventory, getMe } from "./api/Cardapi";
 import FilterCards from "./components/FilterCards";
 import InventoryHandler, { useInventoryHandler } from "./components/InventoryHandler";
 import SessionHandler from "./components/SessionHandler";
 import CardScanner from "./components/CardScanner";
+import DeckHandler from "./components/DeckHandler";
 
 function App() {
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);
   const [inventory, setInventory] = useState([]);
+  const [decks, setDecks] = useState([]);
   const [view, setView] = useState("catalog");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -21,11 +23,40 @@ function App() {
       .then(async ([loadedCards, loadedUser]) => {
         setCards(loadedCards);
         setUser(loadedUser);
-        if (loadedUser) setInventory(await getInventory());
+        if (loadedUser) {
+          const [loadedInventory, loadedDecks] = await Promise.all([getInventory(), getDecks()]);
+          setInventory(loadedInventory);
+          setDecks(loadedDecks);
+        }
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
+
+  async function handleCreateDeck(name) {
+    try {
+      const deck = await createDeck(name);
+      setDecks((current) => [...current, deck]);
+      setMessage(`Mazo “${deck.name}” creado.`);
+      return true;
+    } catch (err) {
+      setMessage(err.message);
+      return false;
+    }
+  }
+
+  async function handleAddToDeck(deckId, cardId) {
+    try {
+      await addCardToDeck(deckId, cardId);
+      setDecks(await getDecks());
+      const deckName = decks.find((deck) => deck.id === deckId)?.name;
+      setMessage(deckName ? `Carta añadida a “${deckName}”.` : "Carta añadida al mazo.");
+      return true;
+    } catch (err) {
+      setMessage(err.message);
+      return false;
+    }
+  }
 
   return (
     <main className="container">
@@ -47,6 +78,7 @@ function App() {
                 onLoggedOut={() => {
                   setUser(null);
                   setInventory([]);
+                  setDecks([]);
                   setView("catalog");
                   setMessage("Sesión cerrada.");
                 }}
@@ -69,6 +101,9 @@ function App() {
         {user && (
           <button type="button" onClick={() => setView("scanner")}>Escaneo de cartas</button>
         )}
+        {user && (
+          <button type="button" onClick={() => setView("decks")}>Mazos</button>
+        )}
       </nav>
 
       {loading && <p>Cargando...</p>}
@@ -79,10 +114,14 @@ function App() {
         <FilterCards cards={cards} user={user} onAdd={inventoryActions.handleAdd} />
       )}
       {!loading && !error && view === "inventory" && user && (
-        <InventoryHandler cards={cards} inventory={inventory} onRemove={inventoryActions.handleRemove} />
+        <InventoryHandler cards={cards} inventory={inventory} decks={decks}
+          onRemove={inventoryActions.handleRemove} onAddToDeck={handleAddToDeck} />
       )}
       {!loading && !error && view === "scanner" && user && (
         <CardScanner cards={cards} onAdd={inventoryActions.handleAdd} />
+      )}
+      {!loading && !error && view === "decks" && user && (
+        <DeckHandler decks={decks} cards={cards} onCreateDeck={handleCreateDeck} />
       )}
     </main>
   );
