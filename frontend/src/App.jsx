@@ -5,6 +5,7 @@ import InventoryHandler, { useInventoryHandler } from "./components/InventoryHan
 import SessionHandler from "./components/SessionHandler";
 import CardScanner from "./components/CardScanner";
 import DeckHandler from "./components/DeckHandler";
+import { useI18n } from "./i18n";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -15,8 +16,9 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
+  const { language, setLanguage, t, translateError } = useI18n();
 
-  const inventoryActions = useInventoryHandler({ setInventory, setMessage });
+  const inventoryActions = useInventoryHandler({ setInventory, setMessage, t, translateError });
 
   useEffect(() => {
     Promise.all([getCards(), getMe()])
@@ -37,10 +39,10 @@ function App() {
     try {
       const deck = await createDeck(name);
       setDecks((current) => [...current, deck]);
-      setMessage(`Mazo “${deck.name}” creado.`);
+      setMessage(t("deckCreated", { name: deck.name }));
       return true;
     } catch (err) {
-      setMessage(err.message);
+      setMessage(translateError(err.message));
       return false;
     }
   }
@@ -50,10 +52,10 @@ function App() {
       await addCardToDeck(deckId, cardId);
       setDecks(await getDecks());
       const deckName = decks.find((deck) => deck.id === deckId)?.name;
-      setMessage(deckName ? `Carta añadida a “${deckName}”.` : "Carta añadida al mazo.");
+      setMessage(deckName ? t("cardAddedToNamedDeck", { name: deckName }) : t("cardAddedToDeck"));
       return true;
     } catch (err) {
-      setMessage(err.message);
+      setMessage(translateError(err.message));
       return false;
     }
   }
@@ -62,52 +64,61 @@ function App() {
     <main className="container">
       <header className="header">
         <div>
-          <h1>Pokedex de Cartas</h1>
-          <p className="subtitle">Catalogo publico, e inventario personal</p>
+          <h1>{t("appTitle")}</h1>
+          <p className="subtitle">{t("subtitle")}</p>
         </div>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
-          alt="Poké Ball"
+          alt={t("pokeballAlt")}
           id="pokeball"
         />
         <div className="user-actions">
           {user ? (
             <>
-              <span>Hola, {user.name}</span>
+              <span>{t("hello", { name: user.name })}</span>
               <SessionHandler
                 onLoggedOut={() => {
                   setUser(null);
                   setInventory([]);
                   setDecks([]);
                   setView("catalog");
-                  setMessage("Sesión cerrada.");
+                  setMessage(t("logoutDone"));
                 }}
                 onError={setMessage}
               />
             </>
           ) : (
-            <a className="login-button" href="/auth/google">Iniciar sesión con Google</a>
+            <a className="login-button" href="/auth/google">{t("login")}</a>
           )}
+          <label className="visually-hidden" htmlFor="language-select">{t("language")}</label>
+          <select id="language-select" className="language-select" aria-label={t("language")}
+            value={language} onChange={(event) => {
+              setLanguage(event.target.value);
+              setMessage("");
+            }}>
+            <option value="es">{t("spanish")}</option>
+            <option value="en">{t("english")}</option>
+          </select>
         </div>
       </header>
 
       <nav className="navigation">
-        <button type="button" onClick={() => setView("catalog")}>Catálogo</button>
+        <button type="button" onClick={() => setView("catalog")}>{t("catalog")}</button>
         {user && (
           <button type="button" onClick={() => setView("inventory")}>
-            Mi inventario ({inventory.reduce((total, item) => total + item.quantity, 0)})
+            {t("inventoryNav", { count: inventory.reduce((total, item) => total + item.quantity, 0) })}
           </button>
         )}
         {user && (
-          <button type="button" onClick={() => setView("scanner")}>Escaneo de cartas</button>
+          <button type="button" onClick={() => setView("scanner")}>{t("scannerNav")}</button>
         )}
         {user && (
-          <button type="button" onClick={() => setView("decks")}>Mazos</button>
+          <button type="button" onClick={() => setView("decks")}>{t("decksNav")}</button>
         )}
       </nav>
 
-      {loading && <p>Cargando...</p>}
-      {error && <p className="error-message">{error}</p>}
+      {loading && <p>{t("loading")}</p>}
+      {error && <p className="error-message">{translateError(error)}</p>}
       {message && <p role="status">{message}</p>}
 
       {!loading && !error && view === "catalog" && (

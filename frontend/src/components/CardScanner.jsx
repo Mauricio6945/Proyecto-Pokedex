@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createWorker } from "tesseract.js";
 import CardLayout from "./CardLayout";
+import { useI18n } from "../i18n";
 
 const normalize = (value) => value
   .normalize("NFD")
@@ -49,6 +50,7 @@ function rankCards(cards, text) {
 }
 
 function CardScanner({ cards, onAdd }) {
+  const { t } = useI18n();
   const [file, setFile] = useState(null);
   const [scanning, setScanning] = useState(false);
   const [status, setStatus] = useState("");
@@ -60,16 +62,16 @@ function CardScanner({ cards, onAdd }) {
     if (!file || scanning) return;
 
     setScanning(true);
-    setStatus("Analizando carta...");
+    setStatus({ key: "readingCard" });
     let worker;
     try {
       worker = await createWorker("eng");
       const { data: { text } } = await worker.recognize(file);
       setRecognizedText(text.trim());
       setSearch("");
-      setStatus(text.trim() ? "Revisa las opciones y elige la carta correspondiente." : "No se pudo leer texto. Busca la carta manualmente.");
-    } catch (error) {
-      setStatus(error.message || "No se pudo procesar la imagen.");
+      setStatus({ key: text.trim() ? "reviewMatches" : "noTextRead" });
+    } catch {
+      setStatus({ key: "scannerError" });
     } finally {
       await worker?.terminate();
       setScanning(false);
@@ -83,9 +85,7 @@ function CardScanner({ cards, onAdd }) {
 
   async function chooseCard(card) {
     const added = await onAdd(card.id);
-    setStatus(added
-      ? `${card.name} se añadió al inventario.`
-      : `No se pudo añadir ${card.name} al inventario.`);
+    setStatus({ key: added ? "cardAddedNamed" : "cardAddFailed", variables: { name: card.name } });
     if (added) {
       setFile(null);
       setRecognizedText("");
@@ -95,10 +95,10 @@ function CardScanner({ cards, onAdd }) {
 
   return (
     <section className="scanner-section">
-      <h2>Escaneo de cartas</h2>
-      <p>Sube una imagen clara para buscar opciones en el catálogo. Revisa los resultados y elige la carta correcta.</p>
+      <h2>{t("scannerTitle")}</h2>
+      <p>{t("scannerDescription")}</p>
       <form onSubmit={handleScan}>
-        <label htmlFor="card-image">Imagen de la carta</label>
+        <label htmlFor="card-image">{t("cardImage")}</label>
         <input
           id="card-image"
           type="file"
@@ -109,24 +109,24 @@ function CardScanner({ cards, onAdd }) {
           }}
         />
         <button type="submit" className="scanner-button" disabled={!file || scanning}>
-          {scanning ? "Escaneando..." : "Escanear carta"}
+          {scanning ? t("scanning") : t("scanCard")}
         </button>
       </form>
-      {status && <p role="status" aria-live="polite">{status}</p>}
-      {(recognizedText || status.includes("No se pudo leer")) && (
+      {status && <p role="status" aria-live="polite">{t(status.key, status.variables)}</p>}
+      {(recognizedText || status?.key === "noTextRead") && (
         <>
           <div className="filter-group scanner-search">
-            <label htmlFor="scanner-search">Buscando carta</label>
-            <input id="scanner-search" type="search" placeholder="No se encontro la carta buscada?, busquela aqui"
+            <label htmlFor="scanner-search">{t("searchingCard")}</label>
+            <input id="scanner-search" type="search" placeholder={t("scannerSearchPlaceholder")}
               value={search} onChange={(event) => setSearch(event.target.value)} />
           </div>
           <p className="results-count">
-            {search.trim() ? "Resultados del catálogo" : "Opciones sugeridas por el OCR"}: {visibleCards.length}
+            {search.trim() ? t("catalogResults") : t("ocrSuggestions")}: {visibleCards.length}
           </p>
-          {visibleCards.length === 0 && <p>No hay coincidencias.</p>}
+          {visibleCards.length === 0 && <p>{t("noMatches")}</p>}
           <section className="card-grid">
             {visibleCards.map((card) => (
-              <CardLayout key={card.id} card={card} actionLabel="Añadir esta carta"
+              <CardLayout key={card.id} card={card} actionLabel={t("addThisCard")}
                 onAction={() => chooseCard(card)} />
             ))}
           </section>

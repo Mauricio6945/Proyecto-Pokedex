@@ -1,11 +1,14 @@
+import { useI18n } from "../i18n";
+
 // Tarjeta reutilizable que muestra la informacion principal de una carta.
 function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabel, onSecondaryAction }) {
+  const { t } = useI18n();
   return (
     <article className="card">
       <div className="card-middle">
         <div className="name-row">
           <h2>{card.name}</h2>
-          <span className="card-code">{card.pokedex_number}</span>
+          <span className="card-code" aria-label={t("pokemonNumber", { number: card.pokedex_number })}>{card.pokedex_number}</span>
         </div>
         <p>{card.type}</p>
       </div>
@@ -15,12 +18,12 @@ function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabe
 
       {/* Datos secundarios usados tanto en catalogo como en inventario. */}
       <div className="card-row">
-        <div>Tipo: {card.type}</div>
-        <div>Rareza: {card.rarity}</div>
-        <div>Variante: {card.variant}</div>
-        <div>Expansión: {card.expansion}</div>
-        <div>Precio estimado: US${card.price_usd}</div>
-        {quantity !== undefined && <strong>Cantidad: {quantity}</strong>}
+        <div>{t("type")}: {card.type}</div>
+        <div>{t("rarity")}: {card.rarity}</div>
+        <div>{t("variant")}: {card.variant}</div>
+        <div>{t("expansion")}: {card.expansion}</div>
+        <div>{t("price", { price: card.price_usd })}</div>
+        {quantity !== undefined && <strong>{t("quantity", { count: quantity })}</strong>}
       </div>
 
       {/* Solo se muestra una accion cuando el componente recibe su manejador. */}
