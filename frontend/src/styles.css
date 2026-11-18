@@ -255,6 +255,40 @@ body {
   flex-wrap: wrap; 
 }
 
+.scanner-section {
+  max-width: 620px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.scanner-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.scanner-section label {
+  font-weight: bold;
+}
+
+.scanner-button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.scanner-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 .card-action { 
   margin-top: 12px; 
 }

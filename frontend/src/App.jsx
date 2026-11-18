@@ -3,6 +3,7 @@ import { getCards, getInventory, getMe } from "./api/Cardapi";
 import FilterCards from "./components/FilterCards";
 import InventoryHandler, { useInventoryHandler } from "./components/InventoryHandler";
 import SessionHandler from "./components/SessionHandler";
+import CardScanner from "./components/CardScanner";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -65,6 +66,9 @@ function App() {
             Mi inventario ({inventory.reduce((total, item) => total + item.quantity, 0)})
           </button>
         )}
+        {user && (
+          <button type="button" onClick={() => setView("scanner")}>Escaneo de cartas</button>
+        )}
       </nav>
 
       {loading && <p>Cargando...</p>}
@@ -76,6 +80,9 @@ function App() {
       )}
       {!loading && !error && view === "inventory" && user && (
         <InventoryHandler cards={cards} inventory={inventory} onRemove={inventoryActions.handleRemove} />
+      )}
+      {!loading && !error && view === "scanner" && user && (
+        <CardScanner cards={cards} onAdd={inventoryActions.handleAdd} />
       )}
     </main>
   );

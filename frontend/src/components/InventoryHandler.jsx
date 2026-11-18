@@ -15,8 +15,10 @@ export function useInventoryHandler({ setInventory, setMessage }) {
       await operation(cardId);
       await refreshInventory();
       setMessage(successMessage);
+      return true;
     } catch (err) {
       setMessage(err.message);
+      return false;
     }
   }
 
