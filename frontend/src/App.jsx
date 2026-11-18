@@ -6,6 +6,7 @@ import SessionHandler from "./components/SessionHandler";
 import CardScanner from "./components/CardScanner";
 import DeckHandler from "./components/DeckHandler";
 import { useI18n } from "./i18n";
+import pokedexImage from "./img/pokedex.png";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -64,13 +65,13 @@ function App() {
     <main className="container">
       <header className="header">
         <div>
-          <h1>{t("appTitle")}</h1>
+          <div className="title-row">
+            <h1>{t("appTitle")}</h1>
+            <img src={pokedexImage} alt="Pokedex" className="pokedex-logo"/>
+          </div>
           <p className="subtitle">{t("subtitle")}</p>
         </div>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg"
-          alt={t("pokeballAlt")}
-          id="pokeball"
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" alt={t("pokeballAlt")} id="pokeball"
         />
         <div className="user-actions">
           {user ? (

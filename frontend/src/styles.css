@@ -23,6 +23,13 @@ h1 {
   color: #6b7280;
 }
 
+.card-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+  font-family: Roboto , BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+  align-items: center;
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -155,11 +162,35 @@ body {
   height: 50px;
 }
 
+#pokedex {
+  margin-right: left;
+  flex: 0 0 auto;
+  width: 50px;  
+  height: 50px;
+}
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-row h1 {
+  font-size: 2em;
+  line-height: 40px;
+}
+
+.pokedex-logo {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
 }
 
 /* Controles agrupados para buscar y filtrar el catalogo. */

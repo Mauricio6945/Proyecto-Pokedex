@@ -2,9 +2,9 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const translations = {
   es: {
-    appTitle: "Pokedex de Cartas",
+    appTitle: "PokeRecords™",
     pokeballAlt: "Poké Ball",
-    subtitle: "Catálogo público e inventario personal",
+    subtitle: "Catálogo público y inventario personal",
     language: "Idioma",
     spanish: "Español",
     english: "English",
@@ -87,9 +87,9 @@ const translations = {
     errorEndpoint: "Endpoint no encontrado",
   },
   en: {
-    appTitle: "Card Pokédex",
+    appTitle: "PokeRecords™",
     pokeballAlt: "Poké Ball",
-    subtitle: "Public catalog and personal collection",
+    subtitle: "Public catalog and Personal Collection",
     language: "Language",
     spanish: "Español",
     english: "English",
