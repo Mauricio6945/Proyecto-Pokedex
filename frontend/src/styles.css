@@ -177,9 +177,175 @@ h1 {
 }
 
 @media (max-width: 800px) {
-  /* En pantallas pequenas las cartas ocupan una sola columna. */
+  /* En tabletas se reduce el número de columnas para dar aire a las cartas. */
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .header > div:first-child {
+    min-width: 0;
+  }
+
+  .header h1 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    overflow-wrap: anywhere;
+  }
+
+  #pokeball {
+    width: 42px;
+    height: 42px;
+  }
+
+  .user-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .user-actions > span {
+    flex: 1 1 100%;
+  }
+
+  .login-button,
+  .user-actions button,
+  .language-select,
+  .navigation button {
+    min-height: 44px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .navigation button {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .filter-group {
+    min-width: 0;
+  }
+
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .card-middle h2 {
+    font-size: 1.3rem;
+    overflow-wrap: anywhere;
+  }
+
+  .card > img {
+    display: block;
+    width: min(100%, 260px);
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    margin: 12px auto;
+  }
+
+  .card-row {
+    gap: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .card-actions {
+    gap: 6px;
+  }
+
+  .card-actions .card-action {
+    min-height: 48px;
+    padding: 8px 6px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .scanner-section {
+    max-width: none;
+    padding: 16px;
+  }
+
+  .scanner-section input[type="file"] {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.9rem;
+  }
+
+  .deck-create-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .deck-create-controls input,
+  .deck-create-controls .card-action {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .deck-dialog {
+    width: 100%;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .deck-dialog-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .deck-dialog-actions .deck-cancel-button {
+    margin-top: 0;
+  }
+
+  .deck-panel {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 12px 8px;
+  }
+
+  .card-actions .card-action {
+    padding: 7px 4px;
+    font-size: 0.74rem;
+  }
+
+  .user-actions .login-button,
+  .user-actions button {
+    padding-inline: 9px;
+    font-size: 0.85rem;
   }
 }
 
@@ -503,5 +669,56 @@ button:not(:disabled):active,
   button,
   .login-button {
     transition: none;
+  }
+}
+
+/* Keep responsive overrides after component styles so they win in the cascade. */
+@media (max-width: 600px) {
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+
+  .navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .navigation button {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .card-actions .card-action {
+    min-height: 48px;
+    padding: 8px 6px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .scanner-section {
+    max-width: none;
+    padding: 16px;
+  }
+
+  .deck-create-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .deck-dialog {
+    width: 100%;
+  }
+
+  .deck-dialog-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .deck-dialog-actions .deck-cancel-button {
+    margin-top: 0;
   }
 }
