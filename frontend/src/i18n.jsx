@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
+// Diccionario con todos los textos visibles en español e inglés.
 const translations = {
+  // Traducciones utilizadas como idioma predeterminado.
   es: {
     appTitle: "PokeRecords™",
     pokeballAlt: "Poké Ball",
@@ -86,6 +88,7 @@ const translations = {
     errorServer: "Error interno del servidor",
     errorEndpoint: "Endpoint no encontrado",
   },
+  // Traducciones alternativas para la interfaz en inglés.
   en: {
     appTitle: "PokeRecords™",
     pokeballAlt: "Poké Ball",
@@ -175,17 +178,21 @@ const translations = {
 
 const LanguageContext = createContext(null);
 
+// Proveedor que conserva el idioma, lo aplica al documento y expone funciones de traducción.
 export function I18nProvider({ children }) {
   const [language, setLanguage] = useState(() => {
+    // Recupera el idioma guardado por el usuario o usa español como valor inicial.
     const saved = window.localStorage.getItem("pokedex-language");
     return saved === "en" ? "en" : "es";
   });
 
+  // Guarda la preferencia y sincroniza el atributo lang de la página al cambiar de idioma.
   useEffect(() => {
     window.localStorage.setItem("pokedex-language", language);
     document.documentElement.lang = language;
   }, [language]);
 
+  // Memoriza las funciones públicas para evitar recrearlas en cada renderizado.
   const value = useMemo(() => ({
     language,
     setLanguage,
@@ -212,9 +219,11 @@ export function I18nProvider({ children }) {
     },
   }), [language]);
 
+  // Hace disponible el contexto de traducción para todos los componentes descendientes.
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
+// Hook seguro que entrega el contexto de idioma y evita su uso fuera del proveedor.
 export function useI18n() {
   const context = useContext(LanguageContext);
   if (!context) throw new Error("useI18n debe usarse dentro de I18nProvider");

@@ -23,6 +23,7 @@ h1 {
   color: black;
 }
 
+/* Distribuye los datos secundarios de una carta en una fila compacta. */
 .card-row {
   margin-top: 12px;
   display: flex;
@@ -34,6 +35,8 @@ h1 {
   padding: 6px 6px;
   border:#111827  1px solid;
 }
+
+/* Organiza las tarjetas en una cuadrícula adaptable. */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -52,6 +55,7 @@ h1 {
   justify-content: space-between;
 }
 
+/* Variantes cromáticas de las cartas según su tipo Pokémon. */
 .card--grass { 
   background-color: #96dd5f; 
   background-image: linear-gradient(145deg, #b8f08d 0%, #96dd5f 56%, #77c849 100%);
@@ -107,14 +111,14 @@ h1 {
    background-image: linear-gradient(145deg, #b49675 0%, #91704b 56%, #735536 100%);
 }
 
-
-
+/* Reserva la zona superior de la tarjeta para controles y elementos superiores. */
 .card-top {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 }
 
+/* Estilo visual del número o código mostrados en la tarjeta. */
 .card-code {
   color: #6b7280;
   font-weight: 600;
@@ -127,10 +131,12 @@ h1 {
   justify-content: left;
 }
 
+/* Reserva el estilo de posibles controles desplegados en la tarjeta. */
 .card-menu {
   color: #6b7280;
 }
 
+/* Ajusta el título principal dentro de cada tarjeta. */
 .card-middle h2 {
   margin: 0;
   font-size: 1.5rem;
@@ -144,6 +150,7 @@ h1 {
   gap: 12px;
 }
 
+/* Agrupa el nombre y los elementos secundarios alineados a la izquierda. */
 .name-left {
   display: flex;
   align-items: center;
@@ -151,6 +158,7 @@ h1 {
   min-width: 0;
 }
 
+/* Mantiene el tamaño del icono de usuario dentro de la tarjeta. */
 .user-icon {
   width: 38px;
   height: 38px;
@@ -158,17 +166,20 @@ h1 {
   flex: 0 0 auto;
 }
 
+/* Estilo secundario del texto descriptivo de la carta. */
 .card-middle p {
   margin: 4px 0 0;
   color: #6b7280;
 }
 
+/* Permite colocar etiquetas pequeñas en varias líneas. */
 .pill-row {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
+/* Presenta el contenido tipo etiqueta con bordes redondeados. */
 .pill {
   border-radius: 999px;
   font-size: 0.95rem;
@@ -184,30 +195,37 @@ h1 {
 }
 
 @media (max-width: 600px) {
+  /* Ajusta los márgenes generales para pantallas de teléfono. */
+  /* Reduce el espaciado general en teléfonos pequeños. */
   .container {
     padding: 16px 12px;
   }
 
+  /* Reorganiza el encabezado en una cuadrícula compacta. */
   .header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
   }
 
+  /* Impide que el bloque de identidad desborde el contenedor móvil. */
   .header > div:first-child {
     min-width: 0;
   }
 
+  /* Adapta el tamaño del título y permite separar palabras largas. */
   .header h1 {
     font-size: clamp(1.45rem, 7vw, 2rem);
     overflow-wrap: anywhere;
   }
 
+  /* Reduce el icono de Poké Ball en la vista móvil. */
   #pokeball {
     width: 42px;
     height: 42px;
   }
 
+  /* Ubica los controles de usuario bajo el título en teléfonos. */
   .user-actions {
     grid-column: 1 / -1;
     justify-content: flex-start;
@@ -218,6 +236,7 @@ h1 {
     flex: 1 1 100%;
   }
 
+  /* Establece una altura táctil cómoda para acciones y navegación. */
   .login-button,
   .user-actions button,
   .language-select,
@@ -227,6 +246,7 @@ h1 {
     text-align: center;
   }
 
+  /* Convierte el menú superior en una cuadrícula de dos columnas. */
   .navigation {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -234,35 +254,42 @@ h1 {
     margin: 14px 0;
   }
 
+  /* Permite que los nombres largos de navegación ocupen varias líneas. */
   .navigation button {
     min-width: 0;
     overflow-wrap: anywhere;
   }
 
+  /* Apila los filtros para que cada uno conserve una columna completa. */
   .filters {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
 
+  /* Evita que los grupos de filtros desborden el ancho disponible. */
   .filter-group {
     min-width: 0;
   }
 
+  /* Muestra una sola tarjeta por fila en teléfonos. */
   .card-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Reduce el relleno y la altura mínima de las tarjetas móviles. */
   .card {
     min-height: 0;
     padding: 14px;
   }
 
+  /* Ajusta los títulos largos dentro de las tarjetas pequeñas. */
   .card-middle h2 {
     font-size: 1.3rem;
     overflow-wrap: anywhere;
   }
 
+  /* Limita y centra la imagen de la carta en pantallas pequeñas. */
   .card > img {
     display: block;
     width: min(100%, 260px);
@@ -272,6 +299,7 @@ h1 {
     margin: 12px auto;
   }
 
+  /* Permite que los metadatos de la carta se ajusten al ancho. */
   .card-row {
     gap: 8px;
     overflow-wrap: anywhere;
@@ -281,6 +309,7 @@ h1 {
     gap: 6px;
   }
 
+  /* Mejora la legibilidad y el área táctil de las acciones de tarjeta. */
   .card-actions .card-action {
     min-height: 48px;
     padding: 8px 6px;
@@ -289,28 +318,33 @@ h1 {
     overflow-wrap: anywhere;
   }
 
+  /* Elimina el ancho fijo del panel de escaneo en móviles. */
   .scanner-section {
     max-width: none;
     padding: 16px;
   }
 
+  /* Mantiene disponible el campo completo de selección de archivo. */
   .scanner-section input[type="file"] {
     width: 100%;
     min-width: 0;
     font-size: 0.9rem;
   }
 
+  /* Apila el nombre y el botón al crear un mazo. */
   .deck-create-controls {
     align-items: stretch;
     flex-direction: column;
   }
 
+  /* Hace que ambos controles del formulario ocupen todo el ancho. */
   .deck-create-controls input,
   .deck-create-controls .card-action {
     width: 100%;
     box-sizing: border-box;
   }
 
+  /* Adapta el diálogo de mazos a la altura y al ancho disponibles. */
   .deck-dialog {
     width: 100%;
     max-height: calc(100vh - 32px);
@@ -318,30 +352,36 @@ h1 {
     box-sizing: border-box;
   }
 
+  /* Apila las acciones del diálogo en pantallas estrechas. */
   .deck-dialog-actions {
     align-items: stretch;
     flex-direction: column;
   }
 
+  /* Evita un margen adicional entre acciones apiladas. */
   .deck-dialog-actions .deck-cancel-button {
     margin-top: 0;
   }
 
+  /* Reduce el relleno de cada panel de mazo en móviles. */
   .deck-panel {
     padding: 14px;
   }
 }
 
 @media (max-width: 360px) {
+  /* Minimiza márgenes laterales en dispositivos muy estrechos. */
   .container {
     padding: 12px 8px;
   }
 
+  /* Reduce aún más las etiquetas dentro de las acciones de tarjeta. */
   .card-actions .card-action {
     padding: 7px 4px;
     font-size: 0.74rem;
   }
 
+  /* Ajusta el tamaño de los controles de sesión en teléfonos muy pequeños. */
   .user-actions .login-button,
   .user-actions button {
     padding-inline: 9px;
@@ -349,6 +389,7 @@ h1 {
   }
 }
 
+/* Limita las dimensiones máximas de todas las imágenes. */
 img {
     max-width: 60%;
     max-height: 60%;
@@ -365,6 +406,7 @@ body {
 }
 
 @keyframes slowBgChange {
+  /* Define los tonos utilizados por la animación alternada del fondo. */
   0% {
     background-color: #FFB6B6;
   }
@@ -393,6 +435,8 @@ body {
   width: 50px;  
   height: 50px;
 }
+
+/* Distribuye el título, el logo y las acciones del encabezado. */
 .header {
   display: flex;
   align-items: center;
@@ -406,11 +450,13 @@ body {
   gap: 10px;
 }
 
+/* Tamaño y altura del título dentro de su fila encabezadora. */
 .title-row h1 {
   font-size: 2em;
   line-height: 40px;
 }
 
+/* Ajusta el logo de la Pokedex sin deformar su imagen. */
 .pokedex-logo {
   width: 40px;
   height: 40px;
@@ -434,12 +480,14 @@ body {
   flex: 1 1 180px;
 }
 
+/* Define la apariencia de las etiquetas de cada filtro. */
 .filter-group label {
   font-size: 14px;
   font-weight: bold;
   color: #374151;
 }
 
+/* Normaliza campos de texto y selectores dentro de los filtros. */
 .filter-group input,.filter-group select {
   width: 100%;
   min-height: 42px;
@@ -452,6 +500,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Resalta visualmente el filtro que tiene el foco del teclado. */
 .filter-group input:focus,.filter-group select:focus {
   outline: none;
   border-color: #ef4444;
@@ -473,10 +522,12 @@ body {
   background-color: #dc2626;
 }
 
+/* Separa el botón de progreso de colección del contenido siguiente. */
 .set-progress-toggle {
   margin: 0 0 14px;
 }
 
+/* Presenta el progreso de cartas por expansión en una lista contenida. */
 .set-progress-list {
   margin: 0 0 18px;
   padding: 14px 18px 14px 34px;
@@ -517,6 +568,7 @@ body {
   cursor: pointer;
 }
 
+/* Organiza los botones principales de navegación en una sola fila adaptable. */
 .navigation { 
   display: flex; 
   gap: 10px; 
@@ -524,6 +576,7 @@ body {
   flex-wrap: wrap; 
 }
 
+/* Contenedor visual de la herramienta de escaneo de cartas. */
 .scanner-section {
   max-width: 620px;
   padding: 20px;
@@ -532,6 +585,7 @@ body {
   background: #fff;
 }
 
+/* Organiza verticalmente el formulario de selección y escaneo. */
 .scanner-section form {
   display: flex;
   flex-direction: column;
@@ -539,10 +593,12 @@ body {
   gap: 12px;
 }
 
+/* Destaca las etiquetas del formulario de escaneo. */
 .scanner-section label {
   font-weight: bold;
 }
 
+/* Botón principal para iniciar el reconocimiento de texto. */
 .scanner-button {
   padding: 10px 14px;
   border: 0;
@@ -553,21 +609,25 @@ body {
   cursor: pointer;
 }
 
+/* Informa visualmente que el escaneo está en progreso. */
 .scanner-button:disabled {
   opacity: 0.6;
   cursor: wait;
 }
 
+/* Separa verticalmente el botón de acción de sus datos asociados. */
 .card-action { 
   margin-top: 12px; 
 }
 
+/* Agrupa acciones principales y secundarias dentro de una tarjeta. */
 .card-actions {
   display: flex;
   gap: 8px;
   margin-top: 12px;
 }
 
+/* Distribuye proporcionalmente los botones de acción disponibles. */
 .card-actions .card-action {
   flex: 1 1 0;
   min-width: 0;
@@ -576,10 +636,12 @@ body {
   font-size: 0.85rem;
 }
 
+/* Usa un color neutro para diferenciar la acción secundaria. */
 .secondary-card-action {
   background: #374151;
 }
 
+/* Superpone un fondo oscuro sobre la página al abrir el diálogo. */
 .deck-dialog-backdrop {
   position: fixed;
   inset: 0;
@@ -590,6 +652,7 @@ body {
   background: rgb(17 24 39 / 55%);
 }
 
+/* Contenedor central del diálogo para elegir un mazo. */
 .deck-dialog {
   width: min(100%, 420px);
   padding: 22px;
@@ -598,8 +661,13 @@ body {
   box-shadow: 0 16px 50px rgb(0 0 0 / 25%);
 }
 
+/* Elimina el margen superior del título del diálogo. */
 .deck-dialog h3 { margin-top: 0; }
+
+/* Destaca la etiqueta del selector dentro del diálogo. */
 .deck-dialog label { display: block; margin-bottom: 6px; font-weight: bold; }
+
+/* Normaliza el selector y el campo usados para crear o elegir mazos. */
 .deck-dialog select, .deck-create-controls input {
   min-height: 42px;
   padding: 9px;
@@ -608,8 +676,11 @@ body {
   font: inherit;
   background: #fff;
 }
+
+/* Hace que el selector use todo el ancho del diálogo. */
 .deck-dialog select { width: 100%; }
 
+/* Organiza las acciones del diálogo y los controles de creación. */
 .deck-dialog-actions, .deck-create-controls {
   display: flex;
   gap: 10px;
@@ -617,8 +688,10 @@ body {
   margin-top: 14px;
 }
 
+/* Distribuye las acciones del diálogo en partes iguales. */
 .deck-dialog-actions > * { flex: 1; }
 
+/* Botón secundario usado para cancelar o cerrar la interfaz modal. */
 .deck-cancel-button {
   margin-top: 12px;
   padding: 10px 14px;
@@ -629,12 +702,25 @@ body {
   cursor: pointer;
 }
 
+/* Limita el ancho del formulario de creación de mazos. */
 .deck-create-form { max-width: 620px; margin: 18px 0 24px; }
+
+/* Destaca la etiqueta del campo de nombre del mazo. */
 .deck-create-form label { display: block; margin-bottom: 6px; font-weight: bold; }
+
+/* Permite que el campo de nombre ocupe el espacio disponible. */
 .deck-create-controls input { flex: 1; min-width: 0; }
+
+/* Evita añadir margen superior al botón de creación dentro del formulario. */
 .deck-create-controls .card-action { margin-top: 0; }
+
+/* Separa visualmente cada mazo dentro de la lista. */
 .decks-list { display: grid; gap: 20px; }
+
+/* Encierra las cartas y datos de cada mazo en un panel. */
 .deck-panel { padding: 18px; border: 1px solid #e5e7eb; border-radius: 14px; }
+
+/* Elimina el margen superior del nombre de cada mazo. */
 .deck-panel h3 { margin-top: 0; }
 
 .card-row { 
@@ -647,17 +733,19 @@ body {
   object-fit: contain; 
 }
 
-/* Consistent hover and pressed feedback for every interactive button. */
+/* Añade una transición uniforme a todos los controles interactivos. */
 button,
 .login-button {
   transition: filter 140ms ease, transform 100ms ease, box-shadow 140ms ease;
 }
 
+/* Atenúa ligeramente los controles al pasar el puntero sobre ellos. */
 button:not(:disabled):hover,
 .login-button:hover {
   filter: grayscale(32%) brightness(0.98);
 }
 
+/* Simula presión visual al activar un botón con el puntero o teclado. */
 button:not(:disabled):active,
 .login-button:active {
   filter: grayscale(42%) brightness(0.9);
@@ -665,6 +753,7 @@ button:not(:disabled):active,
   box-shadow: inset 0 2px 4px rgb(0 0 0 / 18%);
 }
 
+/* Desactiva las transiciones cuando el usuario pide movimiento reducido. */
 @media (prefers-reduced-motion: reduce) {
   button,
   .login-button {
@@ -672,25 +761,29 @@ button:not(:disabled):active,
   }
 }
 
-/* Keep responsive overrides after component styles so they win in the cascade. */
+/* Conserva ajustes responsivos adicionales al final para que tengan prioridad. */
 @media (max-width: 600px) {
+  /* Repite la estructura de encabezado necesaria en la vista móvil final. */
   .header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
   }
 
+  /* Cambia la navegación a una cuadrícula móvil de dos columnas. */
   .navigation {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
+  /* Permite dividir los nombres largos de los botones de navegación. */
   .navigation button {
     min-width: 0;
     overflow-wrap: anywhere;
   }
 
+  /* Ajusta el tamaño táctil de las acciones dentro de las tarjetas. */
   .card-actions .card-action {
     min-height: 48px;
     padding: 8px 6px;
@@ -699,26 +792,52 @@ button:not(:disabled):active,
     overflow-wrap: anywhere;
   }
 
+  /* Amplía el escáner para ocupar el ancho disponible en móviles. */
   .scanner-section {
     max-width: none;
     padding: 16px;
   }
 
+  /* Apila los controles de creación de mazos en pantallas estrechas. */
   .deck-create-controls {
     align-items: stretch;
     flex-direction: column;
   }
 
+  /* Hace que el diálogo use todo el ancho disponible en móviles. */
   .deck-dialog {
     width: 100%;
   }
 
+  /* Apila las acciones finales dentro del diálogo móvil. */
   .deck-dialog-actions {
     align-items: stretch;
     flex-direction: column;
   }
 
+  /* Elimina el margen superior del botón secundario apilado. */
   .deck-dialog-actions .deck-cancel-button {
     margin-top: 0;
   }
+}
+
+footer {
+  position: relative;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin: 32px 0 0;
+  transform: translateX(-50%);
+}
+
+#footer-pokemons {
+  display: block;
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
 }

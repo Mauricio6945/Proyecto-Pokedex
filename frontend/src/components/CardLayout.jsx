@@ -1,5 +1,6 @@
 import { useI18n } from "../i18n";
 
+// Relaciona los nombres de tipo del catálogo con las clases visuales de la carta.
 const typeClasses = {
   grass: "grass",
   fire: "fire",

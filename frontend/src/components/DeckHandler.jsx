@@ -2,11 +2,13 @@ import { useState } from "react";
 import CardLayout from "./CardLayout";
 import { useI18n } from "../i18n";
 
+// Permite crear mazos y muestra las cartas que contiene cada uno.
 function DeckHandler({ decks, cards, onCreateDeck }) {
   const { t } = useI18n();
   const [name, setName] = useState("");
   const [creating, setCreating] = useState(false);
 
+  // Valida el formulario, crea el mazo y limpia el campo tras una operación exitosa.
   async function handleSubmit(event) {
     event.preventDefault();
     if (!name.trim() || creating) return;
@@ -33,6 +35,7 @@ function DeckHandler({ decks, cards, onCreateDeck }) {
       {decks.length === 0 ? <p>{t("noDecks")}</p> : (
         <div className="decks-list">
           {decks.map((deck) => {
+            // Convierte los identificadores del mazo en objetos completos de carta.
             const deckCards = deck.cards.map((item) => {
               const card = cards.find((candidate) => candidate.id === item.cardId);
               return card ? { ...card, quantity: item.quantity } : null;

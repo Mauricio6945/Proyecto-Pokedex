@@ -7,8 +7,9 @@ import CardScanner from "./components/CardScanner";
 import DeckHandler from "./components/DeckHandler";
 import { useI18n } from "./i18n";
 import pokedexImage from "./img/pokedex.png";
-
+import footerImage from "./img/pokemon_footer_background.png";
 function App() {
+  // Estados principales que controlan los datos y la vista actual de la aplicación.
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);
   const [inventory, setInventory] = useState([]);
@@ -17,10 +18,14 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
+
+  // Accede a las traducciones y al idioma seleccionado por el usuario.
   const { language, setLanguage, t, translateError } = useI18n();
 
+  // Agrupa las operaciones compartidas para agregar y quitar cartas del inventario.
   const inventoryActions = useInventoryHandler({ setInventory, setMessage, t, translateError });
 
+  // Al montar la aplicación carga el catálogo y, si existe sesión, los datos privados.
   useEffect(() => {
     Promise.all([getCards(), getMe()])
       .then(async ([loadedCards, loadedUser]) => {
@@ -36,6 +41,7 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
+  // Crea un mazo y actualiza la interfaz cuando la operación termina correctamente.
   async function handleCreateDeck(name) {
     try {
       const deck = await createDeck(name);
@@ -48,6 +54,7 @@ function App() {
     }
   }
 
+  // Añade una carta a un mazo y refresca el mazo seleccionado desde el backend.
   async function handleAddToDeck(deckId, cardId) {
     try {
       await addCardToDeck(deckId, cardId);
@@ -63,6 +70,7 @@ function App() {
 
   return (
     <main className="container">
+      {/* Encabezado con identidad, cuenta del usuario y selector de idioma. */}
       <header className="header">
         <div>
           <div className="title-row">
@@ -103,6 +111,7 @@ function App() {
         </div>
       </header>
 
+      {/* Navegación entre el catálogo público y las vistas disponibles para usuarios autenticados. */}
       <nav className="navigation">
         <button type="button" onClick={() => setView("catalog")}>{t("catalog")}</button>
         {user && (
@@ -118,10 +127,12 @@ function App() {
         )}
       </nav>
 
+      {/* Mensajes globales de carga, error y resultado de la última operación. */}
       {loading && <p>{t("loading")}</p>}
       {error && <p className="error-message">{translateError(error)}</p>}
       {message && <p role="status">{message}</p>}
 
+      {/* Contenido activo según la vista seleccionada. */}
       {!loading && !error && view === "catalog" && (
         <FilterCards cards={cards} user={user} onAdd={inventoryActions.handleAdd} />
       )}
@@ -135,6 +146,9 @@ function App() {
       {!loading && !error && view === "decks" && user && (
         <DeckHandler decks={decks} cards={cards} onCreateDeck={handleCreateDeck} />
       )}
+      <footer>
+        <img src={footerImage} alt="Multiple Pokemon Stickers Footer" id="footer-pokemons" />
+      </footer>
     </main>
   );
 }

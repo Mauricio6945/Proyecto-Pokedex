@@ -3,6 +3,7 @@ import { createWorker } from "tesseract.js";
 import CardLayout from "./CardLayout";
 import { useI18n } from "../i18n";
 
+// Normaliza texto y nombres para que la comparación no dependa de acentos o mayúsculas.
 const normalize = (value) => value
   .normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "")
@@ -10,6 +11,7 @@ const normalize = (value) => value
   .replace(/[^a-z0-9]+/g, " ")
   .trim();
 
+// Calcula la distancia de edición entre dos palabras para tolerar pequeños errores de OCR.
 function editDistance(left, right) {
   const row = Array.from({ length: right.length + 1 }, (_, index) => index);
   for (let i = 1; i <= left.length; i += 1) {
@@ -24,6 +26,7 @@ function editDistance(left, right) {
   return row[right.length];
 }
 
+// Ordena las cartas según la coincidencia entre el texto reconocido y sus nombres.
 function rankCards(cards, text) {
   const words = normalize(text).split(/\s+/).filter((word) => word.length > 2);
   if (words.length === 0) return [];
@@ -51,12 +54,14 @@ function rankCards(cards, text) {
 
 function CardScanner({ cards, onAdd }) {
   const { t } = useI18n();
+  // Estado del archivo, progreso de OCR y criterios de búsqueda manual.
   const [file, setFile] = useState(null);
   const [scanning, setScanning] = useState(false);
   const [status, setStatus] = useState("");
   const [recognizedText, setRecognizedText] = useState("");
   const [search, setSearch] = useState("");
 
+  // Extrae texto de la imagen seleccionada y comunica el resultado al usuario.
   async function handleScan(event) {
     event.preventDefault();
     if (!file || scanning) return;
@@ -78,11 +83,13 @@ function CardScanner({ cards, onAdd }) {
     }
   }
 
+  // Elige sugerencias por OCR o resultados manuales según el texto de búsqueda activo.
   const suggestions = rankCards(cards, recognizedText);
   const visibleCards = search.trim()
     ? cards.filter((card) => normalize(card.name).includes(normalize(search)))
     : suggestions;
 
+  // Añade la carta elegida y limpia el escaneo si la operación tiene éxito.
   async function chooseCard(card) {
     const added = await onAdd(card.id);
     setStatus({ key: added ? "cardAddedNamed" : "cardAddFailed", variables: { name: card.name } });
