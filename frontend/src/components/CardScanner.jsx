@@ -105,7 +105,7 @@ function CardScanner({ cards, onAdd }) {
     <section className="scanner-section">
       <h2>{t("scannerTitle")}</h2>
       <p>{t("scannerDescription")}</p>
-      <form onSubmit={handleScan}>
+      <form onSubmit={handleScan} className="scanner-form">
         <label htmlFor="card-image">{t("cardImage")}</label>
         <input
           id="card-image"

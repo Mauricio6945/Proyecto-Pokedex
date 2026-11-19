@@ -322,6 +322,7 @@ h1 {
   }
 
   /* Establece una altura táctil cómoda para acciones y navegación. */
+  .language-select,
   .login-button,
   .user-actions button,
   .language-select,
@@ -480,7 +481,7 @@ h1 {
   }
 
   /* Ajusta el tamaño de los controles de sesión en teléfonos muy pequeños. */
-  .user-actions .login-button,
+  .user-actions .login-button,.language-select,
   .user-actions button {
     padding-inline: 9px;
     font-size: 0.85rem;
@@ -697,7 +698,17 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
-
+.language-select {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #D1A71F;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Organiza los botones principales de navegación en una sola fila adaptable. */
 .navigation { 
   display: flex; 
@@ -739,6 +750,15 @@ body {
   cursor: pointer;
 }
 
+.scanner-form{
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #329DAB;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Informa visualmente que el escaneo está en progreso. */
 .scanner-button:disabled {
   opacity: 0.6;
@@ -833,25 +853,46 @@ body {
 }
 
 /* Limita el ancho del formulario de creación de mazos. */
-.deck-create-form { max-width: 620px; margin: 18px 0 24px; }
+.deck-create-form { 
+  max-width: 620px; 
+  margin: 18px 0 24px; 
+}
 
 /* Destaca la etiqueta del campo de nombre del mazo. */
-.deck-create-form label { display: block; margin-bottom: 6px; font-weight: bold; }
+.deck-create-form label { 
+  display: block;
+  margin-bottom: 6px; 
+  font-weight: bold; 
+}
 
 /* Permite que el campo de nombre ocupe el espacio disponible. */
-.deck-create-controls input { flex: 1; min-width: 0; }
+.deck-create-controls input { 
+  flex: 1; 
+  min-width: 0; 
+}
 
 /* Evita añadir margen superior al botón de creación dentro del formulario. */
-.deck-create-controls .card-action { margin-top: 0; }
+.deck-create-controls .card-action { 
+  margin-top: 0; 
+}
 
 /* Separa visualmente cada mazo dentro de la lista. */
-.decks-list { display: grid; gap: 20px; }
+.decks-list { 
+  display: grid; 
+  gap: 20px; 
+}
 
 /* Encierra las cartas y datos de cada mazo en un panel. */
-.deck-panel { padding: 18px; border: 1px solid #e5e7eb; border-radius: 14px; }
+.deck-panel { 
+  padding: 18px; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 14px; 
+}
 
 /* Elimina el margen superior del nombre de cada mazo. */
-.deck-panel h3 { margin-top: 0; }
+.deck-panel h3 {
+   margin-top: 0; 
+}
 
 .deck-heading {
   display: flex;
@@ -996,19 +1037,21 @@ body {
 
 /* Añade una transición uniforme a todos los controles interactivos. */
 button,
-.login-button {
+.login-button,.language-select {
   transition: filter 140ms ease, transform 100ms ease, box-shadow 140ms ease;
 }
 
 /* Atenúa ligeramente los controles al pasar el puntero sobre ellos. */
 button:not(:disabled):hover,
-.login-button:hover {
+.login-button:hover,
+.language-select:hover {
   filter: grayscale(32%) brightness(0.98);
 }
 
 /* Simula presión visual al activar un botón con el puntero o teclado. */
 button:not(:disabled):active,
-.login-button:active {
+.login-button:active,
+.language-select:active {
   filter: grayscale(42%) brightness(0.9);
   transform: translateY(1px) scale(0.98);
   box-shadow: inset 0 2px 4px rgb(0 0 0 / 18%);
@@ -1022,7 +1065,8 @@ button:disabled {
 /* Desactiva las transiciones cuando el usuario pide movimiento reducido. */
 @media (prefers-reduced-motion: reduce) {
   button,
-  .login-button {
+  .login-button,
+  .language-select {
     transition: none;
   }
 }
