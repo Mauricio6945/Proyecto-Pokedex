@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createWorker } from "tesseract.js";
 import CardLayout from "./CardLayout";
+import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
 // Normaliza texto y nombres para que la comparación no dependa de acentos o mayúsculas.
@@ -131,12 +132,12 @@ function CardScanner({ cards, onAdd }) {
             {search.trim() ? t("catalogResults") : t("ocrSuggestions")}: {visibleCards.length}
           </p>
           {visibleCards.length === 0 && <p>{t("noMatches")}</p>}
-          <section className="card-grid">
-            {visibleCards.map((card) => (
-              <CardLayout key={card.id} card={card} actionLabel={t("addThisCard")}
-                onAction={() => chooseCard(card)} />
-            ))}
-          </section>
+          <GroupedCardGrid cards={visibleCards} renderCard={(card) => (
+              <CardLayout key={card.id} card={card}
+                actionLabel={card.trade_available > 0 ? t("addThisCard") : t("outOfStock")}
+                actionDisabled={!(card.trade_available > 0)}
+                onAction={card.trade_available > 0 ? () => chooseCard(card) : undefined} />
+          )} />
         </>
       )}
     </section>

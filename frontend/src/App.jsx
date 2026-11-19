@@ -33,7 +33,7 @@ function App() {
   const { language, setLanguage, t, translateError } = useI18n();
 
   // Agrupa las operaciones compartidas para agregar y quitar cartas del inventario.
-  const inventoryActions = useInventoryHandler({ setInventory, setMessage, t, translateError });
+  const inventoryActions = useInventoryHandler({ setInventory, setCards, setMessage, t, translateError });
 
   // Al montar la aplicación carga el catálogo y, si existe sesión, los datos privados.
   useEffect(() => {
@@ -190,7 +190,8 @@ function App() {
       )}
       {!loading && !error && view === "inventory" && user && (
         <InventoryHandler cards={cards} inventory={inventory} decks={decks}
-          onRemove={inventoryActions.handleRemove} onAddToDeck={handleAddToDeck} />
+          onRemove={inventoryActions.handleRemove} onAddToDeck={handleAddToDeck}
+          onSetTradeAvailable={inventoryActions.handleSetTradeAvailable} />
       )}
       {!loading && !error && view === "scanner" && user && (
         <CardScanner cards={cards} onAdd={inventoryActions.handleAdd} />

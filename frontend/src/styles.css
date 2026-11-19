@@ -43,6 +43,22 @@ h1 {
   gap: 12px;
 }
 
+.pokedex-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.pokedex-group {
+  min-width: 0;
+}
+
+.pokedex-group-title {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgb(17 24 39 / 12%);
+  font-size: 1.15rem;
+}
+
 /* Contenedor visual compartido por las tarjetas del catalogo e inventario. */
 .card {
   background: #ffffff;
@@ -771,6 +787,64 @@ body {
 .deck-manage-button { background: #374151; }
 .deck-delete-button { background: #b91c1c; }
 
+.inventory-card-entry {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.trade-availability-control {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 92%);
+}
+
+.trade-availability-control label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.trade-availability-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trade-availability-input-row input {
+  width: 82px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.trade-availability-input-row span {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.trade-save-button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #0891b2;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trade-save-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .card-row { 
   display: grid; 
   gap: 6px; 
@@ -799,6 +873,11 @@ button:not(:disabled):active,
   filter: grayscale(42%) brightness(0.9);
   transform: translateY(1px) scale(0.98);
   box-shadow: inset 0 2px 4px rgb(0 0 0 / 18%);
+}
+
+button:disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
 }
 
 /* Desactiva las transiciones cuando el usuario pide movimiento reducido. */

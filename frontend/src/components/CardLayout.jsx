@@ -17,7 +17,7 @@ const typeClasses = {
 };
 
 // Tarjeta reutilizable que muestra la informacion principal de una carta.
-function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabel, onSecondaryAction }) {
+function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAction, secondaryActionLabel, onSecondaryAction }) {
   const { t } = useI18n();
   const typeClass = typeClasses[card.type?.trim().toLowerCase()];
   return (
@@ -51,8 +51,8 @@ function CardLayout({ card, quantity, actionLabel, onAction, secondaryActionLabe
             {secondaryActionLabel}
           </button>
         </div>
-      ) : onAction ? (
-        <button type="button" className="card-action" onClick={onAction}>
+      ) : actionLabel && (onAction || actionDisabled) ? (
+        <button type="button" className="card-action" onClick={onAction} disabled={actionDisabled}>
           {actionLabel}
         </button>
       ) : null}

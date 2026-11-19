@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import CardLayout from "./CardLayout";
+import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
 //Componente que permite buscar cartas y combinarlas con filtros por atributos.
@@ -70,12 +71,12 @@ function FilterCards({ cards, user, onAdd }) {
       <button type="button" className="clear-button" onClick={clearFilters}>{t("clearFilters")}</button>
       <p className="results-count">{t("foundCards", { count: filteredCards.length })}</p>
       {!user && <p>{t("loginToAdd")}</p>}
-      <section className="card-grid">
-        {filteredCards.map((card) => (
-          <CardLayout key={card.id} card={card} actionLabel={t("addToInventory")}
-            onAction={user ? () => onAdd(card.id) : undefined} />
-        ))}
-      </section>
+      <GroupedCardGrid cards={filteredCards} renderCard={(card) => (
+          <CardLayout key={card.id} card={card}
+            actionLabel={user ? (card.trade_available > 0 ? t("addToInventory") : t("outOfStock")) : undefined}
+            actionDisabled={Boolean(user) && !(card.trade_available > 0)}
+            onAction={user && card.trade_available > 0 ? () => onAdd(card.id) : undefined} />
+      )} />
     </>
   );
 }

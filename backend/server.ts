@@ -40,7 +40,13 @@ db.exec(`
     google_id TEXT NOT NULL REFERENCES users(google_id),
     card_id TEXT NOT NULL,
     quantity INTEGER NOT NULL DEFAULT 1 CHECK (quantity >= 1),
+    trade_available INTEGER NOT NULL DEFAULT 0 CHECK (trade_available >= 0),
     PRIMARY KEY (google_id, card_id)
+  );
+  CREATE TABLE IF NOT EXISTS card_stock (
+    card_id TEXT PRIMARY KEY,
+    amount INTEGER NOT NULL DEFAULT 0 CHECK (amount >= 0),
+    trade_available INTEGER NOT NULL DEFAULT 0 CHECK (trade_available >= 0)
   );
   CREATE TABLE IF NOT EXISTS decks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -57,9 +63,32 @@ db.exec(`
   );
 `);
 
+// Migra inventarios existentes y crea el stock compartido usando los valores del catálogo.
+const inventoryColumns = db.prepare("PRAGMA table_info(inventory)").all() as Array<{ name: string }>;
+if (!inventoryColumns.some((column) => column.name === "trade_available")) {
+  db.exec("ALTER TABLE inventory ADD COLUMN trade_available INTEGER NOT NULL DEFAULT 0 CHECK (trade_available >= 0)");
+}
+const initialCatalog = JSON.parse(await Deno.readTextFile(dataPath)) as Array<{
+  id: string;
+  amount?: number;
+  trade_available?: number;
+}>;
+const seedCardStock = db.prepare(`
+  INSERT OR IGNORE INTO card_stock (card_id, amount, trade_available) VALUES (?, ?, ?)
+`);
+for (const card of initialCatalog) {
+  seedCardStock.run(card.id, card.amount ?? 0, card.trade_available ?? 0);
+}
+
 // Tipos auxiliares para trabajar con información del usuario y del inventario.
 type User = { id: string; name: string; email: string; picture: string | null };
-type InventoryRow = { cardId: string; quantity: number };
+type InventoryRow = {
+  cardId: string;
+  quantity: number;
+  amount: number;
+  tradeAvailable: number;
+  trade_available: number;
+};
 
 // Conjunto de claves públicas de Google para verificar los JWT emitidos durante el login OAuth.
 const googleKeys = createRemoteJWKSet(
@@ -108,8 +137,19 @@ function getUser(request: Request): User | null {
 }
 
 //Lee el archivo JSON con la información de las cartas disponibles en la aplicación.
-async function readCards(): Promise<Array<{ id: string }>> {
-  return JSON.parse(await Deno.readTextFile(dataPath));
+async function readCards(): Promise<Array<Record<string, unknown> & { id: string; amount: number; trade_available: number }>> {
+  const cards = JSON.parse(await Deno.readTextFile(dataPath)) as Array<Record<string, unknown> & { id: string }>;
+  const stock = db.prepare("SELECT card_id AS cardId, amount, trade_available FROM card_stock")
+    .all() as Array<{ cardId: string; amount: number; trade_available: number }>;
+  const stockById = new Map(stock.map((item) => [item.cardId, item]));
+  return cards.map((card) => {
+    const currentStock = stockById.get(card.id);
+    return {
+      ...card,
+      amount: currentStock?.amount ?? Number(card.amount ?? 0),
+      trade_available: currentStock?.trade_available ?? Number(card.trade_available ?? 0),
+    };
+  });
 }
 
 //Respuesta reutilizable para endpoints protegidos cuando el usuario no autenticado intenta acceder.
@@ -405,7 +445,8 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       // Usando un operaciones SQL
       if (request.method === "GET" && path === "/api/inventory") {
         const items = db.prepare(`
-          SELECT card_id AS cardId, quantity
+          SELECT card_id AS cardId, quantity, quantity AS amount,
+            trade_available AS tradeAvailable, trade_available AS trade_available
           FROM inventory WHERE google_id = ? ORDER BY card_id 
         `).all(user.id) as InventoryRow[];
         return Response.json(items, { headers: { "Cache-Control": "no-store" } });
@@ -419,27 +460,78 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         if (!cardId || !(await readCards()).some((card) => card.id === cardId)) {
           return Response.json({ error: "Carta no válida" }, { status: 400 });
         }
-        db.prepare(`
-          INSERT INTO inventory (google_id, card_id, quantity) VALUES (?, ?, 1)
-          ON CONFLICT(google_id, card_id) DO UPDATE SET quantity = quantity + 1
-        `).run(user.id, cardId);
+        db.exec("BEGIN IMMEDIATE");
+        try {
+          const stockResult = db.prepare(`
+            UPDATE card_stock SET trade_available = trade_available - 1
+            WHERE card_id = ? AND trade_available > 0
+          `).run(cardId);
+          if (stockResult.changes === 0) {
+            db.exec("ROLLBACK");
+            return Response.json({ error: "No quedan copias disponibles para intercambio" }, { status: 409 });
+          }
+          db.prepare(`
+            INSERT INTO inventory (google_id, card_id, quantity, trade_available) VALUES (?, ?, 1, 0)
+            ON CONFLICT(google_id, card_id) DO UPDATE SET quantity = quantity + 1
+          `).run(user.id, cardId);
+          db.exec("COMMIT");
+        } catch (error) {
+          db.exec("ROLLBACK");
+          throw error;
+        }
         return Response.json({ message: "Carta agregada" }, { status: 201 });
+      }
+
+      // Actualiza cuántas copias propias quedan ofrecidas para intercambio.
+      const tradeAvailablePath = path.match(/^\/api\/inventory\/(.+)\/trade-available$/);
+      if (request.method === "PUT" && tradeAvailablePath) {
+        let cardId: string;
+        try {
+          cardId = decodeURIComponent(tradeAvailablePath[1]);
+        } catch {
+          return Response.json({ error: "Carta no válida" }, { status: 400 });
+        }
+        const body = await request.json().catch(() => null);
+        const tradeAvailable = body && typeof body === "object" && "tradeAvailable" in body &&
+            typeof body.tradeAvailable === "number" ? body.tradeAvailable : NaN;
+        const row = db.prepare(
+          "SELECT quantity FROM inventory WHERE google_id = ? AND card_id = ?",
+        ).get(user.id, cardId) as { quantity: number } | undefined;
+        if (!row) return Response.json({ error: "Carta no encontrada" }, { status: 404 });
+        if (!Number.isInteger(tradeAvailable) || tradeAvailable < 0 || tradeAvailable > row.quantity) {
+          return Response.json({ error: "La cantidad para intercambio debe estar entre 0 y tus copias totales" }, { status: 400 });
+        }
+        db.prepare(`
+          UPDATE inventory SET trade_available = ? WHERE google_id = ? AND card_id = ?
+        `).run(tradeAvailable, user.id, cardId);
+        return Response.json({ cardId, amount: row.quantity, tradeAvailable });
       }
 
       //Elimina una unidad de la carta indicada; si llega a cero, se borra del inventario.
       if (request.method === "DELETE" && path.startsWith("/api/inventory/")) {
         const cardId = decodeURIComponent(path.slice("/api/inventory/".length));
         const row = db.prepare(
-          "SELECT quantity FROM inventory WHERE google_id = ? AND card_id = ?",
-        ).get(user.id, cardId) as { quantity: number } | undefined;
+          "SELECT quantity, trade_available AS tradeAvailable FROM inventory WHERE google_id = ? AND card_id = ?",
+        ).get(user.id, cardId) as { quantity: number; tradeAvailable: number } | undefined;
         if (!row) return Response.json({ error: "Carta no encontrada" }, { status: 404 });
 
-        if (row.quantity > 1) {
-          db.prepare("UPDATE inventory SET quantity = quantity - 1 WHERE google_id = ? AND card_id = ?")
-            .run(user.id, cardId);
-        } else {
-          db.prepare("DELETE FROM inventory WHERE google_id = ? AND card_id = ?")
-            .run(user.id, cardId);
+        db.exec("BEGIN IMMEDIATE");
+        try {
+          if (row.quantity > 1) {
+            db.prepare(`
+              UPDATE inventory SET quantity = quantity - 1,
+                trade_available = MIN(trade_available, quantity - 1)
+              WHERE google_id = ? AND card_id = ?
+            `).run(user.id, cardId);
+          } else {
+            db.prepare("DELETE FROM inventory WHERE google_id = ? AND card_id = ?")
+              .run(user.id, cardId);
+          }
+          db.prepare("UPDATE card_stock SET amount = amount + 1 WHERE card_id = ?").run(cardId);
+          db.exec("COMMIT");
+        } catch (error) {
+          db.exec("ROLLBACK");
+          throw error;
         }
         return new Response(null, { status: 204 });
       }

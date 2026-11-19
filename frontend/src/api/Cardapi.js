@@ -43,6 +43,15 @@ export function removeFromInventory(cardId) {
   });
 }
 
+// Define cuántas copias propias de una carta están disponibles para intercambio.
+export function updateTradeAvailable(cardId, tradeAvailable) {
+  return apiRequest(`/api/inventory/${encodeURIComponent(cardId)}/trade-available`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ tradeAvailable }),
+  });
+}
+
 // Obtiene los mazos del usuario junto con las cartas que contiene cada uno.
 export function getDecks() {
   return apiRequest("/api/decks");

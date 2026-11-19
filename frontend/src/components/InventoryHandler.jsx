@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { addToInventory, getInventory, removeFromInventory } from "../api/Cardapi";
+import { useEffect, useState } from "react";
+import { addToInventory, getCards, getInventory, removeFromInventory, updateTradeAvailable } from "../api/Cardapi";
 import CardLayout from "./CardLayout";
+import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
 // Centraliza las operaciones de modificacion y recarga del inventario.
-export function useInventoryHandler({ setInventory, setMessage, t, translateError }) {
+export function useInventoryHandler({ setInventory, setCards, setMessage, t, translateError }) {
   // Consulta el inventario actualizado y reemplaza el estado compartido.
   async function refreshInventory() {
-    setInventory(await getInventory());
+    const [updatedInventory, updatedCards] = await Promise.all([getInventory(), getCards()]);
+    setInventory(updatedInventory);
+    setCards(updatedCards);
   }
 
   // Ejecuta una operacion y muestra su resultado o el error producido.
@@ -19,6 +22,26 @@ export function useInventoryHandler({ setInventory, setMessage, t, translateErro
       setMessage(successMessage);
       return true;
     } catch (err) {
+      if (operation === addToInventory) {
+        try {
+          setCards(await getCards());
+        } catch {
+          // Conserva el error original si tampoco se puede actualizar el catálogo.
+        }
+      }
+      setMessage(translateError(err.message));
+      return false;
+    }
+  }
+
+  async function handleSetTradeAvailable(cardId, tradeAvailable) {
+    try {
+      setMessage("");
+      await updateTradeAvailable(cardId, tradeAvailable);
+      await refreshInventory();
+      setMessage(t("tradeAvailabilityUpdated"));
+      return true;
+    } catch (err) {
       setMessage(translateError(err.message));
       return false;
     }
@@ -27,11 +50,47 @@ export function useInventoryHandler({ setInventory, setMessage, t, translateErro
   return {
     handleAdd: (cardId) => handleChange(addToInventory, cardId, t("cardAdded")),
     handleRemove: (cardId) => handleChange(removeFromInventory, cardId, t("cardRemoved")),
+    handleSetTradeAvailable,
   };
 }
 
+function TradeAvailabilityControl({ card, onSave }) {
+  const { t } = useI18n();
+  const [value, setValue] = useState(String(card.tradeAvailable));
+  const [saving, setSaving] = useState(false);
+  const numericValue = Number(value);
+  const valid = value !== "" && Number.isInteger(numericValue) &&
+    numericValue >= 0 && numericValue <= card.amount;
+
+  useEffect(() => {
+    setValue(String(card.tradeAvailable));
+  }, [card.id, card.tradeAvailable]);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (!valid || saving || numericValue === card.tradeAvailable) return;
+    setSaving(true);
+    await onSave(card.id, numericValue);
+    setSaving(false);
+  }
+
+  return (
+    <form className="trade-availability-control" onSubmit={handleSubmit}>
+      <label htmlFor={`trade-available-${card.id}`}>{t("tradeCopies")}</label>
+      <div className="trade-availability-input-row">
+        <input id={`trade-available-${card.id}`} type="number" min="0" max={card.amount} step="1"
+          value={value} onChange={(event) => setValue(event.target.value)} />
+        <span>{t("ofTotal", { count: card.amount })}</span>
+      </div>
+      <button type="submit" className="trade-save-button" disabled={!valid || saving || numericValue === card.tradeAvailable}>
+        {saving ? t("saving") : t("saveTradeAvailability")}
+      </button>
+    </form>
+  );
+}
+
 // Presenta las cartas existentes en el inventario junto con sus cantidades.
-function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck }) {
+function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSetTradeAvailable }) {
   const { t } = useI18n();
   const [showSetProgress, setShowSetProgress] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
@@ -41,7 +100,13 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck }) {
   const inventoryCards = inventory
     .map((item) => {
       const card = cards.find((candidate) => candidate.id === item.cardId);
-      return card ? { ...card, quantity: item.quantity } : null;
+      const amount = item.amount ?? item.quantity;
+      return card ? {
+        ...card,
+        quantity: amount,
+        amount,
+        tradeAvailable: item.tradeAvailable ?? item.trade_available ?? 0,
+      } : null;
     })
     .filter(Boolean);
 
@@ -78,17 +143,18 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck }) {
         </ul>
       )}
       {inventoryCards.length === 0 && <p>{t("noInventory")}</p>}
-      <section className="card-grid">
-        {inventoryCards.map((card) => (
-          <CardLayout key={card.id} card={card} quantity={card.quantity}
-            actionLabel={t("removeCopy")} onAction={() => onRemove(card.id)}
-            secondaryActionLabel={t("addToDeck")}
-            onSecondaryAction={() => {
-              setSelectedCard(card);
-              setSelectedDeckId(decks[0] ? String(decks[0].id) : "");
-            }} />
-        ))}
-      </section>
+      <GroupedCardGrid cards={inventoryCards} renderCard={(card) => (
+          <div className="inventory-card-entry" key={card.id}>
+            <CardLayout card={card} quantity={card.amount}
+              actionLabel={t("removeCopy")} onAction={() => onRemove(card.id)}
+              secondaryActionLabel={t("addToDeck")}
+              onSecondaryAction={() => {
+                setSelectedCard(card);
+                setSelectedDeckId(decks[0] ? String(decks[0].id) : "");
+              }} />
+            <TradeAvailabilityControl card={card} onSave={onSetTradeAvailable} />
+          </div>
+      )} />
       {selectedCard && (
         <div className="deck-dialog-backdrop" role="presentation" onClick={() => setSelectedCard(null)}>
           <section className="deck-dialog" role="dialog" aria-modal="true" aria-labelledby="add-card-title"
