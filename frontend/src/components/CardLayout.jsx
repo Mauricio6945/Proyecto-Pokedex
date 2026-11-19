@@ -23,7 +23,8 @@ function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAct
   const typeClass = typeClasses[card.type?.trim().toLowerCase()];
   const circulationAmount = card.circulationAmount ?? card.amount;
   const circulationAvailable = card.circulationAvailable ?? card.trade_available;
-  const pokemonName = card.pokemonName ?? card.name;
+  // La tarjeta conserva su nombre propio (incluidas EX, variantes y rarezas).
+  const pokemonName = card.name;
   const [descriptionActive, setDescriptionActive] = useState(false);
   const description = (language === "es" ? card.pokemonDescriptionEs : card.pokemonDescriptionEn) ||
     t("descriptionUnavailable");
