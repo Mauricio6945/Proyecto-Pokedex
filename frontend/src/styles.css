@@ -845,6 +845,24 @@ body {
   cursor: not-allowed;
 }
 
+.purchase-history-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.purchase-history-list li {
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #38bdf8;
+  border-radius: 10px;
+  background: rgb(255 255 255 / 94%);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .card-row { 
   display: grid; 
   gap: 6px; 

@@ -5,6 +5,7 @@ import {
   deleteDeck,
   getCards,
   getDecks,
+  getHistory,
   getInventory,
   getMe,
   removeCardFromDeck,
@@ -15,6 +16,7 @@ import InventoryHandler, { useInventoryHandler } from "./components/InventoryHan
 import SessionHandler from "./components/SessionHandler";
 import CardScanner from "./components/CardScanner";
 import DeckHandler from "./components/DeckHandler";
+import PurchaseHistory from "./components/PurchaseHistory";
 import { useI18n } from "./i18n";
 import pokedexImage from "./img/pokedex.png";
 import footerImage from "./img/pokemon_footer_background.png";
@@ -24,6 +26,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [inventory, setInventory] = useState([]);
   const [decks, setDecks] = useState([]);
+  const [history, setHistory] = useState([]);
   const [view, setView] = useState("catalog");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -33,7 +36,7 @@ function App() {
   const { language, setLanguage, t, translateError } = useI18n();
 
   // Agrupa las operaciones compartidas para agregar y quitar cartas del inventario.
-  const inventoryActions = useInventoryHandler({ setInventory, setCards, setMessage, t, translateError });
+  const inventoryActions = useInventoryHandler({ setInventory, setCards, setHistory, setMessage, t, translateError });
 
   // Al montar la aplicación carga el catálogo y, si existe sesión, los datos privados.
   useEffect(() => {
@@ -42,9 +45,12 @@ function App() {
         setCards(loadedCards);
         setUser(loadedUser);
         if (loadedUser) {
-          const [loadedInventory, loadedDecks] = await Promise.all([getInventory(), getDecks()]);
+          const [loadedInventory, loadedDecks, loadedHistory] = await Promise.all([
+            getInventory(), getDecks(), getHistory(),
+          ]);
           setInventory(loadedInventory);
           setDecks(loadedDecks);
+          setHistory(loadedHistory);
         }
       })
       .catch((err) => setError(err.message))
@@ -141,6 +147,7 @@ function App() {
                   setUser(null);
                   setInventory([]);
                   setDecks([]);
+                  setHistory([]);
                   setView("catalog");
                   setMessage(t("logoutDone"));
                 }}
@@ -177,6 +184,9 @@ function App() {
         {user && (
           <button type="button" onClick={() => setView("decks")}>{t("decksNav")}</button>
         )}
+        {user && (
+          <button type="button" onClick={() => setView("history")}>{t("historyNav")}</button>
+        )}
       </nav>
 
       {/* Mensajes globales de carga, error y resultado de la última operación. */}
@@ -200,6 +210,9 @@ function App() {
         <DeckHandler decks={decks} cards={cards} onCreateDeck={handleCreateDeck}
           onRenameDeck={handleRenameDeck} onDeleteDeck={handleDeleteDeck}
           onRemoveCard={handleRemoveCardFromDeck} />
+      )}
+      {!loading && !error && view === "history" && user && (
+        <PurchaseHistory entries={history} />
       )}
       {/* Imagen decorativa fija al final de la interfaz. */}
       <footer>

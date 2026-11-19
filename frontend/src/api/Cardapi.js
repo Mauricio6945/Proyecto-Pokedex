@@ -27,6 +27,11 @@ export function getInventory() {
   return apiRequest("/api/inventory");
 }
 
+// Consulta el historial de compras y ventas del usuario autenticado.
+export function getHistory() {
+  return apiRequest("/api/history");
+}
+
 // Agrega una copia de la carta seleccionada al inventario.
 export function addToInventory(cardId) {
   return apiRequest("/api/inventory", {

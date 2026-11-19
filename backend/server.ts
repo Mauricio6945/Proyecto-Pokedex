@@ -48,6 +48,15 @@ db.exec(`
     amount INTEGER NOT NULL DEFAULT 0 CHECK (amount >= 0),
     trade_available INTEGER NOT NULL DEFAULT 0 CHECK (trade_available >= 0)
   );
+  CREATE TABLE IF NOT EXISTS inventory_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    google_id TEXT NOT NULL REFERENCES users(google_id),
+    card_id TEXT NOT NULL,
+    action TEXT NOT NULL CHECK (action IN ('buy', 'sell')),
+    card_name TEXT NOT NULL,
+    set_name TEXT NOT NULL,
+    occurred_at INTEGER NOT NULL
+  );
   CREATE TABLE IF NOT EXISTS decks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     google_id TEXT NOT NULL REFERENCES users(google_id),
@@ -303,6 +312,27 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       return new Response(null, { status: 204, headers });
     }
 
+    // Devuelve solo los registros de compra y venta del usuario autenticado.
+    if (request.method === "GET" && path === "/api/history") {
+      const user = getUser(request);
+      if (!user) return unauthenticated();
+      const rows = db.prepare(`
+        SELECT id, action, card_name AS cardName, set_name AS setName, occurred_at AS occurredAt
+        FROM inventory_history WHERE google_id = ?
+        ORDER BY occurred_at DESC, id DESC
+      `).all(user.id) as Array<{
+        id: number;
+        action: "buy" | "sell";
+        cardName: string;
+        setName: string;
+        occurredAt: number;
+      }>;
+      return Response.json(rows.map((row) => ({
+        ...row,
+        occurredAt: new Date(row.occurredAt).toISOString(),
+      })), { headers: { "Cache-Control": "no-store" } });
+    }
+
     // Rutas protegidas para consultar y administrar los mazos del usuario.
     if (path === "/api/decks" || path.startsWith("/api/decks/")) {
       const user = getUser(request);
@@ -457,9 +487,15 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         const body = await request.json().catch(() => null);
         const cardId = body && typeof body === "object" && "cardId" in body &&
             typeof body.cardId === "string" ? body.cardId : null;
-        if (!cardId || !(await readCards()).some((card) => card.id === cardId)) {
+        const catalog = await readCards();
+        const card = catalog.find((candidate) => candidate.id === cardId);
+        if (!cardId || !card) {
           return Response.json({ error: "Carta no válida" }, { status: 400 });
         }
+        const cardName = typeof card.name === "string" ? card.name : cardId;
+        const setName = typeof card.expansion === "string"
+          ? card.expansion
+          : typeof card.set_id === "string" ? card.set_id : "";
         db.exec("BEGIN IMMEDIATE");
         try {
           const stockResult = db.prepare(`
@@ -474,6 +510,10 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
             INSERT INTO inventory (google_id, card_id, quantity, trade_available) VALUES (?, ?, 1, 0)
             ON CONFLICT(google_id, card_id) DO UPDATE SET quantity = quantity + 1
           `).run(user.id, cardId);
+          db.prepare(`
+            INSERT INTO inventory_history (google_id, card_id, action, card_name, set_name, occurred_at)
+            VALUES (?, ?, 'buy', ?, ?, ?)
+          `).run(user.id, cardId, cardName, setName, Date.now());
           db.exec("COMMIT");
         } catch (error) {
           db.exec("ROLLBACK");
@@ -515,6 +555,12 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         ).get(user.id, cardId) as { quantity: number; tradeAvailable: number } | undefined;
         if (!row) return Response.json({ error: "Carta no encontrada" }, { status: 404 });
 
+        const card = (await readCards()).find((candidate) => candidate.id === cardId);
+        const cardName = typeof card?.name === "string" ? card.name : cardId;
+        const setName = typeof card?.expansion === "string"
+          ? card.expansion
+          : typeof card?.set_id === "string" ? card.set_id : "";
+
         db.exec("BEGIN IMMEDIATE");
         try {
           if (row.quantity > 1) {
@@ -528,6 +574,10 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
               .run(user.id, cardId);
           }
           db.prepare("UPDATE card_stock SET amount = amount + 1 WHERE card_id = ?").run(cardId);
+          db.prepare(`
+            INSERT INTO inventory_history (google_id, card_id, action, card_name, set_name, occurred_at)
+            VALUES (?, ?, 'sell', ?, ?, ?)
+          `).run(user.id, cardId, cardName, setName, Date.now());
           db.exec("COMMIT");
         } catch (error) {
           db.exec("ROLLBACK");

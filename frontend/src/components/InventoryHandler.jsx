@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { addToInventory, getCards, getInventory, removeFromInventory, updateTradeAvailable } from "../api/Cardapi";
+import { addToInventory, getCards, getHistory, getInventory, removeFromInventory, updateTradeAvailable } from "../api/Cardapi";
 import CardLayout from "./CardLayout";
 import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
 // Centraliza las operaciones de modificacion y recarga del inventario.
-export function useInventoryHandler({ setInventory, setCards, setMessage, t, translateError }) {
+export function useInventoryHandler({ setInventory, setCards, setHistory, setMessage, t, translateError }) {
   // Consulta el inventario actualizado y reemplaza el estado compartido.
   async function refreshInventory() {
-    const [updatedInventory, updatedCards] = await Promise.all([getInventory(), getCards()]);
+    const [updatedInventory, updatedCards, updatedHistory] = await Promise.all([
+      getInventory(), getCards(), getHistory(),
+    ]);
     setInventory(updatedInventory);
     setCards(updatedCards);
+    setHistory(updatedHistory);
   }
 
   // Ejecuta una operacion y muestra su resultado o el error producido.
@@ -56,6 +59,7 @@ export function useInventoryHandler({ setInventory, setCards, setMessage, t, tra
 
 function TradeAvailabilityControl({ card, onSave }) {
   const { t } = useI18n();
+  // Mantiene el valor editable separado del dato original hasta guardar.
   const [value, setValue] = useState(String(card.tradeAvailable));
   const [saving, setSaving] = useState(false);
   const numericValue = Number(value);
