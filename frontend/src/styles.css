@@ -61,6 +61,7 @@ h1 {
 
 /* Contenedor visual compartido por las tarjetas del catalogo e inventario. */
 .card {
+  position: relative;
   background: #ffffff;
   border: 1px solid #120D08;
   border-radius: 18px;
@@ -70,6 +71,68 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.card-description-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 8;
+  width: min(100%, 340px);
+  max-height: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 12px;
+  background: rgb(17 24 39 / 94%);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 24%);
+}
+
+.card-description-tooltip p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.card:hover,
+.card:focus-within,
+.card:focus-visible {
+  z-index: 6;
+}
+
+.card:hover .card-description-tooltip,
+.card:focus-within .card-description-tooltip,
+.card:focus-visible .card-description-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.card:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.card > img {
+  position: relative;
+  z-index: 1;
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.card:hover > img,
+.card:focus-within > img,
+.card:focus-visible > img {
+  transform: scale(1.06);
+}
+
 
 /* Variantes cromáticas de las cartas según su tipo Pokémon. */
 .card--grass { 
@@ -761,7 +824,9 @@ body {
   gap: 8px;
 }
 
-.deck-rename-form { width: 100%; }
+.deck-rename-form { 
+  width: 100%; 
+}
 
 .deck-rename-form input {
   flex: 1 1 180px;
@@ -784,8 +849,13 @@ body {
   cursor: pointer;
 }
 
-.deck-manage-button { background: #374151; }
-.deck-delete-button { background: #b91c1c; }
+.deck-manage-button { 
+  background: #374151; 
+}
+
+.deck-delete-button { background:
+   #b91c1c; 
+}
 
 .inventory-card-entry {
   display: grid;

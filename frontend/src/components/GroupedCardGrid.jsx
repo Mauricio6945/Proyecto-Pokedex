@@ -23,8 +23,8 @@ function GroupedCardGrid({ cards, renderCard }) {
       {orderedGroups.map(([number, groupCards]) => {
         const firstCard = groupCards[0];
         const heading = number === "unknown"
-          ? firstCard.name
-          : `#${String(number).padStart(3, "0")} · ${firstCard.name}`;
+          ? (firstCard.pokemonName ?? firstCard.name)
+          : `#${String(number).padStart(3, "0")} · ${firstCard.pokemonName ?? firstCard.name}`;
 
         return (
           <section className="pokedex-group" key={number}>

@@ -18,6 +18,7 @@ if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
 
 //Rutas de archivos de datos y base de SQLite.
 const dataPath = new URL("./pokemon.json", import.meta.url);
+const pokedexDataPath = new URL("./pokedex.json", import.meta.url);
 const dbPath = Deno.env.get("POKEDEX_DB_PATH") ?? fileURLToPath(new URL("./pokedex.db", import.meta.url));
 const db = new DatabaseSync(dbPath);
 
@@ -82,6 +83,13 @@ const initialCatalog = JSON.parse(await Deno.readTextFile(dataPath)) as Array<{
   amount?: number;
   trade_available?: number;
 }>;
+const pokedexEntries = JSON.parse(await Deno.readTextFile(pokedexDataPath)) as Array<{
+  id: number;
+  name: string;
+  description_en?: string;
+  description_es?: string;
+}>;
+const pokedexByNumber = new Map(pokedexEntries.map((entry) => [entry.id, entry]));
 const seedCardStock = db.prepare(`
   INSERT OR IGNORE INTO card_stock (card_id, amount, trade_available) VALUES (?, ?, ?)
 `);
@@ -153,10 +161,14 @@ async function readCards(): Promise<Array<Record<string, unknown> & { id: string
   const stockById = new Map(stock.map((item) => [item.cardId, item]));
   return cards.map((card) => {
     const currentStock = stockById.get(card.id);
+    const pokedexEntry = pokedexByNumber.get(Number(card.pokedex_number));
     return {
       ...card,
       amount: currentStock?.amount ?? Number(card.amount ?? 0),
       trade_available: currentStock?.trade_available ?? Number(card.trade_available ?? 0),
+      pokemonName: pokedexEntry?.name ?? String(card.name ?? ""),
+      pokemonDescriptionEn: pokedexEntry?.description_en ?? "",
+      pokemonDescriptionEs: pokedexEntry?.description_es ?? "",
     };
   });
 }
