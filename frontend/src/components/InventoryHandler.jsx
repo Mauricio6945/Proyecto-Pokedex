@@ -106,6 +106,8 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSe
         quantity: amount,
         amount,
         tradeAvailable: item.tradeAvailable ?? item.trade_available ?? 0,
+        circulationAmount: card.amount,
+        circulationAvailable: card.trade_available,
       } : null;
     })
     .filter(Boolean);

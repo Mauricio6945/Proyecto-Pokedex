@@ -20,6 +20,8 @@ const typeClasses = {
 function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAction, secondaryActionLabel, onSecondaryAction }) {
   const { t } = useI18n();
   const typeClass = typeClasses[card.type?.trim().toLowerCase()];
+  const circulationAmount = card.circulationAmount ?? card.amount;
+  const circulationAvailable = card.circulationAvailable ?? card.trade_available;
   return (
     <article className={`card${typeClass ? ` card--${typeClass}` : ""}`}>
       <div className="card-middle">
@@ -40,6 +42,12 @@ function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAct
         <div>{t("variant")}: {card.variant}</div>
         <div>{t("expansion")}: {card.expansion}</div>
         <div>{t("price", { price: card.price_usd })}</div>
+        {circulationAmount !== undefined && (
+          <div>{t("cardsInCirculation", { count: circulationAmount })}</div>
+        )}
+        {circulationAvailable !== undefined && (
+          <div>{t("cardsAvailable", { count: circulationAvailable })}</div>
+        )}
         {quantity !== undefined && <strong>{t("quantity", { count: quantity })}</strong>}
       </div>
 
