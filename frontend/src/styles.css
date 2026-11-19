@@ -635,6 +635,38 @@ body {
   line-height: 1.8;
 }
 
+.set-progress-item + .set-progress-item {
+  margin-top: 8px;
+}
+
+.set-progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.set-missing-toggle {
+  border: 1px solid #0284c7;
+  border-radius: 7px;
+  padding: 5px 9px;
+  background: #e0f2fe;
+  color: #075985;
+  cursor: pointer;
+}
+
+.set-missing-list {
+  margin: 6px 0 10px;
+  padding-left: 22px;
+  color: #374151;
+  line-height: 1.55;
+}
+
+.set-all-collected {
+  margin: 6px 0 10px;
+  color: #166534;
+}
+
 /* Texto informativo que muestra cuantas coincidencias encontro el filtro. */
 .results-count {
   font-size: 14px;

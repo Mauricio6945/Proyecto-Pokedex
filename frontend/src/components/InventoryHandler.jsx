@@ -97,6 +97,7 @@ function TradeAvailabilityControl({ card, onSave }) {
 function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSetTradeAvailable }) {
   const { t } = useI18n();
   const [showSetProgress, setShowSetProgress] = useState(false);
+  const [expandedMissingSets, setExpandedMissingSets] = useState(() => new Set());
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedDeckId, setSelectedDeckId] = useState("");
 
@@ -120,9 +121,10 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSe
   const ownedCardIds = new Set(inventory.map((item) => item.cardId));
   const setProgress = cards.reduce((sets, card) => {
     const setName = card.expansion || card.set_id || t("unknownSet");
-    if (!sets[setName]) sets[setName] = { total: 0, owned: 0 };
+    if (!sets[setName]) sets[setName] = { total: 0, owned: 0, missing: [] };
     sets[setName].total += 1;
     if (ownedCardIds.has(card.id)) sets[setName].owned += 1;
+    else sets[setName].missing.push(card);
     return sets;
   }, {});
 
@@ -142,8 +144,32 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSe
           {Object.entries(setProgress)
             .sort(([setA], [setB]) => setA.localeCompare(setB))
             .map(([setName, progress]) => (
-              <li key={setName}>
-                {setName}: {progress.owned}/{progress.total}
+              <li className="set-progress-item" key={setName}>
+                <div className="set-progress-heading">
+                  <span>{setName}: {progress.owned}/{progress.total}</span>
+                  <button
+                    type="button"
+                    className="set-missing-toggle"
+                    aria-expanded={expandedMissingSets.has(setName)}
+                    onClick={() => setExpandedMissingSets((current) => {
+                      const next = new Set(current);
+                      if (next.has(setName)) next.delete(setName);
+                      else next.add(setName);
+                      return next;
+                    })}
+                  >
+                    {t(expandedMissingSets.has(setName) ? "hideMissingCards" : "showMissingCards", { count: progress.missing.length })}
+                  </button>
+                </div>
+                {expandedMissingSets.has(setName) && (
+                  progress.missing.length > 0 ? (
+                    <ul className="set-missing-list">
+                      {progress.missing
+                        .sort((cardA, cardB) => (cardA.name || "").localeCompare(cardB.name || ""))
+                        .map((card) => <li key={card.id}>{card.name}</li>)}
+                    </ul>
+                  ) : <p className="set-all-collected">{t("allSetCardsOwned")}</p>
+                )}
               </li>
             ))}
         </ul>
