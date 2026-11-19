@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useI18n } from "../i18n";
 
 // Relaciona los nombres de tipo del catálogo con las clases visuales de la carta.
@@ -23,14 +24,13 @@ function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAct
   const circulationAmount = card.circulationAmount ?? card.amount;
   const circulationAvailable = card.circulationAvailable ?? card.trade_available;
   const pokemonName = card.pokemonName ?? card.name;
+  const [descriptionActive, setDescriptionActive] = useState(false);
   const description = (language === "es" ? card.pokemonDescriptionEs : card.pokemonDescriptionEn) ||
     t("descriptionUnavailable");
 
   return (
     <article
-      className={`card${typeClass ? ` card--${typeClass}` : ""}`}
-      tabIndex={0}
-      aria-describedby={`pokemon-description-${card.id}`}
+      className={`card${typeClass ? ` card--${typeClass}` : ""}${descriptionActive ? " card--show-description" : ""}`}
     >
       <div className="card-middle">
         <div className="name-row">
@@ -41,7 +41,16 @@ function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAct
       </div>
 
       {/* La imagen conserva el nombre de la carta como texto alternativo. */}
-      <img src={card.image} alt={`Imagen de ${pokemonName}`} />
+      <img
+        src={card.image}
+        alt={`Imagen de ${pokemonName}`}
+        tabIndex={0}
+        aria-describedby={`pokemon-description-${card.id}`}
+        onPointerEnter={() => setDescriptionActive(true)}
+        onPointerLeave={() => setDescriptionActive(false)}
+        onFocus={() => setDescriptionActive(true)}
+        onBlur={() => setDescriptionActive(false)}
+      />
 
       {/* Datos secundarios usados tanto en catalogo como en inventario. */}
       <div className="card-row">

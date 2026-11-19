@@ -74,11 +74,11 @@ h1 {
 
 .card-description-tooltip {
   position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
+  top: 0;
+  left: calc(100% + 8px);
   z-index: 8;
-  width: min(100%, 340px);
-  max-height: 190px;
+  width: min(300px, calc(100vw - 32px));
+  max-height: 220px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -91,7 +91,7 @@ h1 {
   color: #fff;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-4px);
+  transform: translateX(-4px);
   transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
   box-shadow: 0 10px 24px rgb(0 0 0 / 24%);
 }
@@ -101,21 +101,17 @@ h1 {
   line-height: 1.55;
 }
 
-.card:hover,
-.card:focus-within,
-.card:focus-visible {
+.card--show-description {
   z-index: 6;
 }
 
-.card:hover .card-description-tooltip,
-.card:focus-within .card-description-tooltip,
-.card:focus-visible .card-description-tooltip {
+.card--show-description .card-description-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-.card:focus-visible {
+.card > img:focus-visible {
   outline: 3px solid #0284c7;
   outline-offset: 2px;
 }
@@ -127,10 +123,15 @@ h1 {
   transition: transform 180ms ease;
 }
 
-.card:hover > img,
-.card:focus-within > img,
-.card:focus-visible > img {
+.card--show-description > img {
   transform: scale(1.06);
+}
+
+/* Places the description outside the right edge without clipping at the last column. */
+.card-grid > .card:nth-child(3n) .card-description-tooltip,
+.card-grid > .inventory-card-entry:nth-child(3n) .card-description-tooltip {
+  right: calc(100% + 8px);
+  left: auto;
 }
 
 
@@ -271,6 +272,13 @@ h1 {
   .card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* En dos columnas, la última carta también abre la descripción hacia dentro. */
+  .card-grid > .card:nth-child(2n) .card-description-tooltip,
+  .card-grid > .inventory-card-entry:nth-child(2n) .card-description-tooltip {
+    right: calc(100% + 8px);
+    left: auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -354,6 +362,20 @@ h1 {
   /* Muestra una sola tarjeta por fila en teléfonos. */
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* En móviles no hay espacio lateral: la descripción aparece debajo de la carta. */
+  .card-description-tooltip {
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-height: 190px;
+    transform: translateY(-4px);
+  }
+
+  .card--show-description .card-description-tooltip {
+    transform: translateY(0);
   }
 
   /* Reduce el relleno y la altura mínima de las tarjetas móviles. */

@@ -183,18 +183,6 @@ function checkOrigin(request: Request): boolean {
   return request.headers.get("origin") === FRONTEND_ORIGIN;
 }
 
-//Handler auxiliar para servir la colección de cartas del archivo JSON.
-async function cardsHandler(_request: Request): Promise<Response> {
-  const fileContents = await Deno.readTextFile(dataPath);
-  const cards = JSON.parse(fileContents);
-
-  return Response.json(cards, {
-    headers: {
-      "access-control-allow-origin": "*",
-    },
-  });
-}
-
 //Punto de entrada principal: recibe cada solicitud HTTP y despacha a la ruta apropiada.
 const port = Number(Deno.env.get("PORT") ?? "8000");
 Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {

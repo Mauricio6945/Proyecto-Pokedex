@@ -1,7 +1,3 @@
 {
-  "type": "module",
-  "dependencies": {
-    "@tcgdex/sdk": "^2.9.0",
-    "tcgapi": "^0.3.0"
-  }
+  "type": "module"
 }
