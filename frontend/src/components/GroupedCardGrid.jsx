@@ -1,10 +1,9 @@
 import CardLayout from "./CardLayout";
 
-// Agrupa las cartas por número de Pokédex y mantiene juntas sus variantes.
+//Organiza las cartas por número de Pokédex y mantiene juntas sus variantes.
 function GroupedCardGrid({ cards, renderCard }) {
   const groups = new Map();
 
-  // Usa "unknown" para las cartas que no contienen un número de Pokédex válido.
   for (const card of cards) {
     const number = Number(card.pokedex_number);
     const key = Number.isFinite(number) ? number : "unknown";
@@ -23,8 +22,8 @@ function GroupedCardGrid({ cards, renderCard }) {
       {orderedGroups.map(([number, groupCards]) => {
         const firstCard = groupCards[0];
         const heading = number === "unknown"
-          ? (firstCard.pokemonName ?? firstCard.name)
-          : `#${String(number).padStart(3, "0")} · ${firstCard.pokemonName ?? firstCard.name}`;
+          ? firstCard.name
+          : `#${String(number).padStart(3, "0")} · ${firstCard.name}`;
 
         return (
           <section className="pokedex-group" key={number}>

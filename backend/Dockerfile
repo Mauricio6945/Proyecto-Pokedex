@@ -3,7 +3,7 @@
 FROM denoland/deno:2.8.0
 
 WORKDIR /app
-COPY deno.json deno.lock server.ts pokemon.json ./
+COPY deno.json deno.lock server.ts pokemon.json pokedex.json ./
 #Necesario para que el usuario deno pueda escribir la base SQLite local.
 RUN chown -R deno:deno /app
 USER deno
