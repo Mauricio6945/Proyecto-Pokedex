@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
-import { addCardToDeck, createDeck, getCards, getDecks, getInventory, getMe } from "./api/Cardapi";
+import {
+  addCardToDeck,
+  createDeck,
+  deleteDeck,
+  getCards,
+  getDecks,
+  getInventory,
+  getMe,
+  removeCardFromDeck,
+  renameDeck,
+} from "./api/Cardapi";
 import FilterCards from "./components/FilterCards";
 import InventoryHandler, { useInventoryHandler } from "./components/InventoryHandler";
 import SessionHandler from "./components/SessionHandler";
@@ -68,6 +78,47 @@ function App() {
     }
   }
 
+  async function handleRenameDeck(deckId, name) {
+    // Renombra el mazo en el backend y refleja el nuevo nombre en el estado local.
+    try {
+      const updatedDeck = await renameDeck(deckId, name);
+      setDecks((current) => current.map((deck) =>
+        deck.id === deckId ? { ...deck, name: updatedDeck.name } : deck));
+      setMessage(t("deckRenamed", { name: updatedDeck.name }));
+      return true;
+    } catch (err) {
+      setMessage(translateError(err.message));
+      return false;
+    }
+  }
+
+  async function handleDeleteDeck(deckId) {
+    // Elimina el mazo seleccionado y actualiza la lista y el mensaje mostrado.
+    try {
+      await deleteDeck(deckId);
+      const deckName = decks.find((deck) => deck.id === deckId)?.name ?? "";
+      setDecks((current) => current.filter((deck) => deck.id !== deckId));
+      setMessage(t("deckDeleted", { name: deckName }));
+      return true;
+    } catch (err) {
+      setMessage(translateError(err.message));
+      return false;
+    }
+  }
+
+  async function handleRemoveCardFromDeck(deckId, cardId) {
+    // Quita la carta del mazo y vuelve a cargar los mazos para mantener las cantidades sincronizadas.
+    try {
+      await removeCardFromDeck(deckId, cardId);
+      setDecks(await getDecks());
+      setMessage(t("deckCardRemoved"));
+      return true;
+    } catch (err) {
+      setMessage(translateError(err.message));
+      return false;
+    }
+  }
+
   return (
     <main className="container">
       {/* Encabezado con identidad, cuenta del usuario y selector de idioma. */}
@@ -99,6 +150,7 @@ function App() {
           ) : (
             <a className="login-button" href="/auth/google">{t("login")}</a>
           )}
+          {/* Control de idioma disponible para todos los visitantes de la aplicación. */}
           <label className="visually-hidden" htmlFor="language-select">{t("language")}</label>
           <select id="language-select" className="language-select" aria-label={t("language")}
             value={language} onChange={(event) => {
@@ -144,8 +196,11 @@ function App() {
         <CardScanner cards={cards} onAdd={inventoryActions.handleAdd} />
       )}
       {!loading && !error && view === "decks" && user && (
-        <DeckHandler decks={decks} cards={cards} onCreateDeck={handleCreateDeck} />
+        <DeckHandler decks={decks} cards={cards} onCreateDeck={handleCreateDeck}
+          onRenameDeck={handleRenameDeck} onDeleteDeck={handleDeleteDeck}
+          onRemoveCard={handleRemoveCardFromDeck} />
       )}
+      {/* Imagen decorativa fija al final de la interfaz. */}
       <footer>
         <img src={footerImage} alt="Multiple Pokemon Stickers Footer" id="footer-pokemons" />
       </footer>

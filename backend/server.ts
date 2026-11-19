@@ -305,6 +305,63 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         }
       }
 
+      // Actualiza el nombre de un mazo o elimina el mazo completo por su identificador.
+      const deckPath = path.match(/^\/api\/decks\/(\d+)$/);
+      if (deckPath && (request.method === "PUT" || request.method === "DELETE")) {
+        const deckId = Number(deckPath[1]);
+        const deck = db.prepare(
+          "SELECT id FROM decks WHERE id = ? AND google_id = ?",
+        ).get(deckId, user.id);
+        if (!deck) return Response.json({ error: "Mazo no encontrado" }, { status: 404 });
+
+        // La eliminacion incluye las cartas asociadas gracias a la clave externa CASCADE.
+        if (request.method === "DELETE") {
+          db.prepare("DELETE FROM decks WHERE id = ? AND google_id = ?").run(deckId, user.id);
+          return new Response(null, { status: 204 });
+        }
+
+        // Valida el nuevo nombre y evita duplicados dentro de los mazos del usuario.
+        const body = await request.json().catch(() => null);
+        const name = body && typeof body === "object" && "name" in body &&
+            typeof body.name === "string" ? body.name.trim() : "";
+        if (!name || name.length > 60) {
+          return Response.json({ error: "El nombre debe tener entre 1 y 60 caracteres" }, { status: 400 });
+        }
+        const duplicate = db.prepare(
+          "SELECT id FROM decks WHERE google_id = ? AND name = ? AND id <> ?",
+        ).get(user.id, name, deckId);
+        if (duplicate) {
+          return Response.json({ error: "Ya tienes un mazo con ese nombre" }, { status: 409 });
+        }
+        db.prepare("UPDATE decks SET name = ? WHERE id = ? AND google_id = ?")
+          .run(name, deckId, user.id);
+        return Response.json({ id: deckId, name });
+      }
+
+      // Elimina una carta de un mazo a partir de los identificadores enviados en la URL.
+      const deckCardPath = path.match(/^\/api\/decks\/(\d+)\/cards\/(.+)$/);
+      if (request.method === "DELETE" && deckCardPath) {
+        const deckId = Number(deckCardPath[1]);
+        const deck = db.prepare(
+          "SELECT id FROM decks WHERE id = ? AND google_id = ?",
+        ).get(deckId, user.id);
+        if (!deck) return Response.json({ error: "Mazo no encontrado" }, { status: 404 });
+
+        let cardId: string;
+        try {
+          cardId = decodeURIComponent(deckCardPath[2]);
+        } catch {
+          return Response.json({ error: "Carta no válida" }, { status: 400 });
+        }
+        const deckCard = db.prepare(
+          "SELECT card_id FROM deck_cards WHERE deck_id = ? AND card_id = ?",
+        ).get(deckId, cardId);
+        if (!deckCard) return Response.json({ error: "Carta no encontrada en el mazo" }, { status: 404 });
+        db.prepare("DELETE FROM deck_cards WHERE deck_id = ? AND card_id = ?").run(deckId, cardId);
+        return new Response(null, { status: 204 });
+      }
+
+      // Agrega una carta al mazo respetando las copias disponibles en el inventario.
       const deckCardsPath = path.match(/^\/api\/decks\/(\d+)\/cards$/);
       if (request.method === "POST" && deckCardsPath) {
         const deckId = Number(deckCardsPath[1]);

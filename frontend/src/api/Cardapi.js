@@ -1,5 +1,6 @@
 // Cliente HTTP compartido: normaliza respuestas vacias y errores de la API.
 async function apiRequest(url, options = {}) {
+  // Ejecuta la solicitud y convierte los errores HTTP en mensajes reutilizables.
   const response = await fetch(url, options);
   if (!response.ok) {
     const data = await response.json().catch(() => ({}));
@@ -63,6 +64,28 @@ export function addCardToDeck(deckId, cardId) {
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ cardId }),
   });
+}
+
+// Cambia el nombre de un mazo existente.
+export function renameDeck(deckId, name) {
+  return apiRequest(`/api/decks/${encodeURIComponent(deckId)}`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ name }),
+  });
+}
+
+// Elimina un mazo del usuario y las cartas asociadas.
+export function deleteDeck(deckId) {
+  return apiRequest(`/api/decks/${encodeURIComponent(deckId)}`, { method: "DELETE" });
+}
+
+// Quita todas las copias de una carta dentro de un mazo.
+export function removeCardFromDeck(deckId, cardId) {
+  return apiRequest(
+    `/api/decks/${encodeURIComponent(deckId)}/cards/${encodeURIComponent(cardId)}`,
+    { method: "DELETE" },
+  );
 }
 
 // Finaliza la sesion del usuario en el backend.

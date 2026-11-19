@@ -723,6 +723,54 @@ body {
 /* Elimina el margen superior del nombre de cada mazo. */
 .deck-panel h3 { margin-top: 0; }
 
+.deck-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.deck-heading h3 {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.deck-management-actions,
+.deck-rename-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deck-rename-form { width: 100%; }
+
+.deck-rename-form input {
+  flex: 1 1 180px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.deck-manage-button,
+.deck-delete-button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deck-manage-button { background: #374151; }
+.deck-delete-button { background: #b91c1c; }
+
 .card-row { 
   display: grid; 
   gap: 6px; 
@@ -818,6 +866,15 @@ button:not(:disabled):active,
   /* Elimina el margen superior del botón secundario apilado. */
   .deck-dialog-actions .deck-cancel-button {
     margin-top: 0;
+  }
+
+  .deck-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .deck-management-actions > button {
+    flex: 1 1 auto;
   }
 }
 
