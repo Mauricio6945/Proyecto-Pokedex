@@ -4,6 +4,8 @@ import CardLayout from "./CardLayout";
 function GroupedCardGrid({ cards, renderCard }) {
   const groups = new Map();
 
+
+  //Construye el map por número de Pokédex, usando "unknown" para cartas sin número definido.
   for (const card of cards) {
     const number = Number(card.pokedex_number);
     const key = Number.isFinite(number) ? number : "unknown";

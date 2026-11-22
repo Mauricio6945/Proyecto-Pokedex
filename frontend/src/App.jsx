@@ -11,6 +11,7 @@ import {
   removeCardFromDeck,
   renameDeck,
 } from "./api/Cardapi";
+
 import FilterCards from "./components/FilterCards";
 import InventoryHandler, { useInventoryHandler } from "./components/InventoryHandler";
 import SessionHandler from "./components/SessionHandler";
@@ -21,6 +22,8 @@ import { useI18n } from "./i18n";
 import pokedexImage from "./img/pokedex.png";
 import footerImage from "./img/pokemon_footer_background.png";
 function App() {
+
+
   // Estados principales que controlan los datos y la vista actual de la aplicación.
   const [cards, setCards] = useState([]);
   const [user, setUser] = useState(null);

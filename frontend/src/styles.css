@@ -103,7 +103,7 @@ h1 {
   margin: 16px 0 20px;
   padding: 16px 18px;
   border: 1px solid #d1d5db;
-  border-left: 4px solid #60a5fa;
+  border-left: 4px solid #c45c5c;
   border-radius: 12px;
   background: #f8fafc;
   color: #374151;
@@ -872,10 +872,16 @@ body {
 }
 
 /* Elimina el margen superior del título del diálogo. */
-.deck-dialog h3 { margin-top: 0; }
+.deck-dialog h3 { 
+  margin-top: 0; 
+}
 
 /* Destaca la etiqueta del selector dentro del diálogo. */
-.deck-dialog label { display: block; margin-bottom: 6px; font-weight: bold; }
+.deck-dialog label { 
+  display: block; 
+  margin-bottom: 6px; 
+  font-weight: bold;
+ }
 
 /* Normaliza el selector y el campo usados para crear o elegir mazos. */
 .deck-dialog select, .deck-create-controls input {
@@ -888,7 +894,9 @@ body {
 }
 
 /* Hace que el selector use todo el ancho del diálogo. */
-.deck-dialog select { width: 100%; }
+.deck-dialog select { 
+  width: 100%;
+ }
 
 /* Organiza las acciones del diálogo y los controles de creación. */
 .deck-dialog-actions, .deck-create-controls {
@@ -899,7 +907,9 @@ body {
 }
 
 /* Distribuye las acciones del diálogo en partes iguales. */
-.deck-dialog-actions > * { flex: 1; }
+.deck-dialog-actions > * { 
+  flex: 1;
+ }
 
 /* Botón secundario usado para cancelar o cerrar la interfaz modal. */
 .deck-cancel-button {
@@ -1078,9 +1088,9 @@ body {
 .purchase-history-list li {
   padding: 14px 16px;
   border: 1px solid #e5e7eb;
-  border-left: 4px solid #38bdf8;
+  border-left: 4px solid #3f8023;
   border-radius: 10px;
-  background: rgb(255 255 255 / 94%);
+  background: white;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }

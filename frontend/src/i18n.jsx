@@ -35,13 +35,6 @@ const translations = {
     clearFilters: "Limpiar filtros",
     foundCards: "Se encontraron {count} cartas.",
     loginToAdd: "Inicia sesión para agregar cartas a tu inventario.",
-    loginFeaturesTitle: "Funciones disponibles al iniciar sesión",
-    loginFeaturesDescription: "Inicia sesión con Google para administrar tu colección personal:",
-    loginFeatureInventory: "Agregar o quitar cartas y administrar copias para intercambio.",
-    loginFeatureScanner: "Escanear cartas desde una imagen con OCR.",
-    loginFeatureDecks: "Crear y organizar mazos con las cartas de tu inventario.",
-    loginFeatureHistory: "Consultar tu historial personal de movimientos.",
-    loginFeatureCollection: "Revisar el progreso de cada set y las cartas que te faltan.",
     addToInventory: "Agregar a mi inventario",
     cardAdded: "Carta agregada al inventario.",
     tradeCopies: "Copias disponibles para intercambio",
@@ -156,13 +149,6 @@ const translations = {
     clearFilters: "Clear filters",
     foundCards: "Found {count} cards.",
     loginToAdd: "Sign in to add cards to your inventory.",
-    loginFeaturesTitle: "Features unlocked when you sign in",
-    loginFeaturesDescription: "Sign in with Google to manage your personal collection:",
-    loginFeatureInventory: "Add or remove cards and manage copies available for trade.",
-    loginFeatureScanner: "Scan cards from an image using OCR.",
-    loginFeatureDecks: "Create and organize decks with cards from your inventory.",
-    loginFeatureHistory: "View your personal activity history.",
-    loginFeatureCollection: "Track set progress and see which cards you are missing.",
     addToInventory: "Add to my inventory",
     cardAdded: "Card added to inventory.",
     tradeCopies: "Copies available for trade",
@@ -248,21 +234,23 @@ const translations = {
 
 const LanguageContext = createContext(null);
 
-// Proveedor que conserva el idioma, lo aplica al documento y expone funciones de traducción.
+//Proveedor que conserva el idioma, lo aplica al documento y expone funciones de traducción.
 export function I18nProvider({ children }) {
+
   const [language, setLanguage] = useState(() => {
-    // Recupera el idioma guardado por el usuario o usa español como valor inicial.
-    const saved = window.localStorage.getItem("pokedex-language");
-    return saved === "en" ? "en" : "es";
+    //Recupera el idioma guardado por el usuario o usa español como valor inicial.
+    const saved = window.localStorage.getItem("pokedex-language");//Guarda preferencia en localStorage
+    return saved === "en" ? "en" : "es"; //Las dos opciones, español o ingles.
+    //Cualquier otro valor se ignora y se usa español por defecto.
   });
 
-  // Guarda la preferencia y sincroniza el atributo lang de la página al cambiar de idioma.
+  //Guarda la preferencia y sincroniza el atributo lang de la página al cambiar de idioma.
   useEffect(() => {
     window.localStorage.setItem("pokedex-language", language);
     document.documentElement.lang = language;
   }, [language]);
 
-  // Memoriza las funciones públicas para evitar recrearlas en cada renderizado.
+  //Memoriza las funciones publicas para evitar recrearlas en cada renderizado.
   const value = useMemo(() => ({
     language,
     setLanguage,
@@ -270,6 +258,8 @@ export function I18nProvider({ children }) {
       (result, [name, replacement]) => result.replaceAll(`{${name}}`, () => String(replacement)),
       translations[language][key] ?? translations.es[key] ?? key,
     ),
+
+    //Errores del backend traducidos a mensajes de usuario.
     translateError: (message) => {
       const errorKeys = {
         "Debes iniciar sesión": "errorAuth",
@@ -298,6 +288,7 @@ export function I18nProvider({ children }) {
 }
 
 //Hook seguro que entrega el contexto de idioma y evita su uso fuera del proveedor.
+//cada objeto necesita ser usado dentro de un I18nProvider para que funcione correctamente.
 export function useI18n() {
   const context = useContext(LanguageContext);
   if (!context) throw new Error("useI18n debe usarse dentro de I18nProvider");

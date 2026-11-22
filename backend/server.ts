@@ -24,6 +24,7 @@ const db = new DatabaseSync(dbPath);
 
 //Inicialización del esquema de base de datos con las tablas de usuarios, sesiones y inventario.
 //Usando un formato SQL
+//PRAGMA para habilitar claves foráneas y asegurar la integridad referencial entre las tablas.
 db.exec(`
   PRAGMA foreign_keys = ON;
   CREATE TABLE IF NOT EXISTS users (
@@ -72,6 +73,8 @@ db.exec(`
     PRIMARY KEY (deck_id, card_id)
   );
 `);
+//Crea 7 tablas sesiones, usuarios, inventory, inventory_history, card_stock, decks y deck_cards
+
 
 // Migra inventarios existentes y crea el stock compartido usando los valores del catálogo.
 const inventoryColumns = db.prepare("PRAGMA table_info(inventory)").all() as Array<{ name: string }>;
@@ -89,7 +92,10 @@ const pokedexEntries = JSON.parse(await Deno.readTextFile(pokedexDataPath)) as A
   description_en?: string;
   description_es?: string;
 }>;
+
+// Crea un mapa de búsqueda rápida de entradas del pokédex por número, con la descripcion de el pokemon de las cartas.
 const pokedexByNumber = new Map(pokedexEntries.map((entry) => [entry.id, entry]));
+
 const seedCardStock = db.prepare(`
   INSERT OR IGNORE INTO card_stock (card_id, amount, trade_available) VALUES (?, ?, ?)
 `);
@@ -125,6 +131,7 @@ function hashToken(value: string): string {
 }
 
 //Obtiene el valor de una cookie a partir del encabezado HTTP de la solicitud.
+//separa los pares clave-valor y busca la cookie con el nombre especificado.
 function getCookie(request: Request, name: string): string | null {
   const cookieHeader = request.headers.get("cookie") ?? "";
   const entry = cookieHeader.split(";").map((part) => part.trim())
@@ -147,9 +154,9 @@ function getUser(request: Request): User | null {
     SELECT u.google_id AS id, u.name, u.email, u.picture
     FROM sessions AS s
     JOIN users AS u ON u.google_id = s.google_id
-    WHERE s.session_hash = ? AND s.expires_at > ?
+    WHERE s.session_hash = ? AND s.expires_at > ? 
   `).get(hashToken(sessionId), Date.now());
-
+      // Verifica que la sesion exista, y no haya expirado
   return (row as User | undefined) ?? null;
 }
 
@@ -175,7 +182,8 @@ async function readCards(): Promise<Array<Record<string, unknown> & { id: string
 
 //Respuesta reutilizable para endpoints protegidos cuando el usuario no autenticado intenta acceder.
 function unauthenticated(): Response {
-  return Response.json({ error: "Debes iniciar sesión" }, { status: 401 });
+  return Response.json({ error: "Debes iniciar sesión" }, { status: 401 }); //Construye una respuesta
+  //JSON con un mensaje de error y un código de estado 401 (No autorizado).
 }
 
 //Verifica que la solicitud provenga del origen permitido del frontend.
@@ -195,7 +203,7 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       return Response.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
     }
 
-    //Endpoint público para devolver el catálogo de cartas disponible.
+    //Endpvoint público para devoler el catálogo de cartas disponible.
     if (request.method === "GET" && path === "/api/cards") {
       return Response.json(await readCards());
     }
@@ -223,12 +231,17 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
 
     //Paso 2 del flujo OAuth: Google responde con el código de autorización y el backend lo intercambia por un token.
     if (request.method === "GET" && path === "/auth/google/callback") {
-      const state = url.searchParams.get("state");
-      const code = url.searchParams.get("code");
-      const expectedState = getCookie(request, "oauth_state");
-      const expectedNonce = getCookie(request, "oauth_nonce");
+      const state = url.searchParams.get("state");//El valor de estado enviado por Google para verificar la sesión.
+      const code = url.searchParams.get("code"); //El código de autorización que se intercambiará por un token de acceso.
+      const expectedState = getCookie(request, "oauth_state");//guarda el valor de estado en la cookie
+      const expectedNonce = getCookie(request, "oauth_nonce");//guarda el valor de nonce en la cookie
 
-      //Validacion basica del callback para asegurar que la respuesta corresponde a esta sesion.
+
+      //ambos van a ser comparados con los valores recibidos en la respuesta de google
+      //(Verificar que la respuesta de Google corresponde a la sesión iniciada y no es un intento de ataque CSRF).
+
+
+      //Validacion del callback para asegurar que la respuesta corresponde a esta sesion.
       if (!state || !code || !expectedState || !expectedNonce || state !== expectedState) {
         return Response.json({ error: "Login cancelado o verificación de estado fallida" }, { status: 400 });
       }
@@ -309,7 +322,9 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       }
       const headers = new Headers();
       headers.append("set-cookie", makeCookie("pokedex_session", "", 0));
-      return new Response(null, { status: 204, headers });
+      return new Response(null, { status: 204, headers }); //Devuelve una respuesta vacía con
+      //código 204 (No Content) y elimina la cookie de sesión si no hay sesión activa.
+      //Esto cierra la sesión del usuario en el navegador.
     }
 
     // Devuelve solo los registros de compra y venta del usuario autenticado.
@@ -336,7 +351,10 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
     // Rutas protegidas para consultar y administrar los mazos del usuario.
     if (path === "/api/decks" || path.startsWith("/api/decks/")) {
       const user = getUser(request);
-      if (!user) return unauthenticated();
+      if (!user) return unauthenticated(); //Verifica que el usuario esté 
+      //autenticado antes de permitir el acceso a los mazos.
+
+
 
       if (request.method === "GET" && path === "/api/decks") {
         const decks = db.prepare(
@@ -355,6 +373,7 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         })), { headers: { "Cache-Control": "no-store" } });
       }
 
+      // Crea un nuevo mazo para el usuario autenticado, validando el nombre y evitando duplicados.
       if (request.method === "POST" && path === "/api/decks") {
         const body = await request.json().catch(() => null);
         const name = body && typeof body === "object" && "name" in body &&
@@ -376,7 +395,10 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       }
 
       // Actualiza el nombre de un mazo o elimina el mazo completo por su identificador.
-      const deckPath = path.match(/^\/api\/decks\/(\d+)$/);
+      const deckPath = path.match(/^\/api\/decks\/(\d+)$/); // Coincide con rutas como /api/decks/id
+      //id siendo el identificador del mazo
+
+      //PUT para actualizar el nombre del mazo y DELETE para eliminar el mazo completo.
       if (deckPath && (request.method === "PUT" || request.method === "DELETE")) {
         const deckId = Number(deckPath[1]);
         const deck = db.prepare(
@@ -384,13 +406,13 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         ).get(deckId, user.id);
         if (!deck) return Response.json({ error: "Mazo no encontrado" }, { status: 404 });
 
-        // La eliminacion incluye las cartas asociadas gracias a la clave externa CASCADE.
+        //La eliminacion incluye las cartas asociadas gracias a la clave externa CASCADE.
         if (request.method === "DELETE") {
           db.prepare("DELETE FROM decks WHERE id = ? AND google_id = ?").run(deckId, user.id);
           return new Response(null, { status: 204 });
         }
 
-        // Valida el nuevo nombre y evita duplicados dentro de los mazos del usuario.
+        //Valida el nuevo nombre y evita duplicados dentro de los mazos del usuario.
         const body = await request.json().catch(() => null);
         const name = body && typeof body === "object" && "name" in body &&
             typeof body.name === "string" ? body.name.trim() : "";
@@ -408,13 +430,15 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         return Response.json({ id: deckId, name });
       }
 
-      // Elimina una carta de un mazo a partir de los identificadores enviados en la URL.
-      const deckCardPath = path.match(/^\/api\/decks\/(\d+)\/cards\/(.+)$/);
+      //Elimina una carta de un mazo a partir de los identificadores enviados en la URL.
+      const deckCardPath = path.match(/^\/api\/decks\/(\d+)\/cards\/(.+)$/); 
+      //Coincide con rutas con el formato /api/decks/id/cards/cardId
+
       if (request.method === "DELETE" && deckCardPath) {
         const deckId = Number(deckCardPath[1]);
         const deck = db.prepare(
           "SELECT id FROM decks WHERE id = ? AND google_id = ?",
-        ).get(deckId, user.id);
+        ).get(deckId, user.id); //id del mazo y id del usuario autenticado
         if (!deck) return Response.json({ error: "Mazo no encontrado" }, { status: 404 });
 
         let cardId: string;
@@ -425,14 +449,21 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         }
         const deckCard = db.prepare(
           "SELECT card_id FROM deck_cards WHERE deck_id = ? AND card_id = ?",
-        ).get(deckId, cardId);
+        ).get(deckId, cardId); //Verifica que la carta exista en el mazo antes de intentar eliminarla.
+
         if (!deckCard) return Response.json({ error: "Carta no encontrada en el mazo" }, { status: 404 });
-        db.prepare("DELETE FROM deck_cards WHERE deck_id = ? AND card_id = ?").run(deckId, cardId);
+        db.prepare("DELETE FROM deck_cards WHERE deck_id = ? AND card_id = ?").run(deckId, cardId); 
+        //Elimina la carta del mazo en la base de datos, si pasa la validación.
         return new Response(null, { status: 204 });
       }
 
       // Agrega una carta al mazo respetando las copias disponibles en el inventario.
       const deckCardsPath = path.match(/^\/api\/decks\/(\d+)\/cards$/);
+      //Coincide con rutas con el formato /api/decks/id/cards
+
+
+      //Comprueba que el mazo existe y que la carta es válida
+      //y está en el inventario del usuario antes de agregarla al mazo (Esto añade cartas al mazo btw).
       if (request.method === "POST" && deckCardsPath) {
         const deckId = Number(deckCardsPath[1]);
         const deck = db.prepare(
@@ -471,8 +502,9 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
       const user = getUser(request);
       if (!user) return unauthenticated();
 
-      // Obtiene la colección completa del usuario, ordenada por ID de carta.
-      // Usando un operaciones SQL
+      //Obtiene la coleccion completa del usuario, ordenada por ID de carta.
+      //Usa operaciones SQL para seleccionar los campos necesarios y devolverlos en formato JSON.
+
       if (request.method === "GET" && path === "/api/inventory") {
         const items = db.prepare(`
           SELECT card_id AS cardId, quantity, quantity AS amount,
@@ -482,30 +514,34 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         return Response.json(items, { headers: { "Cache-Control": "no-store" } });
       }
 
-      // Agrega una nueva carta al inventario del usuario o aumenta su cantidad si ya existe.
+      //Agrega una nueva carta al inventario del usuario o aumenta su cantidad si ya existe.
       if (request.method === "POST" && path === "/api/inventory") {
         const body = await request.json().catch(() => null);
         const cardId = body && typeof body === "object" && "cardId" in body &&
             typeof body.cardId === "string" ? body.cardId : null;
-        const catalog = await readCards();
+        const catalog = await readCards(); //Valida que la carta exista en el catálogo antes de agregarla al inventario.
         const card = catalog.find((candidate) => candidate.id === cardId);
         if (!cardId || !card) {
           return Response.json({ error: "Carta no válida" }, { status: 400 });
         }
+
         const cardName = typeof card.name === "string" ? card.name : cardId;
         const setName = typeof card.expansion === "string"
           ? card.expansion
           : typeof card.set_id === "string" ? card.set_id : "";
-        db.exec("BEGIN IMMEDIATE");
+        db.exec("BEGIN IMMEDIATE"); //"BEGIN IMMEDIATE" inicia una 
+        //transacción de base de datos para asegurar que las operaciones sean atómicas y consistentes.
+
         try {
           const stockResult = db.prepare(`
             UPDATE card_stock SET trade_available = trade_available - 1
             WHERE card_id = ? AND trade_available > 0
-          `).run(cardId);
+          `).run(cardId); //Actualiza la cantidad de copias 
+          //disponibles para intercambio en la tabla card_stock, asegurando que no se pueda reducir por debajo de cero.
           if (stockResult.changes === 0) {
             db.exec("ROLLBACK");
             return Response.json({ error: "No quedan copias disponibles para intercambio" }, { status: 409 });
-          }
+          } //Ejecuta un rollback si no hay copias disponibles (Error 409, conflicto de recursos)
           db.prepare(`
             INSERT INTO inventory (google_id, card_id, quantity, trade_available) VALUES (?, ?, 1, 0)
             ON CONFLICT(google_id, card_id) DO UPDATE SET quantity = quantity + 1
@@ -522,7 +558,7 @@ Deno.serve({ hostname: "0.0.0.0", port }, async (request) => {
         return Response.json({ message: "Carta agregada" }, { status: 201 });
       }
 
-      // Actualiza cuántas copias propias quedan ofrecidas para intercambio.
+      //Actualiza cuantas copias propias quedan ofrecidas para intercambio.
       const tradeAvailablePath = path.match(/^\/api\/inventory\/(.+)\/trade-available$/);
       if (request.method === "PUT" && tradeAvailablePath) {
         let cardId: string;

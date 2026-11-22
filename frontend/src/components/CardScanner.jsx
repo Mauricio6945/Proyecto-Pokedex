@@ -4,15 +4,31 @@ import CardLayout from "./CardLayout";
 import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
-// Normaliza texto y nombres para que la comparación no dependa de acentos o mayúsculas.
-const normalize = (value) => value
-  .normalize("NFD")
-  .replace(/[\u0300-\u036f]/g, "")
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, " ")
-  .trim();
+//Este escaner se basa en OCR (Optical Character Recognition) 
+//para reconocer el nombre de la carta en una imagen y buscarla en el catálogo.
 
-// Calcula la distancia de edición entre dos palabras para tolerar pequeños errores de OCR.
+//Utiliza la librería tesseract.js para procesar la imagen y extraer el texto,
+//y luego compara el texto reconocido con los nombres de las cartas en el catálogo,
+//permitiendo al usuario elegir la carta correcta y agregarla a su inventario.
+
+//Normaliza texto y nombres para que la comparación no dependa de acentos o mayusculas.
+const normalize = (value) => value
+
+  .normalize("NFD")//Descompone caracteres Unicode en sus componentes base y diacriticos 
+  //(signo gráfico añadido a una letra para modificar su valor fonético).
+
+  .replace(/[\u0300-\u036f]/g, "") //Elimina acentos y diacriticos 
+  //para que la comparacion no dependa de ellos.
+
+  .toLowerCase() //Pasa a minusculas para que la comparacion no dependa de mayusculas.
+
+  .replace(/[^a-z0-9]+/g, " ") //Reemplaza caracteres no alfanumericos 
+  //por espacios para que la comparacion no dependa de signos de puntuacion.
+
+  .trim(); //Elimina espacios al inicio y al final para que la comparacion no dependa de ellos.
+
+//Calcula la distancia de edicion entre dos palabras para tolerar pequeños errores de OCR.
+
 function editDistance(left, right) {
   const row = Array.from({ length: right.length + 1 }, (_, index) => index);
   for (let i = 1; i <= left.length; i += 1) {
@@ -27,7 +43,7 @@ function editDistance(left, right) {
   return row[right.length];
 }
 
-// Ordena las cartas según la coincidencia entre el texto reconocido y sus nombres.
+//Ordena las cartas segun la coincidencia entre el texto reconocido y sus nombres.
 function rankCards(cards, text) {
   const words = normalize(text).split(/\s+/).filter((word) => word.length > 2);
   if (words.length === 0) return [];
@@ -53,23 +69,28 @@ function rankCards(cards, text) {
     .map(({ card }) => card);
 }
 
+//Componente que permite al usuario escanear una carta con la camara o subir una imagen para reconocer su nombre.
 function CardScanner({ cards, onAdd }) {
   const { t } = useI18n();
-  // Estado del archivo, progreso de OCR y criterios de búsqueda manual.
+
+  //Estado del archivo, progreso de OCR y criterios de búsqueda manual.
   const [file, setFile] = useState(null);
   const [scanning, setScanning] = useState(false);
   const [status, setStatus] = useState("");
   const [recognizedText, setRecognizedText] = useState("");
   const [search, setSearch] = useState("");
 
-  // Extrae texto de la imagen seleccionada y comunica el resultado al usuario.
-  async function handleScan(event) {
+  //Extrae texto de la imagen seleccionada y comunica el resultado al usuario.
+  async function handleScan(event){
+
+    //Submite el formulario, evita que se recargue la pagina 
+    //y no hace nada si no hay archivo o ya se esta escaneando.
     event.preventDefault();
     if (!file || scanning) return;
 
     setScanning(true);
     setStatus({ key: "readingCard" });
-    let worker;
+    let worker; //Crea un trabajador de Tesseract.js para procesar la imagen y reconocer el texto.
     try {
       worker = await createWorker("eng");
       const { data: { text } } = await worker.recognize(file);
@@ -79,18 +100,18 @@ function CardScanner({ cards, onAdd }) {
     } catch {
       setStatus({ key: "scannerError" });
     } finally {
-      await worker?.terminate();
+      await worker?.terminate(); //Libera los recursos del trabajador para evitar fugas de memoria.
       setScanning(false);
     }
   }
 
-  // Elige sugerencias por OCR o resultados manuales según el texto de búsqueda activo.
+  //Elige sugerencias por OCR o resultados manuales según el texto de búsqueda activo.
   const suggestions = rankCards(cards, recognizedText);
   const visibleCards = search.trim()
     ? cards.filter((card) => normalize(card.name).includes(normalize(search)))
     : suggestions;
 
-  // Añade la carta elegida y limpia el escaneo si la operación tiene éxito.
+  //Añade la carta elegida y limpia el escaneo si la operación tiene exito.
   async function chooseCard(card) {
     const added = await onAdd(card.id);
     setStatus({ key: added ? "cardAddedNamed" : "cardAddFailed", variables: { name: card.name } });

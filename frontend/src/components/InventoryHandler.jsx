@@ -37,6 +37,7 @@ export function useInventoryHandler({ setInventory, setCards, setHistory, setMes
     }
   }
 
+  //Define cuantas copias propias de una carta estan disponibles para intercambio.
   async function handleSetTradeAvailable(cardId, tradeAvailable) {
     try {
       setMessage("");
@@ -59,6 +60,7 @@ export function useInventoryHandler({ setInventory, setCards, setHistory, setMes
 
 function TradeAvailabilityControl({ card, onSave }) {
   const { t } = useI18n();
+  
   //Mantiene el valor editable separado del dato original hasta guardar.
   const [value, setValue] = useState(String(card.tradeAvailable));
   const [saving, setSaving] = useState(false);
@@ -92,6 +94,7 @@ function TradeAvailabilityControl({ card, onSave }) {
     </form>
   );
 }
+
 
 //Presenta las cartas existentes en el inventario junto con sus cantidades.
 function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSetTradeAvailable }) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useI18n } from "../i18n";
 
-// Relaciona los nombres de tipo del catálogo con las clases visuales de la carta.
+//Relaciona los nombres de tipo del catalogo con las clases visuales de la carta.
 const typeClasses = {
   grass: "grass",
   fire: "fire",
@@ -17,15 +17,22 @@ const typeClasses = {
   dragon: "dragon",
 };
 
-// Tarjeta reutilizable que muestra la informacion principal de una carta.
+//Tarjeta reutilizable que muestra la informacion principal de una carta.
+//props
 function CardLayout({ card, quantity, actionLabel, actionDisabled = false, onAction, secondaryActionLabel, onSecondaryAction }) {
-  const { language, t } = useI18n();
+  const { language, t } = useI18n(); //Accede a las traducciones y al idioma seleccionado por el usuario.
   const typeClass = typeClasses[card.type?.trim().toLowerCase()];
   const circulationAmount = card.circulationAmount ?? card.amount;
   const circulationAvailable = card.circulationAvailable ?? card.trade_available;
-  // La tarjeta conserva su nombre propio (incluidas EX, variantes y rarezas).
+  
+  //La tarjeta conserva su nombre propio (incluidas EX, variantes y rarezas).
   const pokemonName = card.name;
+
   const [descriptionActive, setDescriptionActive] = useState(false);
+  //El tooltip de descripcion se activa al pasar el mouse o al enfocar la imagen, 
+  //puede ser true o false. Se mantiene en el estado del componente para que no se pierda al re-renderizar.
+
+
   const description = (language === "es" ? card.pokemonDescriptionEs : card.pokemonDescriptionEn) ||
     t("descriptionUnavailable");
 
