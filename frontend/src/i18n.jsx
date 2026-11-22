@@ -35,6 +35,13 @@ const translations = {
     clearFilters: "Limpiar filtros",
     foundCards: "Se encontraron {count} cartas.",
     loginToAdd: "Inicia sesión para agregar cartas a tu inventario.",
+    loginFeaturesTitle: "Funciones disponibles al iniciar sesión",
+    loginFeaturesDescription: "Inicia sesión con Google para administrar tu colección personal:",
+    loginFeatureInventory: "Agregar o quitar cartas y administrar copias para intercambio.",
+    loginFeatureScanner: "Escanear cartas desde una imagen con OCR.",
+    loginFeatureDecks: "Crear y organizar mazos con las cartas de tu inventario.",
+    loginFeatureHistory: "Consultar tu historial personal de movimientos.",
+    loginFeatureCollection: "Revisar el progreso de cada set y las cartas que te faltan.",
     addToInventory: "Agregar a mi inventario",
     cardAdded: "Carta agregada al inventario.",
     tradeCopies: "Copias disponibles para intercambio",
@@ -149,6 +156,13 @@ const translations = {
     clearFilters: "Clear filters",
     foundCards: "Found {count} cards.",
     loginToAdd: "Sign in to add cards to your inventory.",
+    loginFeaturesTitle: "Features unlocked when you sign in",
+    loginFeaturesDescription: "Sign in with Google to manage your personal collection:",
+    loginFeatureInventory: "Add or remove cards and manage copies available for trade.",
+    loginFeatureScanner: "Scan cards from an image using OCR.",
+    loginFeatureDecks: "Create and organize decks with cards from your inventory.",
+    loginFeatureHistory: "View your personal activity history.",
+    loginFeatureCollection: "Track set progress and see which cards you are missing.",
     addToInventory: "Add to my inventory",
     cardAdded: "Card added to inventory.",
     tradeCopies: "Copies available for trade",
@@ -279,11 +293,11 @@ export function I18nProvider({ children }) {
     },
   }), [language]);
 
-  // Hace disponible el contexto de traducción para todos los componentes descendientes.
+  //Hace disponible el contexto de traducción para todos los componentes descendientes.
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
-// Hook seguro que entrega el contexto de idioma y evita su uso fuera del proveedor.
+//Hook seguro que entrega el contexto de idioma y evita su uso fuera del proveedor.
 export function useI18n() {
   const context = useContext(LanguageContext);
   if (!context) throw new Error("useI18n debe usarse dentro de I18nProvider");

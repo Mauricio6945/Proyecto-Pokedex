@@ -70,7 +70,19 @@ function FilterCards({ cards, user, onAdd }) {
       </section>
       <button type="button" className="clear-button" onClick={clearFilters}>{t("clearFilters")}</button>
       <p className="results-count">{t("foundCards", { count: filteredCards.length })}</p>
-      {!user && <p>{t("loginToAdd")}</p>}
+      {!user && (
+        <aside className="login-features" aria-labelledby="login-features-title">
+          <h2 id="login-features-title">{t("loginFeaturesTitle")}</h2>
+          <p>{t("loginFeaturesDescription")}</p>
+          <ul>
+            <li>{t("loginFeatureInventory")}</li>
+            <li>{t("loginFeatureScanner")}</li>
+            <li>{t("loginFeatureDecks")}</li>
+            <li>{t("loginFeatureHistory")}</li>
+            <li>{t("loginFeatureCollection")}</li>
+          </ul>
+        </aside>
+      )}
       <GroupedCardGrid cards={filteredCards} renderCard={(card) => (
           <CardLayout key={card.id} card={card}
             actionLabel={user ? (card.trade_available > 0 ? t("addToInventory") : t("outOfStock")) : undefined}

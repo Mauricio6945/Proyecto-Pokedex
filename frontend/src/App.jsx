@@ -32,13 +32,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
-  // Accede a las traducciones y al idioma seleccionado por el usuario.
+  //Accede a las traducciones y al idioma seleccionado por el usuario.
   const { language, setLanguage, t, translateError } = useI18n();
 
-  // Agrupa las operaciones compartidas para agregar y quitar cartas del inventario.
+  //Agrupa las operaciones compartidas para agregar y quitar cartas del inventario.
   const inventoryActions = useInventoryHandler({ setInventory, setCards, setHistory, setMessage, t, translateError });
 
-  // Al montar la aplicación carga el catálogo y, si existe sesión, los datos privados.
+  //Al montar la aplicación carga el catálogo y, si existe sesión, los datos privados.
   useEffect(() => {
     Promise.all([getCards(), getMe()])
       .then(async ([loadedCards, loadedUser]) => {
@@ -57,7 +57,7 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
 
-  // Crea un mazo y actualiza la interfaz cuando la operación termina correctamente.
+  //Crea un mazo y actualiza la interfaz cuando la operación termina correctamente.
   async function handleCreateDeck(name) {
     try {
       const deck = await createDeck(name);
@@ -70,7 +70,7 @@ function App() {
     }
   }
 
-  // Añade una carta a un mazo y refresca el mazo seleccionado desde el backend.
+  //Añade una carta a un mazo y refresca el mazo seleccionado desde el backend.
   async function handleAddToDeck(deckId, cardId) {
     try {
       await addCardToDeck(deckId, cardId);
@@ -85,7 +85,7 @@ function App() {
   }
 
   async function handleRenameDeck(deckId, name) {
-    // Renombra el mazo en el backend y refleja el nuevo nombre en el estado local.
+    //Renombra el mazo en el backend y refleja el nuevo nombre en el estado local.
     try {
       const updatedDeck = await renameDeck(deckId, name);
       setDecks((current) => current.map((deck) =>
@@ -99,7 +99,7 @@ function App() {
   }
 
   async function handleDeleteDeck(deckId) {
-    // Elimina el mazo seleccionado y actualiza la lista y el mensaje mostrado.
+    //Elimina el mazo seleccionado y actualiza la lista y el mensaje mostrado.
     try {
       await deleteDeck(deckId);
       const deckName = decks.find((deck) => deck.id === deckId)?.name ?? "";
@@ -113,7 +113,7 @@ function App() {
   }
 
   async function handleRemoveCardFromDeck(deckId, cardId) {
-    // Quita la carta del mazo y vuelve a cargar los mazos para mantener las cantidades sincronizadas.
+    //Quita la carta del mazo y vuelve a cargar los mazos para mantener las cantidades sincronizadas.
     try {
       await removeCardFromDeck(deckId, cardId);
       setDecks(await getDecks());

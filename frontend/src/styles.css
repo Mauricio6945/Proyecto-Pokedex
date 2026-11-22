@@ -99,6 +99,32 @@ h1 {
   line-height: 1.55;
 }
 
+.login-features {
+  margin: 16px 0 20px;
+  padding: 16px 18px;
+  border: 1px solid #d1d5db;
+  border-left: 4px solid #60a5fa;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #374151;
+}
+
+.login-features h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.login-features p {
+  margin: 0 0 8px;
+}
+
+.login-features ul {
+  margin: 0;
+  padding-left: 22px;
+  line-height: 1.55;
+}
+
 .card--show-description {
   z-index: 6;
 }
@@ -363,17 +389,21 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  /* En móviles no hay espacio lateral: la descripción aparece debajo de la carta. */
+  /* En móviles la imagen y la descripción compacta comparten la carta sin salirse. */
   .card-description-tooltip {
-    top: calc(100% + 8px);
-    right: 0;
-    left: 0;
-    width: 100%;
-    transform: translateY(-4px);
+    top: 50%;
+    right: 8px;
+    left: auto;
+    width: min(48%, 190px);
+    gap: 6px;
+    padding: 10px;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    transform: translate(4px, -50%);
   }
 
   .card--show-description .card-description-tooltip {
-    transform: translateY(0);
+    transform: translate(0, -50%);
   }
 
   /* Reduce el relleno y la altura mínima de las tarjetas móviles. */
@@ -391,11 +421,11 @@ h1 {
   /* Limita y centra la imagen de la carta en pantallas pequeñas. */
   .card > img {
     display: block;
-    width: min(100%, 260px);
+    width: min(48%, 260px);
     max-width: 100%;
     max-height: 220px;
     object-fit: contain;
-    margin: 12px auto;
+    margin: 12px auto 12px 0;
   }
 
   /* Permite que los metadatos de la carta se ajusten al ancho. */

@@ -4,9 +4,9 @@ import CardLayout from "./CardLayout";
 import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
-// Centraliza las operaciones de modificacion y recarga del inventario.
+//Centraliza las operaciones de modificacion y recarga del inventario.
 export function useInventoryHandler({ setInventory, setCards, setHistory, setMessage, t, translateError }) {
-  // Consulta el inventario actualizado y reemplaza el estado compartido.
+  //Consulta el inventario actualizado y reemplaza el estado compartido.
   async function refreshInventory() {
     const [updatedInventory, updatedCards, updatedHistory] = await Promise.all([
       getInventory(), getCards(), getHistory(),
@@ -16,7 +16,7 @@ export function useInventoryHandler({ setInventory, setCards, setHistory, setMes
     setHistory(updatedHistory);
   }
 
-  // Ejecuta una operacion y muestra su resultado o el error producido.
+  //Ejecuta una operacion y muestra su resultado o el error producido.
   async function handleChange(operation, cardId, successMessage) {
     try {
       setMessage("");
@@ -29,7 +29,7 @@ export function useInventoryHandler({ setInventory, setCards, setHistory, setMes
         try {
           setCards(await getCards());
         } catch {
-          // Conserva el error original si tampoco se puede actualizar el catálogo.
+          //Conserva el error original si tampoco se puede actualizar el catálogo.
         }
       }
       setMessage(translateError(err.message));
@@ -59,7 +59,7 @@ export function useInventoryHandler({ setInventory, setCards, setHistory, setMes
 
 function TradeAvailabilityControl({ card, onSave }) {
   const { t } = useI18n();
-  // Mantiene el valor editable separado del dato original hasta guardar.
+  //Mantiene el valor editable separado del dato original hasta guardar.
   const [value, setValue] = useState(String(card.tradeAvailable));
   const [saving, setSaving] = useState(false);
   const numericValue = Number(value);
@@ -93,7 +93,7 @@ function TradeAvailabilityControl({ card, onSave }) {
   );
 }
 
-// Presenta las cartas existentes en el inventario junto con sus cantidades.
+//Presenta las cartas existentes en el inventario junto con sus cantidades.
 function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSetTradeAvailable }) {
   const { t } = useI18n();
   const [showSetProgress, setShowSetProgress] = useState(false);
@@ -101,7 +101,7 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSe
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedDeckId, setSelectedDeckId] = useState("");
 
-  // Une cada registro del inventario con los datos completos de su carta.
+  //Une cada registro del inventario con los datos completos de su carta.
   const inventoryCards = inventory
     .map((item) => {
       const card = cards.find((candidate) => candidate.id === item.cardId);
@@ -117,7 +117,7 @@ function InventoryHandler({ cards, inventory, decks, onRemove, onAddToDeck, onSe
     })
     .filter(Boolean);
 
-  // Cuenta cartas distintas por expansión para medir el progreso de colección.
+  //Cuenta cartas distintas por expansión para medir el progreso de colección.
   const ownedCardIds = new Set(inventory.map((item) => item.cardId));
   const setProgress = cards.reduce((sets, card) => {
     const setName = card.expansion || card.set_id || t("unknownSet");

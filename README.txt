@@ -2,7 +2,7 @@ POKERECORDS - CATÁLOGO E INVENTARIO DE CARTAS POKÉMON
 =====================================================
 
 Estado: versión funcional avanzada; etapa de validación y cierre.
-Fecha de actualización de este documento: 19 de noviembre de 2026.
+Fecha de actualización de este documento: 22 de noviembre de 2026.
 Repositorio: https://github.com/Mauricio6945/Proyecto-Pokedex
 
 
@@ -46,6 +46,9 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
 
 2.2. Inicio de sesión y usuarios
   - Inicio de sesión mediante Google SSO (OAuth 2.0/OpenID Connect).
+  - La pantalla del catálogo informa a los visitantes qué funciones personales
+    se habilitan al iniciar sesión: inventario e intercambios, escáner OCR,
+    mazos, historial y progreso de colección.
   - Validación de identidad en el backend mediante JWT de Google.
   - Sesiones mantenidas con cookies HTTP-only.
   - Cierre de sesión y acceso protegido a las funciones personales.
@@ -95,6 +98,8 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
   - Interfaz en español e inglés mediante traducciones propias del proyecto.
   - Descripciones de Pokémon disponibles en ambos idiomas; aparecen al pasar
     el puntero sobre la imagen de la carta o al enfocarla con el teclado.
+  - En móviles, la descripción aparece en un panel compacto dentro del borde
+    derecho de la carta para evitar que se salga de la pantalla.
   - Los grupos de cartas usan el nombre general de pokedex.json como categoría;
     cada CardLayout muestra el nombre específico de la carta, incluidas sus
     variantes (por ejemplo, EX).
@@ -238,13 +243,13 @@ Frontend (Vercel):
   - Directorio raíz del proyecto en Vercel: frontend.
   - Comando de compilación: npm run build.
   - Directorio de salida: dist.
-  - frontend/vercel.json reenvía /api/* y /auth/* al backend desplegado en
+  - frontend/vercel.json reenvía /api/* y /auth/* al backend se encuentra desplegado en
     https://proyecto-pokedex-e9uj.onrender.com y redirige el resto a index.html.
   - Comprobar que esa URL coincida con la dirección vigente de Render.
   - FRONTEND_ORIGIN debe coincidir exactamente con el dominio público HTTPS de
-    Vercel (sin barra final); registrar también en Google Cloud la redirección
-    https://TU_DOMINIO_VERCEL/auth/google/callback.
-  - No exponer secretos OAuth en variables de frontend ni en el repositorio.
+    Vercel (sin barra final). Registra también en Google Cloud la redirección:
+    https://proyecto-pokedex-c26l.vercel.app/auth/google/callback.
+  - No exponer secretos OAuth en variables en frontend, ni repositorio.
 
 Comprobaciones recomendadas luego de un despliegue:
   - GET /api/health responde correctamente desde Vercel.
@@ -328,6 +333,12 @@ historial de commits. No sustituyen la revisión del historial completo de GitHu
     de cada carta en su tarjeta.
   - Desplegable de cartas faltantes por set y mejoras visuales del selector
     de archivos del escáner.
+
+22 de noviembre de 2026:
+  - Ajuste móvil del panel de descripción para que quede compacto a la derecha
+    de la carta y permanezca dentro de la pantalla.
+  - Aviso bilingüe en el catálogo con las funciones que se desbloquean al
+    iniciar sesión.
 
 9. CRÉDITOS Y NOTAS
 ---------------------

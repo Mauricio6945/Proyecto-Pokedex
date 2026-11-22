@@ -21,7 +21,7 @@ function GroupedCardGrid({ cards, renderCard }) {
     <div className="pokedex-groups">
       {orderedGroups.map(([number, groupCards]) => {
         const firstCard = groupCards[0];
-        // El nombre de la Pokédex identifica la categoría común a todas las variantes.
+        //El nombre de la Pokédex identifica la categoría común a todas las variantes.
         const categoryName = firstCard.pokemonName ?? firstCard.name;
         const heading = number === "unknown"
           ? categoryName

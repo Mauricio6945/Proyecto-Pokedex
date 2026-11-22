@@ -1,10 +1,10 @@
 import { useI18n } from "../i18n";
 
-// Presenta las operaciones de compra y venta registradas por el usuario.
+//Presenta las operaciones de compra y venta registradas por el usuario.
 function PurchaseHistory({ entries }) {
   const { language, t } = useI18n();
 
-  // Convierte la marca temporal almacenada a una fecha y hora legibles.
+  //Convierte la marca temporal almacenada a una fecha y hora legibles.
   function formatDateTime(value) {
     const date = new Date(value);
     const parts = new Intl.DateTimeFormat(language === "es" ? "es-CL" : "en-GB", {
