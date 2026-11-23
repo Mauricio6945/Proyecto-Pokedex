@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CardLayout from "./CardLayout";
-import GroupedCardGrid from "./GroupedCardGrid";
 import { useI18n } from "../i18n";
 
 // Permite crear mazos y muestra las cartas que contiene cada uno.
@@ -95,11 +94,13 @@ function DeckHandler({ decks, cards, onCreateDeck, onRenameDeck, onDeleteDeck, o
                 {deckCards.length === 0 ? <p>{t("emptyDeck")}</p> : (
                   <>
                     <p>{t("cardCount", { count: deckCards.reduce((total, card) => total + card.quantity, 0) })}</p>
-                    <GroupedCardGrid cards={deckCards} collapsible={false} renderCard={(card) => (
+                    <div className="card-grid">
+                      {deckCards.map((card) => (
                         <CardLayout key={card.id} card={card} quantity={card.quantity}
                           actionLabel={t("removeFromDeck")}
                           onAction={() => onRemoveCard(deck.id, card.id)} />
-                    )} />
+                      ))}
+                    </div>
                   </>
                 )}
               </section>
