@@ -170,9 +170,9 @@ h1 {
   margin: 16px 0 20px;
   padding: 16px 18px;
   border: 1px solid #d1d5db;
-  border-left: 4px solid #c45c5c;
+  border-top: 1px solid #d1d5db;
   border-radius: 12px;
-  background: #f8fafc;
+  background: #fef3c7;
   color: #374151;
 }
 
