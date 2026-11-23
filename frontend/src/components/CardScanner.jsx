@@ -153,7 +153,7 @@ function CardScanner({ cards, onAdd }) {
             {search.trim() ? t("catalogResults") : t("ocrSuggestions")}: {visibleCards.length}
           </p>
           {visibleCards.length === 0 && <p>{t("noMatches")}</p>}
-          <GroupedCardGrid cards={visibleCards} renderCard={(card) => (
+          <GroupedCardGrid cards={visibleCards} collapsible={false} renderCard={(card) => (
               <CardLayout key={card.id} card={card}
                 actionLabel={card.trade_available > 0 ? t("addThisCard") : t("outOfStock")}
                 actionDisabled={!(card.trade_available > 0)}

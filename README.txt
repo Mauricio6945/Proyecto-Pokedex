@@ -38,7 +38,9 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
 
 - Organización visual por número de Pokédex: cada especie aparece inicialmente
   como un encabezado plegado. Al abrirlo se muestran todas las cartas y
-  variantes de esa especie, agrupadas bajo el nombre general de Pokédex.
+  variantes de esa especie, agrupadas bajo el nombre general de Pokédex. Esto
+  se aplica al catálogo y al inventario; en mazos y resultados del escáner las
+  cartas de cada especie se muestran directamente.
 
 - Estilos diferenciados según el tipo de Pokémon.
 
@@ -85,6 +87,7 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
   - Reconocimiento óptico de texto (OCR) con Tesseract.js.
   - Ordenamiento de sugerencias de cartas según el texto reconocido.
   - Búsqueda manual como alternativa cuando el OCR no encuentra resultados.
+  - Resultados agrupados por especie, con las cartas visibles inmediatamente.
   - Selección de la carta correcta y posibilidad de añadirla al inventario.
 
 2.7. Historial de movimientos
@@ -342,8 +345,8 @@ historial de commits. No sustituyen la revisión del historial completo de GitHu
     iniciar sesión.
 
 23 de noviembre de 2026:
-  - Acordeones por especie en el catálogo, inventario, escáner y mazos; las
-    cartas aparecen al expandir el nombre del Pokémon.
+  - Acordeones por especie en el catálogo y el inventario.
+  - Cartas visibles inmediatamente en cada mazo y en los resultados del escáner.
 
 9. CRÉDITOS Y NOTAS
 ---------------------

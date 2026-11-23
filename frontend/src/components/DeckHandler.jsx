@@ -95,7 +95,7 @@ function DeckHandler({ decks, cards, onCreateDeck, onRenameDeck, onDeleteDeck, o
                 {deckCards.length === 0 ? <p>{t("emptyDeck")}</p> : (
                   <>
                     <p>{t("cardCount", { count: deckCards.reduce((total, card) => total + card.quantity, 0) })}</p>
-                    <GroupedCardGrid cards={deckCards} renderCard={(card) => (
+                    <GroupedCardGrid cards={deckCards} collapsible={false} renderCard={(card) => (
                         <CardLayout key={card.id} card={card} quantity={card.quantity}
                           actionLabel={t("removeFromDeck")}
                           onAction={() => onRemoveCard(deck.id, card.id)} />
