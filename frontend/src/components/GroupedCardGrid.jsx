@@ -1,13 +1,27 @@
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import CardLayout from "./CardLayout";
 import { useI18n } from "../i18n";
 
 //Organiza las cartas por número de Pokédex y mantiene juntas sus variantes.
-function GroupedCardGrid({ cards, renderCard, collapsible = true }) {
+function GroupedCardGrid({ cards, renderCard, collapsible = true, resetKey }) {
   const { t } = useI18n();
   const idPrefix = useId().replaceAll(":", "");
-  const [expandedGroups, setExpandedGroups] = useState(() => new Set());
+  const [accordionState, setAccordionState] = useState(() => ({
+    expanded: new Set(),
+    mounted: new Set(),
+    closing: new Set(),
+  }));
   const groups = new Map();
+
+  //Cierra los grupos abiertos cuando cambian los filtros del catálogo.
+  useEffect(() => {
+    if (!collapsible) return;
+    setAccordionState((current) => current.expanded.size === 0 ? current : ({
+      ...current,
+      expanded: new Set(),
+      closing: new Set([...current.closing, ...current.expanded]),
+    }));
+  }, [collapsible, resetKey]);
 
 
   //Construye el map por número de Pokédex, usando "unknown" para cartas sin número definido.
@@ -34,7 +48,9 @@ function GroupedCardGrid({ cards, renderCard, collapsible = true }) {
           ? categoryName
           : `#${String(number).padStart(3, "0")} · ${categoryName}`;
         const groupKey = String(number);
-        const expanded = !collapsible || expandedGroups.has(groupKey);
+        const expanded = !collapsible || accordionState.expanded.has(groupKey);
+        const mounted = !collapsible || accordionState.mounted.has(groupKey) || expanded;
+        const closing = collapsible && accordionState.closing.has(groupKey);
         const cardsId = `pokedex-group-cards-${idPrefix}-${groupKey}`;
 
         return (
@@ -47,10 +63,20 @@ function GroupedCardGrid({ cards, renderCard, collapsible = true }) {
                   aria-expanded={expanded}
                   aria-controls={cardsId}
                   aria-label={t(expanded ? "hidePokemonCards" : "showPokemonCards", { name: categoryName })}
-                  onClick={() => setExpandedGroups((current) => {
-                    const next = new Set(current);
-                    if (next.has(groupKey)) next.delete(groupKey);
-                    else next.add(groupKey);
+                  onClick={() => setAccordionState((current) => {
+                    const next = {
+                      expanded: new Set(current.expanded),
+                      mounted: new Set(current.mounted),
+                      closing: new Set(current.closing),
+                    };
+                    if (next.expanded.has(groupKey)) {
+                      next.expanded.delete(groupKey);
+                      next.closing.add(groupKey);
+                    } else {
+                      next.expanded.add(groupKey);
+                      next.mounted.add(groupKey);
+                      next.closing.delete(groupKey);
+                    }
                     return next;
                   })}
                 >
@@ -59,8 +85,25 @@ function GroupedCardGrid({ cards, renderCard, collapsible = true }) {
                 </button>
               ) : heading}
             </h3>
-            <div className={`card-grid${collapsible ? " card-grid--accordion" : ""}`} id={collapsible ? cardsId : undefined} hidden={!expanded}>
-              {expanded && groupCards.map((card) => renderCard
+            <div
+              className={`card-grid${collapsible ? " card-grid--accordion" : ""}${closing ? " card-grid--closing" : ""}`}
+              id={collapsible ? cardsId : undefined}
+              hidden={!mounted}
+              aria-hidden={!expanded && collapsible ? true : undefined}
+              inert={!expanded && collapsible ? true : undefined}
+              onAnimationEnd={(event) => {
+                if (event.target !== event.currentTarget || event.animationName !== "pokedex-group-close") return;
+                setAccordionState((current) => {
+                  if (current.expanded.has(groupKey)) return current;
+                  const mountedGroups = new Set(current.mounted);
+                  const closingGroups = new Set(current.closing);
+                  mountedGroups.delete(groupKey);
+                  closingGroups.delete(groupKey);
+                  return { ...current, mounted: mountedGroups, closing: closingGroups };
+                });
+              }}
+            >
+              {mounted && groupCards.map((card) => renderCard
                 ? renderCard(card)
                 : <CardLayout key={card.id} card={card} quantity={card.quantity} />)}
             </div>

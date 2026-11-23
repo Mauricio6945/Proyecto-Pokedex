@@ -41,7 +41,9 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
   variantes de esa especie, agrupadas bajo el nombre general de Pokédex. Esto
   se aplica al catálogo y al inventario. En el escáner los resultados se
   agrupan por especie, pero permanecen visibles; los mazos muestran todas las
-  cartas en una cuadrícula plana, sin agrupar por especie.
+  cartas en una cuadrícula plana, sin agrupar por especie. En el catálogo,
+  cambiar cualquier filtro cierra los grupos abiertos con una animación de
+  repliegue.
 
 - Estilos diferenciados según el tipo de Pokémon.
 
@@ -347,6 +349,7 @@ historial de commits. No sustituyen la revisión del historial completo de GitHu
 
 23 de noviembre de 2026:
   - Acordeones por especie en el catálogo y el inventario.
+  - Los filtros del catálogo cierran los acordeones abiertos con animación.
   - Resultados del escáner visibles inmediatamente, agrupados por especie.
   - Cartas de cada mazo en una cuadrícula plana, sin encabezados por especie.
 

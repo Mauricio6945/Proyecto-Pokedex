@@ -83,12 +83,16 @@ function FilterCards({ cards, user, onAdd }) {
           </ul>
         </aside>
       )}
-      <GroupedCardGrid cards={filteredCards} renderCard={(card) => (
+      <GroupedCardGrid
+        cards={filteredCards}
+        resetKey={JSON.stringify([searchName, selectedRarity, selectedExpansion, selectedVariant])}
+        renderCard={(card) => (
           <CardLayout key={card.id} card={card}
             actionLabel={user ? (card.trade_available > 0 ? t("addToInventory") : t("outOfStock")) : undefined}
             actionDisabled={Boolean(user) && !(card.trade_available > 0)}
             onAction={user && card.trade_available > 0 ? () => onAdd(card.id) : undefined} />
-      )} />
+        )}
+      />
     </>
   );
 }
