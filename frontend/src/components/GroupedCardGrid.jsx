@@ -1,7 +1,12 @@
+import { useId, useState } from "react";
 import CardLayout from "./CardLayout";
+import { useI18n } from "../i18n";
 
 //Organiza las cartas por número de Pokédex y mantiene juntas sus variantes.
 function GroupedCardGrid({ cards, renderCard }) {
+  const { t } = useI18n();
+  const idPrefix = useId().replaceAll(":", "");
+  const [expandedGroups, setExpandedGroups] = useState(() => new Set());
   const groups = new Map();
 
 
@@ -28,12 +33,32 @@ function GroupedCardGrid({ cards, renderCard }) {
         const heading = number === "unknown"
           ? categoryName
           : `#${String(number).padStart(3, "0")} · ${categoryName}`;
+        const groupKey = String(number);
+        const expanded = expandedGroups.has(groupKey);
+        const cardsId = `pokedex-group-cards-${idPrefix}-${groupKey}`;
 
         return (
           <section className="pokedex-group" key={number}>
-            <h3 className="pokedex-group-title">{heading}</h3>
-            <div className="card-grid">
-              {groupCards.map((card) => renderCard
+            <h3 className="pokedex-group-title">
+              <button
+                type="button"
+                className="pokedex-group-toggle"
+                aria-expanded={expanded}
+                aria-controls={cardsId}
+                aria-label={t(expanded ? "hidePokemonCards" : "showPokemonCards", { name: categoryName })}
+                onClick={() => setExpandedGroups((current) => {
+                  const next = new Set(current);
+                  if (next.has(groupKey)) next.delete(groupKey);
+                  else next.add(groupKey);
+                  return next;
+                })}
+              >
+                <span>{heading}</span>
+                <span className="pokedex-group-chevron" aria-hidden="true">{expanded ? "▾" : "▸"}</span>
+              </button>
+            </h3>
+            <div className="card-grid" id={cardsId} hidden={!expanded}>
+              {expanded && groupCards.map((card) => renderCard
                 ? renderCard(card)
                 : <CardLayout key={card.id} card={card} quantity={card.quantity} />)}
             </div>

@@ -2,7 +2,7 @@ POKERECORDS - CATÁLOGO E INVENTARIO DE CARTAS POKÉMON
 =====================================================
 
 Estado: versión funcional avanzada; etapa de validación y cierre.
-Fecha de actualización de este documento: 22 de noviembre de 2026.
+Fecha de actualización de este documento: 23 de noviembre de 2026.
 Repositorio: https://github.com/Mauricio6945/Proyecto-Pokedex
 
 
@@ -36,8 +36,9 @@ SQLite. El despliegue del proyecto está configurado para usar Vercel (frontend)
 
 - Búsqueda por nombre y filtros combinables por rareza, expansión y variante.
 
-- Organización visual por número de Pokédex: varias versiones de un mismo
-  Pokémon se agrupan bajo su nombre general.
+- Organización visual por número de Pokédex: cada especie aparece inicialmente
+  como un encabezado plegado. Al abrirlo se muestran todas las cartas y
+  variantes de esa especie, agrupadas bajo el nombre general de Pokédex.
 
 - Estilos diferenciados según el tipo de Pokémon.
 
@@ -339,6 +340,10 @@ historial de commits. No sustituyen la revisión del historial completo de GitHu
     de la carta y permanezca dentro de la pantalla.
   - Aviso bilingüe en el catálogo con las funciones que se desbloquean al
     iniciar sesión.
+
+23 de noviembre de 2026:
+  - Acordeones por especie en el catálogo, inventario, escáner y mazos; las
+    cartas aparecen al expandir el nombre del Pokémon.
 
 9. CRÉDITOS Y NOTAS
 ---------------------
